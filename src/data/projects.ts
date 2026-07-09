@@ -50,6 +50,6 @@ export const projects: Project[] = [
       'Trade-off analysis across layout alternatives; materials selected within a $2,300 BOM to meet cleanroom and conveyance requirements.',
     windowTitle: 'skyline_transport — assembly_dwg_03',
     preview: { kind: 'mock', mock: 'skyline' },
-    links: [],
+    links: [{ label: 'Writeup ↗', href: '/skyline-transport-writeup.pdf', primary: true }],
   },
 ]
