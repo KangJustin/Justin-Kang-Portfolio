@@ -13,7 +13,7 @@ export const experience: Experience[] = [
     dates: 'oct_2024 — may_2026',
     loc: 'berkeley, ca',
     org: 'Berkeley AI Research — Robotic AI & Learning Lab',
-    role: 'research_assistant',
+    role: 'undergraduate_research_assistant',
     summary:
       'Designed and ran measurement studies across 15+ experimental configurations, isolating performance factors and failure modes. A/B-tested ML policy variants to quantify trade-offs, and processed large-scale operational datasets in Python/Pandas for engineering stakeholders.',
   },
