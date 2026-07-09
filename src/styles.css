@@ -194,6 +194,17 @@ a:hover {
   font-size: 14px;
 }
 
+.sb-nav-divider {
+  height: 1px;
+  background: #33322b;
+  margin: 10px 0 10px 20px;
+}
+
+.sb-link--aux .sb-label {
+  font-size: 13px;
+  color: var(--on-dark-2);
+}
+
 .sb-bottom {
   display: flex;
   flex-direction: column;
@@ -900,7 +911,77 @@ a:hover {
   max-width: var(--maxw);
 }
 
+/* ---------- Writing callout (homepage) ---------- */
+
+.section--callout {
+  padding-top: 48px;
+  padding-bottom: 56px;
+}
+
+.wr-callout {
+  border: 1px solid var(--ink);
+  padding: 28px 32px;
+  max-width: var(--maxw);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.wr-callout-label {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+
+.wr-callout-title {
+  font-family: var(--mono);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.wr-callout-body {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  max-width: 66ch;
+}
+
+.wr-callout .plink {
+  margin-top: 6px;
+}
+
 /* ---------- Writing / Research & Essays (/writing) ---------- */
+
+.wr-empty {
+  border: 1px dashed var(--divider-dot);
+  background: var(--panel);
+  padding: 40px 44px;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.wr-empty-heading {
+  font-family: var(--mono);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.wr-empty-body {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.wr-empty .plink {
+  margin-top: 4px;
+}
 
 .wr-hero {
   padding: 100px var(--pad-x) 8px;

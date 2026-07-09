@@ -8,89 +8,43 @@ export interface WritingItem {
   takeaway: string
   tags: string[]
   ctaLabel: string // 'Read paper ↗' | 'Read essay ↗' | 'Read analysis ↗'
-  // Placeholder until the actual paper/essay is uploaded — set to a real
-  // URL (e.g. '/writing/001-ai-in-education.pdf') when available.
-  href?: string
+  href?: string // link to the actual paper/essay (PDF under /public or external)
 }
 
-export const writingItems: WritingItem[] = [
-  {
-    index: '[ 001 ]',
-    date: 'jul_2026',
-    category: 'education research',
-    type: 'research_brief',
-    title: 'AI in Education and Workforce Readiness',
-    summary:
-      'Examines how AI tools are reshaping student skill development, project-based learning, and early-career readiness.',
-    takeaway:
-      'AI is most effective when it supports feedback loops, not when it replaces student reasoning.',
-    tags: ['AI', 'Education', 'Workforce'],
-    ctaLabel: 'Read paper ↗',
-  },
-  {
-    index: '[ 002 ]',
-    date: 'jun_2026',
-    category: 'gender, race, nation, and health',
-    type: 'essay',
-    title: 'Health, Social Space, and Structural Inequality',
-    summary:
-      'Explores how race, gender, class, and place shape access to health and produce unequal outcomes across institutions.',
-    takeaway:
-      'Inequality is produced by both systems and the spatial geographies that embed them.',
-    tags: ['Public Health', 'Inequality', 'Social Science'],
-    ctaLabel: 'Read essay ↗',
-  },
-  {
-    index: '[ 003 ]',
-    date: 'may_2026',
-    category: 'literature',
-    type: 'literary_analysis',
-    title: 'Power, Voice, and Survival in Their Eyes Were Watching God',
-    summary:
-      'A close reading of Janie’s journey as an act of narrative reclamation and the pursuit of self-definition.',
-    takeaway: 'Janie’s story reframes autonomy as both resistance and renewal.',
-    tags: ['Literature', 'Modernism', 'Black Studies'],
-    ctaLabel: 'Read analysis ↗',
-  },
-  {
-    index: '[ 004 ]',
-    date: 'apr_2026',
-    category: 'urban systems',
-    type: 'analysis_note',
-    title: 'Urban Data, Climate Risk, and Public Planning',
-    summary:
-      'Analyzes how public datasets can guide equitable climate planning across housing, infrastructure, and emergency response.',
-    takeaway: 'Data-driven planning works best when it centers community context and capacity.',
-    tags: ['Urban Planning', 'Data', 'Climate'],
-    ctaLabel: 'Read paper ↗',
-  },
-  {
-    index: '[ 005 ]',
-    date: 'mar_2026',
-    category: 'international environmental law',
-    type: 'policy_essay',
-    title: 'Treaty Interpretation and Climate Governance',
-    summary:
-      'Argues for a dynamic, context-informed approach to interpreting climate treaties in a rapidly changing world.',
-    takeaway: 'Legal interpretation must evolve with science and intergenerational equity.',
-    tags: ['International Law', 'Climate Policy', 'Governance'],
-    ctaLabel: 'Read essay ↗',
-  },
-]
+// The archive is EMPTY by default — add entries only for real, finished
+// papers. Developer template (copy, uncomment, and fill in):
+//
+// {
+//   index: '[ 001 ]',
+//   date: 'jul_2026',
+//   category: 'course or research area',
+//   type: 'research_brief', // essay | literary_analysis | policy_essay | analysis_note
+//   title: 'Paper Title',
+//   summary: 'One or two sentences on what the paper examines.',
+//   takeaway: 'The single most important conclusion.',
+//   tags: ['Tag', 'Tag'],
+//   ctaLabel: 'Read paper ↗',
+//   href: '/writing/001-paper.pdf',
+// },
 
-export const featuredPaper = {
-  item: writingItems[0],
-  filename: '001_AI_in_Education.md',
-  excerpt:
-    'AI tools are changing how students practice, get feedback, and build early-career skills. The question is not whether to use them, but where they belong in the learning loop.',
-}
+export const writingItems: WritingItem[] = []
+
+// Shown in the sidebar panel once at least one item exists.
+export const featuredPaper =
+  writingItems.length > 0
+    ? {
+        item: writingItems[0],
+        filename: '001_paper.md',
+        excerpt: '',
+      }
+    : null
 
 export const writingPage = {
   terminalPath: '~/writing',
   terminalCmd: 'ls archive',
   title: 'Research & Essays',
   subtitle:
-    'A curated space to showcase research papers, essays, and class writing. Each piece includes a concise summary, central argument, evidence, and key takeaway.',
+    'A curated archive for research papers, essays, and class writing. Each entry will include a concise summary, central argument, evidence, and key takeaway.',
   includes: [
     'Thesis / central argument',
     'Why it matters',
@@ -98,4 +52,19 @@ export const writingPage = {
     'Key insight',
     'Takeaway',
   ],
+  empty: {
+    heading: 'No papers published yet.',
+    body: 'I’m currently organizing selected research papers, essays, and class writing into concise summaries. Each entry will include the central argument, key evidence, limitations, and what I took away.',
+    ctaLabel: 'Add first paper →',
+    // Points at the data file in the repo — replace with the first real entry.
+    ctaHref: 'https://github.com/KangJustin/Justin-Kang-Portfolio/blob/main/src/data/writing.ts',
+  },
+}
+
+// Compact homepage callout linking to /writing.
+export const writingCallout = {
+  label: '// WRITING_ARCHIVE',
+  title: 'Research & Essays',
+  body: 'A separate archive for selected research papers, class essays, and analytical writing. Each entry will eventually include the central argument, key evidence, limitations, and takeaway.',
+  ctaLabel: 'View writing archive →',
 }

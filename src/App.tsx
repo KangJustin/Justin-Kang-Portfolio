@@ -7,6 +7,7 @@ import { Skills } from './components/Skills'
 import { Now } from './components/Now'
 import { Resume } from './components/Resume'
 import { WritingArchive } from './components/WritingArchive'
+import { WritingCallout } from './components/WritingCallout'
 
 // Minimal history-based routing: '/' is the single-page portfolio,
 // '/writing' is the Research & Essays archive. vercel.json rewrites
@@ -40,6 +41,7 @@ export default function App() {
           <>
             <Hero />
             <Projects />
+            <WritingCallout navigate={navigate} />
             <Experience />
             <Skills />
             <Now />

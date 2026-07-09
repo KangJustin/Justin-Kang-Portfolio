@@ -4,6 +4,7 @@ import { WritingItemRow } from './WritingItemRow'
 import { FeaturedPaper } from './FeaturedPaper'
 
 export function WritingArchive() {
+  const isEmpty = writingItems.length === 0
   return (
     <>
       <section className="wr-hero">
@@ -21,14 +22,29 @@ export function WritingArchive() {
 
       <section className="section section--writing">
         <SectionHead title="// WRITING_ARCHIVE" meta={`${writingItems.length} selected`} />
-        <div className="wr-grid">
-          <div className="wr-list">
-            {writingItems.map((item) => (
-              <WritingItemRow key={item.index} item={item} />
-            ))}
+        {isEmpty ? (
+          <div className="wr-empty">
+            <div className="wr-empty-heading">{writingPage.empty.heading}</div>
+            <p className="wr-empty-body">{writingPage.empty.body}</p>
+            <a
+              href={writingPage.empty.ctaHref}
+              className="plink plink--primary"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {writingPage.empty.ctaLabel}
+            </a>
           </div>
-          <FeaturedPaper />
-        </div>
+        ) : (
+          <div className="wr-grid">
+            <div className="wr-list">
+              {writingItems.map((item) => (
+                <WritingItemRow key={item.index} item={item} />
+              ))}
+            </div>
+            <FeaturedPaper />
+          </div>
+        )}
       </section>
     </>
   )

@@ -1,6 +1,8 @@
 import { featuredPaper, writingPage } from '../data/writing'
 
+// Renders nothing until the archive has at least one item.
 export function FeaturedPaper() {
+  if (!featuredPaper) return null
   const { item, filename, excerpt } = featuredPaper
   return (
     <aside className="wr-aside">
@@ -18,7 +20,7 @@ export function FeaturedPaper() {
           </div>
           <div className="fp-doc">
             <div className="fp-doc-title">{item.title}</div>
-            <p className="fp-doc-excerpt">“{excerpt}”</p>
+            {excerpt && <p className="fp-doc-excerpt">“{excerpt}”</p>}
             <div className="fp-doc-insight">
               <span className="fp-doc-insight-label">key_insight:</span> {item.takeaway}
             </div>
