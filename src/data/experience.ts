@@ -4,9 +4,22 @@ export interface Experience {
   dates: string
 }
 
-// "Experience & Involvement" — the section and its nav link stay hidden
-// until this array has verified entries. Add real roles only:
-//
-// { org: 'Organization', role: 'Your Role', dates: 'MMM 20XX — MMM 20XX' },
+// Verified entries from Justin's resume (July 2026). Most recent first.
 
-export const experience: Experience[] = []
+export const experience: Experience[] = [
+  {
+    org: 'Berkeley AI Research — Robotic AI & Learning Lab',
+    role: 'Research Assistant',
+    dates: 'Oct 2024 — May 2026',
+  },
+  {
+    org: 'Hispanic Scholarship Fund',
+    role: 'YLS Scholar Squad Leader',
+    dates: 'May 2024 — May 2026',
+  },
+  {
+    org: 'MustemUSA (eBay Store)',
+    role: 'Founder',
+    dates: 'Aug 2020 — Apr 2024',
+  },
+]
