@@ -48,8 +48,8 @@ export const projects: Project[] = [
     desc: 'Modular overhead gantry and cart system for semiconductor cleanroom material handling, co-designed to ISO 14644 standards. 2nd place, ASME UC Berkeley CADathon Spring 2025.',
     proof:
       'Trade-off analysis across layout alternatives; materials selected within a $2,300 BOM to meet cleanroom and conveyance requirements.',
-    windowTitle: 'skyline_transport — cad_render',
-    preview: { kind: 'image', src: '/projects/skyline-cover.png' },
+    windowTitle: 'skyline_transport — assembly_dwg_03',
+    preview: { kind: 'mock', mock: 'skyline' },
     links: [{ label: 'Writeup ↗', href: '/skyline-transport-writeup.pdf', primary: true }],
   },
 ]
