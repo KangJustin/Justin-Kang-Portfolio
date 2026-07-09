@@ -4,7 +4,7 @@ import { SectionHead } from './SectionHead'
 export function Experience() {
   return (
     <section id="experience" className="section">
-      <SectionHead title="// 03_EXPERIENCE" />
+      <SectionHead title="// 04_EXPERIENCE" />
       <div className="xp-list">
         {experience.map((r) => (
           <div key={r.org} className="xp-row">

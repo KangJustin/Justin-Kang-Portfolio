@@ -4,7 +4,7 @@ import { SectionHead } from './SectionHead'
 export function Skills() {
   return (
     <section id="skills" className="section">
-      <SectionHead title="// 04_SKILLS" />
+      <SectionHead title="// 05_SKILLS" />
       <div className="sk-grid">
         {skillGroups.map((group) => (
           <div key={group.title} className="sk-col">

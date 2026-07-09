@@ -1,30 +1,63 @@
 import { site } from '../data/site'
 import { useScrollSpy } from '../hooks/useScrollSpy'
+import type { Page } from '../App'
 
-const sectionIds = ['about', 'projects', 'experience', 'skills', 'now', 'resume']
+const sectionIds = ['about', 'projects', 'experience', 'skills', 'resume']
 
-const navItems = [
-  { num: '01', label: 'About', id: 'about' },
-  { num: '02', label: 'Projects', id: 'projects' },
-  { num: '03', label: 'Experience', id: 'experience' },
-  { num: '04', label: 'Skills', id: 'skills' },
-  { num: '05', label: 'Now', id: 'now' },
-  { num: '06', label: 'Resume', id: 'resume' },
+type NavItem =
+  | { num: string; label: string; kind: 'section'; id: string }
+  | { num: string; label: string; kind: 'route'; to: string }
+
+const navItems: NavItem[] = [
+  { num: '01', label: 'About', kind: 'section', id: 'about' },
+  { num: '02', label: 'Projects', kind: 'section', id: 'projects' },
+  { num: '03', label: 'Writing', kind: 'route', to: '/writing' },
+  { num: '04', label: 'Experience', kind: 'section', id: 'experience' },
+  { num: '05', label: 'Skills', kind: 'section', id: 'skills' },
+  { num: '06', label: 'Resume', kind: 'section', id: 'resume' },
 ]
 
-export function Sidebar() {
-  const active = useScrollSpy(sectionIds)
+interface SidebarProps {
+  page: Page
+  navigate: (to: string) => void
+}
+
+export function Sidebar({ page, navigate }: SidebarProps) {
+  const spyActive = useScrollSpy(sectionIds)
+
+  const isActive = (item: NavItem) =>
+    item.kind === 'route' ? page === 'writing' : page === 'home' && spyActive === item.id
+
+  const hrefFor = (item: NavItem) =>
+    item.kind === 'route' ? item.to : page === 'home' ? `#${item.id}` : `/#${item.id}`
 
   return (
     <nav className="sidebar">
       <div className="sb-top">
-        <div className="sb-wordmark">{site.wordmark}</div>
+        <a
+          href="/"
+          className="sb-wordmark"
+          onClick={(e) => {
+            e.preventDefault()
+            navigate('/')
+          }}
+        >
+          {site.wordmark}
+        </a>
         <div className="sb-nav">
           {navItems.map((item) => (
             <a
-              key={item.id}
-              href={`#${item.id}`}
-              className={`sb-link${active === item.id ? ' is-active' : ''}`}
+              key={item.num}
+              href={hrefFor(item)}
+              className={`sb-link${isActive(item) ? ' is-active' : ''}`}
+              onClick={
+                item.kind === 'route'
+                  ? (e) => {
+                      e.preventDefault()
+                      navigate(item.to)
+                    }
+                  : undefined
+              }
             >
               <span className="sb-dot" />
               <span className="sb-num">{item.num}</span>
