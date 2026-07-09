@@ -58,7 +58,7 @@ export function Sidebar({ page, navigate }: SidebarProps) {
             }}
           >
             <span className="sb-dot" />
-            <span className="sb-label">Writing archive ↗</span>
+            <span className="sb-label">Writing ↗</span>
           </a>
         </div>
       </div>
