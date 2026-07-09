@@ -18,6 +18,14 @@ export const experience: Experience[] = [
       'Designed and ran measurement studies across 15+ experimental configurations, isolating performance factors and failure modes. A/B-tested ML policy variants to quantify trade-offs, and processed large-scale operational datasets in Python/Pandas for engineering stakeholders.',
   },
   {
+    dates: 'jul_2024 — aug_2024',
+    loc: 'inglewood, ca',
+    org: 'Los Angeles Rams (NFL)',
+    role: 'football_operations_intern',
+    summary:
+      'Managed training camp operations for 4,000+ attendees, coordinating logistics against team and fan-engagement goals. Streamlined internal workflows by communicating across executive, coaching, and event stakeholders.',
+  },
+  {
     dates: 'aug_2020 — apr_2024',
     loc: 'los angeles, ca',
     org: 'MustemUSA (eBay Store)',
