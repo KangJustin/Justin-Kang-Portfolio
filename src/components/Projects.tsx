@@ -1,51 +1,73 @@
 import { projects } from '../data/projects'
 import type { Project } from '../data/projects'
+import { SectionHead } from './SectionHead'
+import { FluxPreview } from './previews/FluxPreview'
+import { SkylinePreview } from './previews/SkylinePreview'
 
-function Thumb({ thumb }: { thumb: Project['thumb'] }) {
-  if (thumb.kind === 'image') {
+function PreviewBody({ preview }: { preview: Project['preview'] }) {
+  if (preview.kind === 'image') {
     return (
-      <div className="proj__thumb">
-        <img src={thumb.image} alt="" />
+      <div className="window__body window__body--image">
+        <img src={preview.src} alt="" />
       </div>
     )
   }
-  return <div className={`proj__thumb proj__thumb--${thumb.kind}`}>{thumb.glyphText}</div>
+  return (
+    <div className="window__body">
+      {preview.mock === 'flux' ? <FluxPreview /> : <SkylinePreview />}
+    </div>
+  )
 }
 
 export function Projects() {
   return (
-    <section id="projects" className="section-block">
-      <div className="col-header">
-        <h2 className="col-header__title">Projects</h2>
-      </div>
-
-      {projects.length === 0 ? (
-        <div className="empty-state" data-reveal>
-          Projects coming soon — currently organizing GitHub repos, demos, and writeups.
-        </div>
-      ) : (
-        <div className="proj-grid">
-          {projects.map((p) => (
-            <a key={p.title} href={p.link ?? '#'} className="proj" data-reveal>
-              <Thumb thumb={p.thumb} />
-              <div className="proj__text">
-                <div>
-                  <div className="proj__title">{p.title}</div>
-                  <div className="proj__desc">{p.description}</div>
-                </div>
-                <div className="proj__tags">{p.tags.join('  ')}</div>
+    <section id="projects" className="section section--projects">
+      <SectionHead title="// 02_PROJECTS" meta={`${projects.length} selected`} />
+      <div className="projects-list">
+        {projects.map((p) => (
+          <article key={p.title} className="project">
+            <div className="project__info">
+              <div className="project__index">{p.index}</div>
+              <h3 className="project__title">{p.title}</h3>
+              <div className="chips">
+                {p.tags.map((tag) => (
+                  <span key={tag} className="chip">
+                    {tag}
+                  </span>
+                ))}
               </div>
-              {p.gallery && (
-                <div className="proj__gallery">
-                  {p.gallery.map((src) => (
-                    <img key={src} src={src} alt="" />
+              <p className="project__desc">{p.desc}</p>
+              <p className="project__proof">{p.proof}</p>
+              {p.links.length > 0 && (
+                <div className="project__links">
+                  {p.links.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      className={`plink${link.primary ? ' plink--primary' : ''}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {link.label}
+                    </a>
                   ))}
                 </div>
               )}
-            </a>
-          ))}
-        </div>
-      )}
+            </div>
+            <div className="window">
+              <div className="window__bar">
+                <span className="window__file">{p.windowTitle}</span>
+                <span className="window__dots">
+                  <span />
+                  <span />
+                  <span />
+                </span>
+              </div>
+              <PreviewBody preview={p.preview} />
+            </div>
+          </article>
+        ))}
+      </div>
     </section>
   )
 }

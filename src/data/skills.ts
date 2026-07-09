@@ -1,23 +1,11 @@
 export interface SkillGroup {
-  label: string
-  skills: string[]
+  title: string
+  items: string[]
 }
 
 export const skillGroups: SkillGroup[] = [
-  {
-    label: 'Frontend',
-    skills: ['React', 'TypeScript', 'Vite', 'HTML', 'CSS'],
-  },
-  {
-    label: 'Backend / Data',
-    skills: ['Supabase', 'SQL', 'APIs'],
-  },
-  {
-    label: 'Tools',
-    skills: ['Git', 'GitHub', 'Figma', 'Vercel'],
-  },
-  {
-    label: 'Exploring',
-    skills: ['AI tools', 'Full-stack architecture', 'Product design', 'Finance'],
-  },
+  { title: 'languages/', items: ['Python', 'JavaScript', 'SQL / MySQL'] },
+  { title: 'data_stack/', items: ['Pandas', 'NumPy', 'Matplotlib', 'Jupyter'] },
+  { title: 'ai_backend/', items: ['Gemini', 'Claude', 'FastAPI', 'APIs'] },
+  { title: 'tools/', items: ['Git', 'Vercel', 'Figma', 'CAD'] },
 ]

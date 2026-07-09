@@ -1,9 +1,6 @@
-// Content for the "Now" bar — keep it small and honest.
-
 export const now = {
-  blurb: 'A snapshot of what I’m working on right now.',
-  learning: 'Full-stack development, AI tools, product design',
-  building: 'Personal portfolio and GitHub project writeups',
-  improving: 'Resume, technical projects, and deployment workflow',
-  lookingFor: 'Software, product, AI, data, and finance-related opportunities',
+  lastUpdated: 'last_updated: jul_2026',
+  currentlyBuilding:
+    'Writing technical project breakdowns for UrbanPilot and BarelyAtWork, with a focus on AI workflows, public data pipelines, and product design decisions.',
+  lookingFor: 'Software, AI/data, product, and technical finance opportunities.',
 }

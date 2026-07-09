@@ -1,41 +1,55 @@
+export interface ProjectLink {
+  label: string
+  href: string
+  primary?: boolean
+}
+
 export interface Project {
+  index: string // e.g. '[ 001 ] · jun_2026'
   title: string
-  description: string
   tags: string[]
-  // Thumbnail: a glyph tile, or a real 88x64 screenshot under /public.
-  thumb: { kind: 'glyph-dark' | 'glyph-light'; glyphText: string } | { kind: 'image'; image: string }
-  // Optional filmstrip of real product screenshots shown under the card.
-  gallery?: string[]
-  link?: string
+  desc: string
+  proof: string
+  windowTitle: string // filename shown in the preview window's title bar
+  // Preview panel inside the window frame: a real screenshot (16:10 crop)
+  // or one of the hand-built CSS mocks ('flux' | 'skyline').
+  preview: { kind: 'image'; src: string } | { kind: 'mock'; mock: 'flux' | 'skyline' }
+  // Only real URLs — add 'Demo ↗' / 'Writeup ↗' entries when they exist.
+  links: ProjectLink[]
 }
 
 export const projects: Project[] = [
   {
+    index: '[ 001 ] · jun_2026',
     title: 'UrbanPilot',
-    description:
-      'AI urban-planning copilot — four Claude agents analyze any address across climate, housing, and accessibility, then render AI-generated 2040/2075 streetscapes.',
-    tags: ['React', 'Node', 'Claude'],
-    thumb: { kind: 'image', image: '/projects/urbanpilot-icon.png' },
-    gallery: [
-      '/projects/urbanpilot-pre-analysis.jpg',
-      '/projects/urbanpilot-analysis.jpg',
-      '/projects/urbanpilot-streetscape.jpg',
-    ],
-    link: 'https://github.com/KangJustin/urbanpilot',
+    tags: ['Multi-agent AI', 'Python', 'Data pipelines', 'Public datasets'],
+    desc: 'Multi-agent AI system that runs parallel scenario analyses — climate, housing, accessibility, urban design — for any real address.',
+    proof:
+      'Integrates + cleans 6 data sources: Census ACS, FEMA, Open-Meteo, Transit 511, Google Maps. Supports multi-variable sensitivity analysis across planning dimensions.',
+    windowTitle: 'urbanpilot — scenario_dashboard',
+    preview: { kind: 'image', src: '/projects/urbanpilot-analysis.jpg' },
+    links: [{ label: 'Code ↗', href: 'https://github.com/KangJustin/urbanpilot', primary: true }],
   },
   {
-    title: 'BarelyAtWork',
-    description:
-      'Voice-powered automation engine — speak one command and it builds and runs a validated multi-app workflow across Gmail, Slack, Calendar, and 12+ other integrations.',
-    tags: ['Kotlin', 'FastAPI', 'Gemma'],
-    thumb: { kind: 'glyph-light', glyphText: 'b' },
-    link: 'https://github.com/trigtbh/lahacks-26',
+    index: '[ 002 ] · apr_2026',
+    title: 'BarelyAtWork / Flux',
+    tags: ['Voice AI', 'Gemini', 'Workflow JSON', '12+ integrations'],
+    desc: 'Voice-first automation platform on Meta Ray-Ban glasses — one spoken command triggers multi-step workflows across 12+ services, including Gmail, Slack, Notion, and Fetch.ai Agentverse.',
+    proof:
+      'Constrained Gemini pipeline with a validate → repair loop converts voice transcripts into structured workflow JSON and eliminates invalid parameters.',
+    windowTitle: 'flux — voice_to_workflow',
+    preview: { kind: 'mock', mock: 'flux' },
+    links: [{ label: 'Code ↗', href: 'https://github.com/trigtbh/lahacks-26', primary: true }],
   },
   {
+    index: '[ 003 ] · apr_2025',
     title: 'Skyline Transport',
-    description:
-      'Modular overhead gantry and cart system for semiconductor cleanroom material handling, designed to ISO 14644 within a $2,300 BOM — 2nd place at the ASME UC Berkeley CADathon, Spring 2025.',
-    tags: ['CAD', 'Systems Design', 'ASME'],
-    thumb: { kind: 'glyph-dark', glyphText: 's' },
+    tags: ['CAD', 'Trade-off analysis', 'ISO 14644'],
+    desc: 'Modular overhead gantry and cart system for semiconductor cleanroom material handling, co-designed to ISO 14644 standards. 2nd place, ASME UC Berkeley CADathon Spring 2025.',
+    proof:
+      'Trade-off analysis across layout alternatives; materials selected within a $2,300 BOM to meet cleanroom and conveyance requirements.',
+    windowTitle: 'skyline_transport — assembly_dwg_03',
+    preview: { kind: 'mock', mock: 'skyline' },
+    links: [],
   },
 ]

@@ -1,24 +1,22 @@
 import { Sidebar } from './components/Sidebar'
 import { Hero } from './components/Hero'
 import { Projects } from './components/Projects'
+import { Experience } from './components/Experience'
 import { Skills } from './components/Skills'
-import { ExperienceInvolvement } from './components/ExperienceInvolvement'
-import { NowBar } from './components/NowBar'
-import { useRevealAll } from './hooks/useRevealAll'
+import { Now } from './components/Now'
+import { Resume } from './components/Resume'
 
 export default function App() {
-  useRevealAll()
   return (
     <div className="shell">
       <Sidebar />
       <main className="main">
         <Hero />
-        <div className="rule" />
         <Projects />
-        <div className="rule" />
+        <Experience />
         <Skills />
-        <ExperienceInvolvement />
-        <NowBar />
+        <Now />
+        <Resume />
       </main>
     </div>
   )
