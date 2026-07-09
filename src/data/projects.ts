@@ -31,4 +31,11 @@ export const projects: Project[] = [
     thumb: { kind: 'glyph-light', glyphText: 'b' },
     link: 'https://github.com/trigtbh/lahacks-26',
   },
+  {
+    title: 'Skyline Transport',
+    description:
+      'Modular overhead gantry and cart system for semiconductor cleanroom material handling, designed to ISO 14644 within a $2,300 BOM — 2nd place at the ASME UC Berkeley CADathon, Spring 2025.',
+    tags: ['CAD', 'Systems Design', 'ASME'],
+    thumb: { kind: 'glyph-dark', glyphText: 's' },
+  },
 ]
