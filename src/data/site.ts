@@ -1,6 +1,6 @@
 export const site = {
   name: 'Justin Kang',
-  wordmark: 'justinkang.dev',
+  wordmark: 'justin-kang.vercel.app',
   tagline: 'UC Berkeley student building practical software, data tools, and student projects.',
   heroBody:
     'I’m interested in software, AI, data, finance, and product. I like building useful tools, learning by shipping, and turning rough ideas into clean, working systems.',
