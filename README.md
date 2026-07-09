@@ -1,6 +1,6 @@
 # Justin Kang — Personal Portfolio
 
-Clean, project-first student portfolio built with **React + TypeScript + Vite**: fixed dark sidebar, off-white content area, Space Mono + Inter, olive-green accent, no rounded corners or shadows.
+Terminal/systems personal portfolio built with **React + TypeScript + Vite**: near-black scroll-spy sidebar, off-white grid-lined hero, JetBrains Mono details, dark-teal accent, window-chrome project previews. Implemented from the design handoff `design_handoff_portfolio 2/Portfolio Redesign.dc.html`.
 
 ## Develop
 
