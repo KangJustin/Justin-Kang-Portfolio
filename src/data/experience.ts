@@ -29,8 +29,8 @@ export const experience: Experience[] = [
     dates: 'may_2024 — may_2026',
     loc: 'hybrid',
     org: 'Hispanic Scholarship Fund',
-    role: 'yls_scholar_squad_leader',
+    role: 'yls_scholar_squad_leader · college_consultant',
     summary:
-      'Mentored 15+ high school seniors one-on-one across two application cycles; facilitated operations at the 2024 USC and 2025 Princeton Young Leaders Summits. Mentees admitted to Yale, Columbia, Tufts (QuestBridge), USC, WashU, and UC Berkeley.',
+      'Mentored 15+ high school seniors one-on-one across two application cycles; facilitated operations at the 2024 USC and 2025 Princeton Young Leaders Summits. Mentees admitted to Yale, Columbia, Brown, Tufts (QuestBridge), USC, WashU, and UC Berkeley, including a Gates Scholarship recipient.',
   },
 ]
