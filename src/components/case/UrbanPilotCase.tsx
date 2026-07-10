@@ -13,72 +13,76 @@ import {
 function DashboardMock() {
   return (
     <div className="up-dash">
-      <div className="up-topbar">
-        <span className="up-wordmark">
-          Urban<span className="up-wordmark-acc">Pilot</span>
-        </span>
-        <span className="up-loc">Downtown Berkeley, CA</span>
-        <span className="up-search">⌕ Search address, landmark, city…</span>
-      </div>
-      <div className="up-pills">
-        <span className="up-pill">✓ Verified · Open-Meteo</span>
-        <span className="up-pill">✓ Verified · Census ACS</span>
-        <span className="up-pill">✓ Verified · FEMA</span>
+      {/* header: identity + location + target year */}
+      <div className="up-head">
+        <div className="up-head-left">
+          <span className="up-wordmark">
+            Urban<span className="up-wordmark-acc">Pilot</span>
+          </span>
+          <span className="up-loc">Downtown Berkeley, CA</span>
+        </div>
+        <div className="up-years">
+          <span>Current</span>
+          <span className="active">2040</span>
+          <span>2075</span>
+        </div>
       </div>
 
+      {/* planning goal */}
       <div className="up-goal">
-        <span className="up-goal-label">Planning goal</span>
+        <span className="up-goal-label">Goal</span>
         <span className="up-goal-text">Add housing near transit</span>
         <span className="up-goal-cursor" />
       </div>
 
-      <div className="up-metrics">
-        <div className="up-metric">
-          <span className="up-metric-label">Climate</span>
-          <span className="up-metric-value">
-            62<span className="up-metric-unit">/100</span>
+      {/* KPI row — 4 larger cards */}
+      <div className="up-kpis">
+        <div className="up-kpi">
+          <span className="up-kpi-label">Climate</span>
+          <span className="up-kpi-value">
+            62<span className="up-kpi-unit">/100</span>
           </span>
         </div>
-        <div className="up-metric">
-          <span className="up-metric-label">Transit</span>
-          <span className="up-metric-value">
-            66<span className="up-metric-unit">/100</span>
+        <div className="up-kpi">
+          <span className="up-kpi-label">Transit</span>
+          <span className="up-kpi-value">
+            66<span className="up-kpi-unit">/100</span>
           </span>
         </div>
-        <div className="up-metric">
-          <span className="up-metric-label">Med. rent</span>
-          <span className="up-metric-value">$1,719</span>
+        <div className="up-kpi">
+          <span className="up-kpi-label">Median rent</span>
+          <span className="up-kpi-value">$1,719</span>
         </div>
-        <div className="up-metric">
-          <span className="up-metric-label">Flood risk</span>
-          <span className="up-metric-value">Min.</span>
-        </div>
-        <div className="up-metric">
-          <span className="up-metric-label">Air qual.</span>
-          <span className="up-metric-value">
-            26 <span className="up-metric-unit">AQI</span>
-          </span>
+        <div className="up-kpi">
+          <span className="up-kpi-label">Flood risk</span>
+          <span className="up-kpi-value">Min.</span>
         </div>
       </div>
 
+      {/* main: scenario table (focal) + map */}
       <div className="up-main">
-        <div className="up-panel">
-          <div className="up-panel-label">Scenario performance</div>
+        <div className="up-panel up-panel--focal">
+          <div className="up-panel-title">Scenario performance</div>
           <table className="up-table">
             <thead>
               <tr>
                 <th></th>
                 <th>Current</th>
-                <th className="hl">2040</th>
+                <th className="hl">
+                  <span className="up-th-chip">2040</span>
+                </th>
                 <th>2075</th>
               </tr>
             </thead>
             <tbody>
               {d.scenarioRows.map((row) => (
-                <tr key={row.name}>
+                <tr key={row.name} className={row.name === 'Overall' ? 'total' : undefined}>
                   <td>{row.name}</td>
                   <td className="num">{row.current}</td>
-                  <td className="num hl">{row.y2040}</td>
+                  <td className="num hl">
+                    {row.y2040}
+                    <span className="up-delta">▲{row.y2040 - row.current}</span>
+                  </td>
                   <td className="num">{row.y2075}</td>
                 </tr>
               ))}
@@ -87,64 +91,64 @@ function DashboardMock() {
         </div>
 
         <div className="up-map">
-          <div className="up-panel-label up-map-label">Scenario area</div>
+          <div className="up-panel-title up-map-title">Scenario area</div>
           <div className="up-map-box">
             <svg
-              viewBox="0 0 220 160"
+              viewBox="0 0 220 170"
               preserveAspectRatio="xMidYMid slice"
               role="img"
-              aria-label="Abstract street-grid map of the scenario area with location markers"
+              aria-label="Abstract street-grid map with the selected scenario area and location markers"
             >
-              <rect width="220" height="160" fill="#F6F3EA" />
-              <g stroke="#C9C2AE" strokeWidth="1.5">
-                <line x1="0" y1="34" x2="220" y2="30" />
-                <line x1="0" y1="72" x2="220" y2="68" />
-                <line x1="0" y1="112" x2="220" y2="110" />
-                <line x1="0" y1="148" x2="220" y2="146" />
-                <line x1="36" y1="0" x2="40" y2="160" />
-                <line x1="84" y1="0" x2="86" y2="160" />
-                <line x1="132" y1="0" x2="132" y2="160" />
-                <line x1="180" y1="0" x2="178" y2="160" />
+              <rect width="220" height="170" fill="#F3F0E4" />
+              <g stroke="#B4AC93" strokeWidth="1.5">
+                <line x1="0" y1="36" x2="220" y2="32" />
+                <line x1="0" y1="76" x2="220" y2="72" />
+                <line x1="0" y1="118" x2="220" y2="116" />
+                <line x1="0" y1="156" x2="220" y2="154" />
+                <line x1="38" y1="0" x2="42" y2="170" />
+                <line x1="132" y1="0" x2="132" y2="170" />
+                <line x1="182" y1="0" x2="180" y2="170" />
               </g>
-              <line x1="0" y1="150" x2="220" y2="20" stroke="#B4AC93" strokeWidth="2.5" />
-              <rect
-                x="140"
-                y="76"
-                width="34"
-                height="30"
-                fill="rgba(62,122,114,.14)"
-                stroke="#3E7A72"
-                strokeWidth="1"
-                strokeDasharray="3 2"
-              />
+              <line x1="0" y1="160" x2="220" y2="22" stroke="#9E9781" strokeWidth="3" />
+              {/* transit corridor */}
               <line
-                x1="84"
+                x1="86"
                 y1="0"
-                x2="86"
-                y2="160"
+                x2="88"
+                y2="170"
                 stroke="#3E7A72"
-                strokeWidth="2"
-                strokeDasharray="6 3"
-                opacity="0.6"
+                strokeWidth="2.5"
+                strokeDasharray="7 4"
+                opacity="0.75"
               />
+              {/* selected scenario area */}
+              <rect
+                x="62"
+                y="46"
+                width="60"
+                height="52"
+                fill="rgba(62,122,114,.16)"
+                stroke="#3E7A72"
+                strokeWidth="1.5"
+                strokeDasharray="5 3"
+              />
+              {/* markers */}
               <g>
-                <circle cx="86" cy="70" r="5" fill="#3E7A72" />
-                <circle cx="86" cy="70" r="9" fill="none" stroke="#3E7A72" strokeWidth="1" opacity="0.5" />
-                <circle cx="46" cy="118" r="4" fill="#3E7A72" opacity="0.8" />
-                <circle cx="156" cy="44" r="4" fill="#3E7A72" opacity="0.8" />
+                <circle cx="88" cy="72" r="14" fill="#3E7A72" opacity="0.18" />
+                <circle cx="88" cy="72" r="9" fill="none" stroke="#3E7A72" strokeWidth="1.5" opacity="0.6" />
+                <circle cx="88" cy="72" r="6" fill="#3E7A72" />
+                <circle cx="46" cy="126" r="4.5" fill="#3E7A72" opacity="0.85" />
+                <circle cx="160" cy="46" r="4.5" fill="#3E7A72" opacity="0.85" />
               </g>
-              <line x1="12" y1="150" x2="44" y2="150" stroke="#43402F" strokeWidth="1.5" />
-              <text x="12" y="144" fontFamily="IBM Plex Mono, monospace" fontSize="7" fill="#6B6656">
-                400 m
-              </text>
             </svg>
           </div>
         </div>
       </div>
 
-      <div className="up-main">
+      {/* bottom: risks + recommendations */}
+      <div className="up-bottom">
         <div className="up-panel">
-          <div className="up-panel-label">Risks · 4 found</div>
+          <div className="up-panel-title">Risks</div>
           <ul className="up-risks">
             {d.risks.map((risk) => (
               <li key={risk.name} className="up-risk">
@@ -160,7 +164,7 @@ function DashboardMock() {
           </ul>
         </div>
         <div className="up-panel">
-          <div className="up-panel-label">Interventions</div>
+          <div className="up-panel-title">Recommendations</div>
           <div className="up-chips">
             {d.interventions.map((chip) => (
               <span key={chip} className="up-chip">
