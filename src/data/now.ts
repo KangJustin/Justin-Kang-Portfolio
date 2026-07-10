@@ -17,17 +17,12 @@ export const now = {
     {
       label: 'teaching myself',
       icon: 'bulb',
-      body: 'Intro to Python for astrophysics, and honestly loving it.',
+      body: 'A summer course learning about Python for astrophysics.',
     },
     {
       label: 'open to',
       icon: 'compass',
       body: 'Internships in software or hardware.',
-    },
-    {
-      label: 'jotting down',
-      icon: 'notebook',
-      body: "Future goals — the ones I'm still figuring out.",
     },
   ] as NowBlock[],
 }
