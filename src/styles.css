@@ -873,41 +873,45 @@ a:hover {
 
 /* ---------- Now ---------- */
 
-.now-panel {
-  color: var(--sidebar-text);
+.now-grid {
   max-width: var(--maxw);
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  background: var(--sidebar-bg);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
 }
 
-.now-block {
+.now-card {
+  border-radius: 12px;
+  padding: 1.25rem;
+  background: var(--panel);
+  border: 1px solid var(--hairline-2);
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 40px 48px;
-  border-bottom: 1px solid #33322b;
+  gap: 10px;
 }
 
-.now-block:nth-child(odd) {
-  border-right: 1px solid #33322b;
+.now-card-head {
+  display: flex;
+  align-items: center;
+  gap: 9px;
 }
 
-.now-block:nth-last-child(-n + 2) {
-  border-bottom: none;
-}
-
-.now-label {
-  font-family: var(--mono);
-  font-size: 12px;
+.now-card-icon {
+  width: 18px;
+  height: 18px;
   color: var(--accent);
-  letter-spacing: 0.08em;
+  flex-shrink: 0;
 }
 
-.now-text {
+.now-card-label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.now-card-body {
   font-size: 16px;
   line-height: 1.6;
-  color: var(--on-dark-body);
+  color: var(--ink-2);
 }
 
 /* ---------- Resume ---------- */
@@ -2248,6 +2252,21 @@ a:hover {
   color: var(--c-faint);
 }
 
+/* ---------- Case viewport image ---------- */
+
+.cs-viewimg {
+  flex: 1;
+  background: var(--c-surface);
+}
+
+.cs-viewimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+  display: block;
+}
+
 /* ---------- Skyline CAD viewport ---------- */
 
 .sk2-viewbox {
@@ -2315,19 +2334,6 @@ a:hover {
   }
   .hero__name {
     font-size: 56px;
-  }
-  .now-panel {
-    grid-template-columns: 1fr;
-  }
-  .now-block {
-    padding: 28px 28px;
-    border-right: none !important;
-  }
-  .now-block:nth-last-child(-n + 2) {
-    border-bottom: 1px solid #33322b;
-  }
-  .now-block:last-child {
-    border-bottom: none;
   }
   .projects-list {
     gap: 64px;

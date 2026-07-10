@@ -1,21 +1,33 @@
+export type NowIcon = 'hammer' | 'bulb' | 'compass' | 'notebook'
+
+export interface NowBlock {
+  label: string // plain lowercase phrase, no prompt styling
+  icon: NowIcon
+  body: string // first-person, casual sentence
+}
+
 export const now = {
   lastUpdated: 'last_updated: jul_2026',
   blocks: [
     {
-      label: '> currently_building',
-      text: 'Building full-stack AI tools and data products — including civic-tech dashboards, voice automation workflows, and portfolio case studies.',
+      label: "right now, I'm making",
+      icon: 'hammer',
+      body: "BridgeSF, and this website you're looking at.",
     },
     {
-      label: '> currently_learning',
-      text: 'Deepening backend development, Supabase, data pipelines, applied AI systems, and product design through hands-on projects.',
+      label: 'teaching myself',
+      icon: 'bulb',
+      body: 'Intro to Python for astrophysics, and honestly loving it.',
     },
     {
-      label: '> looking_for',
-      text: 'Software, AI/data, product, and technical finance opportunities where I can work on practical systems with real users.',
+      label: 'open to',
+      icon: 'compass',
+      body: 'Internships in software or hardware.',
     },
     {
-      label: '> writing_about',
-      text: 'Organizing selected research papers, class essays, and technical project notes into concise summaries and takeaways.',
+      label: 'jotting down',
+      icon: 'notebook',
+      body: "Future goals — the ones I'm still figuring out.",
     },
-  ],
+  ] as NowBlock[],
 }
