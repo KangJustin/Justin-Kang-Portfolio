@@ -86,7 +86,7 @@ export const writingItems: WritingItem[] = [
   },
   {
     index: '[ 005 ]',
-    date: 'jul_2026',
+    date: 'may_2026',
     category: 'newspace economy — team startup investment proposal (group 3)',
     type: 'business_proposal',
     title: 'Qubital: In-Orbit Quantum Processor Fabrication',
