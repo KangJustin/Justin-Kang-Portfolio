@@ -27,15 +27,31 @@ export interface WritingItem {
 //   href: '/writing/001-paper.pdf',
 // },
 
-export const writingItems: WritingItem[] = []
+export const writingItems: WritingItem[] = [
+  {
+    index: '[ 001 ]',
+    date: 'jul_2026',
+    category: 'digital infrastructure 101 — the hidden foundations of the internet',
+    type: 'article',
+    title: 'What IRIS Actually Fixed',
+    summary:
+      'Iceland’s third submarine cable gets the credit for the country’s swing from crypto mining to AI infrastructure. Drawing on a cable-by-cable inventory, investment records, and energy data, this piece tests how much of that credit the record actually supports.',
+    takeaway:
+      'IRIS removed the constraint — it didn’t create the demand. Generation and transmission now decide how far Iceland scales.',
+    tags: ['Digital Infrastructure', 'Submarine Cables', 'Data Centers', 'Energy'],
+    ctaLabel: 'Read article ↗',
+    href: '/writing/001-what-iris-actually-fixed.pdf',
+  },
+]
 
 // Shown in the sidebar panel once at least one item exists.
 export const featuredPaper =
   writingItems.length > 0
     ? {
         item: writingItems[0],
-        filename: '001_paper.md',
-        excerpt: '',
+        filename: '001_what_iris_actually_fixed.md',
+        excerpt:
+          'Iceland’s third cable gets the credit for the country’s swing from crypto to AI infrastructure. The record supports something narrower, and points at the grid.',
       }
     : null
 
