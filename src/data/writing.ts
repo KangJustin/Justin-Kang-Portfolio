@@ -42,6 +42,62 @@ export const writingItems: WritingItem[] = [
     ctaLabel: 'Read article ↗',
     href: '/writing/001-what-iris-actually-fixed.pdf',
   },
+  {
+    index: '[ 002 ]',
+    date: 'may_2026',
+    category: 'creation, creativity, and origin stories in modern greek literature and film',
+    type: 'literary_analysis',
+    title: 'Cohesion and Collapse: Sophocles Against Freud',
+    summary:
+      'Freud’s Totem and Taboo argues that guilt, taboo, and the authority of the dead are the forces that found civilization. Reading Oedipus Rex and Antigone against that model, this essay tracks the same three forces through Thebes and finds them doing the opposite of what Freud predicts.',
+    takeaway:
+      'Freud was right about the forces — guilt, taboo, the dead — but wrong about the outcome. In Sophocles they don’t build order, they dismantle it, twice.',
+    tags: ['Classics', 'Sophocles', 'Freud', 'Literary Theory'],
+    ctaLabel: 'Read essay ↗',
+    href: '/writing/002-cohesion-and-collapse-sophocles-against-freud.pdf',
+  },
+  {
+    index: '[ 003 ]',
+    date: 'mar_2026',
+    category: 'creation, creativity, and origin stories in modern greek literature and film',
+    type: 'literary_analysis',
+    title: 'The Weight of Remembrance in Poem 3 of Mythistorema',
+    summary:
+      'A close reading of George Seferis’s Poem 3, which opens on the command “Remember the baths where you were murdered.” Tracing the poem’s shift from an unidentified second person to a private “I” holding a marble head, this essay reads memory as something imposed on the speaker rather than chosen.',
+    takeaway:
+      'By the poem’s end the speaker isn’t holding something broken — they are the broken thing. Seferis stages remembrance as coercive and inescapable, a burden that has to be carried alone even when the past it draws on is shared.',
+    tags: ['Poetry', 'George Seferis', 'Close Reading', 'Modern Greek Literature'],
+    ctaLabel: 'Read essay ↗',
+    href: '/writing/003-the-weight-of-remembrance-mythistorema.pdf',
+  },
+  {
+    index: '[ 004 ]',
+    date: 'dec_2024',
+    category: 'principles of sociology — xsociol 3ac',
+    type: 'research_paper',
+    title: 'Parenting Across Cultures: A Comparative Analysis of Asian American and European American Styles',
+    summary:
+      'A sociological comparison of Asian American (authoritarian) and European American (authoritative) parenting, using Chao’s concept of “training,” Kim’s racial triangulation, and cross-cultural research to argue that Western frameworks mislabel disciplined, collectivist parenting as simply harsh.',
+    takeaway:
+      'Neither style is superior, just differently rooted — Asian American parenting’s structure and discipline function as intentional care within a collectivist framework, not the deficit Western-centric labels like “Tiger Mom” assume.',
+    tags: ['Sociology', 'Cultural Comparison', 'Parenting', 'Asian American Studies'],
+    ctaLabel: 'Read paper ↗',
+    href: '/writing/004-parenting-across-cultures.pdf',
+  },
+  {
+    index: '[ 005 ]',
+    date: 'group_project',
+    category: 'newspace economy — team startup investment proposal (group 3)',
+    type: 'business_proposal',
+    title: 'Qubital: In-Orbit Quantum Processor Fabrication',
+    summary:
+      'A group investment proposal (written with Group 3 teammates) pitching Qubital, a startup that 3D-nanoprints quantum processors directly in orbit to exploit microgravity, vacuum, and radiative cooling — advantages no terrestrial cleanroom can replicate. Covers technical feasibility, target markets (defense, pharma, AI), competitive positioning against incumbents like IBM and Infleqtion, and a staged revenue model.',
+    takeaway:
+      'Qubital’s moat isn’t better qubits — it’s the only proposal combining in-orbit fabrication with space-native operation, a category no terrestrial quantum incumbent or existing orbital-manufacturing startup currently occupies.',
+    tags: ['Quantum Computing', 'Space Economy', 'Startup Strategy', 'Group Project'],
+    ctaLabel: 'Read proposal ↗',
+    href: '/writing/005-qubital-newspace-economy-proposal.pdf',
+  },
 ]
 
 // Shown in the sidebar panel once at least one item exists.

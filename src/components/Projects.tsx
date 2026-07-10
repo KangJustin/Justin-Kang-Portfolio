@@ -19,7 +19,7 @@ function PreviewBody({ preview }: { preview: Project['preview'] }) {
   )
 }
 
-export function Projects() {
+export function Projects({ navigate }: { navigate: (to: string) => void }) {
   return (
     <section id="projects" className="section section--projects">
       <SectionHead title="// 02_PROJECTS" meta={`${projects.length} selected`} />
@@ -38,8 +38,20 @@ export function Projects() {
               </div>
               <p className="project__desc">{p.desc}</p>
               <p className="project__proof">{p.proof}</p>
-              {p.links.length > 0 && (
+              {(p.caseStudy || p.links.length > 0) && (
                 <div className="project__links">
+                  {p.caseStudy && (
+                    <a
+                      href={p.caseStudy}
+                      className="plink plink--primary"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        navigate(p.caseStudy!)
+                      }}
+                    >
+                      Case study →
+                    </a>
+                  )}
                   {p.links.map((link) => (
                     <a
                       key={link.label}

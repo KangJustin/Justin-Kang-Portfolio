@@ -16,6 +16,8 @@ export interface Project {
   preview: { kind: 'image'; src: string } | { kind: 'mock'; mock: 'flux' | 'skyline' }
   // Only real URLs — add 'Demo ↗' / 'Writeup ↗' entries when they exist.
   links: ProjectLink[]
+  // Route of the full case-study page (e.g. '/projects/urbanpilot').
+  caseStudy?: string
 }
 
 export const projects: Project[] = [
@@ -28,7 +30,8 @@ export const projects: Project[] = [
       'Integrates + cleans 6 data sources: Census ACS, FEMA, Open-Meteo, Transit 511, Google Maps. Supports multi-variable sensitivity analysis across planning dimensions.',
     windowTitle: 'urbanpilot — scenario_dashboard',
     preview: { kind: 'image', src: '/projects/urbanpilot-dashboard.jpg' },
-    links: [{ label: 'Code ↗', href: 'https://github.com/KangJustin/urbanpilot', primary: true }],
+    links: [{ label: 'Code ↗', href: 'https://github.com/KangJustin/urbanpilot' }],
+    caseStudy: '/projects/urbanpilot',
   },
   {
     index: '[ 002 ] · apr_2026',
@@ -39,7 +42,8 @@ export const projects: Project[] = [
       'Constrained Gemini pipeline with a validate → repair loop converts voice transcripts into structured workflow JSON and eliminates invalid parameters.',
     windowTitle: 'flux — voice_to_workflow',
     preview: { kind: 'mock', mock: 'flux' },
-    links: [{ label: 'Code ↗', href: 'https://github.com/trigtbh/lahacks-26', primary: true }],
+    links: [{ label: 'Code ↗', href: 'https://github.com/trigtbh/lahacks-26' }],
+    caseStudy: '/projects/flux',
   },
   {
     index: '[ 003 ] · apr_2025',
@@ -50,6 +54,7 @@ export const projects: Project[] = [
       'Trade-off analysis across layout alternatives; materials selected within a $2,300 BOM to meet cleanroom and conveyance requirements.',
     windowTitle: 'skyline_transport — assembly_dwg_03',
     preview: { kind: 'mock', mock: 'skyline' },
-    links: [{ label: 'Writeup ↗', href: '/skyline-transport-writeup.pdf', primary: true }],
+    links: [{ label: 'Writeup ↗', href: '/skyline-transport-writeup.pdf' }],
+    caseStudy: '/projects/skyline',
   },
 ]
