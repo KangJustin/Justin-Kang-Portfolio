@@ -8,7 +8,6 @@ import { Experience } from './components/Experience'
 import { Now } from './components/Now'
 import { Resume } from './components/Resume'
 import { WritingArchive } from './components/WritingArchive'
-import { WritingCallout } from './components/WritingCallout'
 import { UrbanPilotCase } from './components/case/UrbanPilotCase'
 import { FluxCase } from './components/case/FluxCase'
 import { SkylineCase } from './components/case/SkylineCase'
@@ -55,9 +54,8 @@ export default function App() {
           <WritingArchive />
         ) : (
           <>
-            <Hero />
+            <Hero navigate={navigate} />
             <Projects navigate={navigate} />
-            <WritingCallout navigate={navigate} />
             <Experience />
             <Skills />
             <Now />

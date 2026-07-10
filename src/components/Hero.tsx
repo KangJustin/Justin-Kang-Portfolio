@@ -1,6 +1,6 @@
 import { site } from '../data/site'
 
-export function Hero() {
+export function Hero({ navigate }: { navigate: (to: string) => void }) {
   const [first, last] = site.name.split(' ')
   return (
     <section id="about" className="hero">
@@ -34,6 +34,16 @@ export function Hero() {
           </a>
           <a href={site.links.github} className="link-underline" target="_blank" rel="noreferrer">
             GitHub ↗
+          </a>
+          <a
+            href="/writing"
+            className="link-underline"
+            onClick={(e) => {
+              e.preventDefault()
+              navigate('/writing')
+            }}
+          >
+            Writing ↗
           </a>
         </div>
       </div>
