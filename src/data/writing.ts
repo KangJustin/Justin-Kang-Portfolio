@@ -86,7 +86,7 @@ export const writingItems: WritingItem[] = [
   },
   {
     index: '[ 005 ]',
-    date: 'group_project',
+    date: 'jul_2026',
     category: 'newspace economy — team startup investment proposal (group 3)',
     type: 'business_proposal',
     title: 'Qubital: In-Orbit Quantum Processor Fabrication',
@@ -97,6 +97,20 @@ export const writingItems: WritingItem[] = [
     tags: ['Quantum Computing', 'Space Economy', 'Startup Strategy', 'Group Project'],
     ctaLabel: 'Read proposal ↗',
     href: '/writing/005-qubital-newspace-economy-proposal.pdf',
+  },
+  {
+    index: '[ 006 ]',
+    date: 'sep_2024',
+    category: 'audiobiography — musically expressing group identities',
+    type: 'personal_essay',
+    title: 'Audiobiography: Musically Expressing Group Identities',
+    summary:
+      'A personal reflection told through three songs, each tied to a group identity: “Eye of the Tiger” and the running community built through marathon training, “Still D.R.E.” and the West Coast hip-hop culture that bridged a childhood in Korea to Central LA, and “Way Back Then” (from Squid Game) and pride in Korean culture reaching a global audience.',
+    takeaway:
+      'Music doesn’t just soundtrack identity — it does the work of belonging, bridging communities (a marathon field, a new city, a home culture) faster than shared language or background ever could.',
+    tags: ['Personal Essay', 'Identity', 'Music', 'Immigration'],
+    ctaLabel: 'Read essay ↗',
+    href: '/writing/006-audiobiography-musically-expressing-group-identities.pdf',
   },
 ]
 
