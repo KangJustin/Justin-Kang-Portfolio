@@ -1,46 +1,156 @@
-# Justin Kang — Personal Portfolio
+# Justin Kang — Portfolio
 
-Terminal/systems personal portfolio built with **React + TypeScript + Vite**: near-black scroll-spy sidebar, off-white grid-lined hero, JetBrains Mono details, dark-teal accent, window-chrome project previews. Implemented from the design handoff `design_handoff_portfolio 2/Portfolio Redesign.dc.html`.
+Terminal-inspired personal portfolio for applied AI, data products, software systems, and selected writing.
 
-## Develop
+**Live site:** https://justin-kang.vercel.app  
+**Stack:** React 19 · TypeScript · Vite · CSS · Oxlint
+
+## Overview
+
+This portfolio is built around a systems/terminal visual language: a near-black sidebar, off-white grid background, monospaced labels, muted teal accents, and custom browser/CAD-style project previews.
+
+The site highlights:
+
+- **UrbanPilot** — multi-agent urban planning scenario dashboard using public datasets.
+- **BarelyAtWork / Flux** — voice-to-workflow automation system for Meta Ray-Ban glasses.
+- **Skyline Transport** — CADathon-winning overhead gantry/cart system for cleanroom material handling.
+- **Research & Essays** — separate writing archive for selected papers, essays, and analytical writing.
+
+## Tech stack
+
+- **Framework:** React 19 + Vite
+- **Language:** TypeScript
+- **Styling:** CSS custom properties, responsive grid/flex layouts
+- **Linting:** Oxlint
+- **Deployment:** Vercel-ready static build
+
+## Local development
 
 ```bash
 npm install
-npm run dev      # http://localhost:5173
-npm run build    # type-check + production build to dist/
+npm run dev        # start local dev server at http://localhost:5173
+npm run lint       # run oxlint
+npm run build      # type-check + production build to dist/
+npm run preview    # preview the production build locally
+```
+
+## Project structure
+
+```txt
+.
+├── public/                 # static assets, resume, writing PDFs, project writeups
+├── src/
+│   ├── components/         # reusable UI sections and project/case-study views
+│   ├── data/               # editable portfolio content
+│   ├── hooks/              # reveal/scroll behavior
+│   ├── App.tsx             # app routes and page composition
+│   ├── main.tsx            # React entry point
+│   └── styles.css          # global styles and design tokens
+├── index.html
+├── package.json
+├── vite.config.ts
+└── vercel.json
 ```
 
 ## Editing content
 
-All copy lives in `src/data/` — no component changes needed:
+Most portfolio copy lives in `src/data/`, so updates usually do not require component changes.
 
-| File | Contents |
+| File | Purpose |
 | --- | --- |
-| `src/data/site.ts` | Name, wordmark, tagline, hero copy, email, links, Proof of Work rows |
-| `src/data/projects.ts` | Project rows — empty for now; the homepage shows a "coming soon" state until real projects are added |
-| `src/data/skills.ts` | Skill groups (Frontend, Backend / Data, Tools, Exploring) |
-| `src/data/experience.ts` | "Experience & Involvement" — section and nav link stay hidden until real roles are added |
-| `src/data/now.ts` | Now bar: learning / building / improving / looking for |
+| `src/data/site.ts` | Name, hero copy, status tags, email, resume, GitHub, and LinkedIn links |
+| `src/data/projects.ts` | Homepage project cards, tags, descriptions, preview type, links, and case-study routes |
+| `src/data/caseStudies.ts` | Full project case-study content for UrbanPilot, Flux, and Skyline Transport |
+| `src/data/writing.ts` | Research & Essays archive entries, featured writing, and writing page copy |
+| `src/data/experience.ts` | Experience and involvement entries |
+| `src/data/skills.ts` | Skill groups and tools |
+| `src/data/now.ts` | Current focus / Now section content |
 
-Honesty rules baked in: the Proof of Work card shows an em dash until real
-counts are set, the Projects section shows an empty state instead of fake
-cards, and Experience & Involvement renders nothing without verified entries.
+## Adding a project
 
-## Assets to supply
+Add a new object to `src/data/projects.ts`:
 
-- **Resume:** drop `resume.pdf` into `public/` (sidebar Resume link + hero button point at it).
-- **Project thumbnails:** 88×64 — use `thumb: { kind: 'image', image: '/path.png' }`
-  per project, or keep the glyph tiles.
+```ts
+{
+  index: '[ 004 ] · aug_2026',
+  title: 'Project Name',
+  tags: ['Tag 1', 'Tag 2'],
+  desc: 'One-sentence project description.',
+  proof: 'Short proof point or technical detail.',
+  windowTitle: 'project_name — preview',
+  preview: { kind: 'mock', mock: 'urbanpilot' },
+  links: [{ label: 'Code ↗', href: 'https://github.com/...' }],
+  caseStudy: '/projects/project-name',
+}
+```
 
-## Design tokens
+Use `preview: { kind: 'image', src: '/path.png' }` for a real asset, or `preview: { kind: 'mock', mock: 'flux' | 'skyline' | 'urbanpilot' }` for one of the handcrafted UI previews.
 
-Defined as CSS variables at the top of `src/styles.css` (page `#F3F2E9`, ink
-`#1A1A15`, accent `#A9B86A`, sidebar gradient `#201F1B → #17160F`, etc.).
-Scroll-reveal motion lives in `src/hooks/useRevealAll.ts`.
+## Adding writing
 
-## Deploy
+Add finished writing entries to `src/data/writing.ts` and place the final PDF or article asset in `public/writing/`.
 
-Static site — deploys anywhere:
+Each writing item supports:
 
-- **Vercel / Netlify:** import the repo; framework preset "Vite", build `npm run build`, output `dist`.
-- **GitHub Pages:** set `base` in `vite.config.ts` to `'/<repo-name>/'`, build, and publish `dist`.
+- title
+- date
+- category
+- type
+- summary
+- takeaway
+- tags
+- CTA label
+- link path
+
+## Assets
+
+Expected static assets:
+
+- `public/resume.pdf` — linked from the hero Resume button
+- `public/skyline-transport-writeup.pdf` — Skyline Transport writeup
+- `public/writing/*.pdf` — writing archive PDFs/articles
+- optional project screenshots or generated visuals
+
+## Design notes
+
+Core styling is defined in `src/styles.css` using CSS variables. The current design direction uses:
+
+- warm off-white page background
+- dark charcoal text
+- near-black terminal/sidebar surfaces
+- muted teal accent color
+- thin technical borders
+- monospaced labels and UI details
+- custom project mockups instead of low-resolution screenshots
+
+## Deployment
+
+### Vercel
+
+Import the repository and use the Vite defaults:
+
+```txt
+Build command: npm run build
+Output directory: dist
+```
+
+### Netlify
+
+```txt
+Build command: npm run build
+Publish directory: dist
+```
+
+### GitHub Pages
+
+If deploying to GitHub Pages, set the Vite base path in `vite.config.ts`:
+
+```ts
+base: '/Justin-Kang-Portfolio/'
+```
+
+Then build and publish the `dist/` folder.
+
+## Notes
+
+This README is meant to document the portfolio as a living site. Keep it updated when project data, writing entries, design direction, or deployment setup changes.
