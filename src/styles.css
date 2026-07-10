@@ -875,11 +875,9 @@ a:hover {
 
 .now-panel {
   color: var(--sidebar-text);
-  padding: 48px 56px;
   max-width: var(--maxw);
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 40px 64px;
   background: var(--sidebar-bg);
 }
 
@@ -887,6 +885,16 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  padding: 40px 48px;
+  border-bottom: 1px solid #33322b;
+}
+
+.now-block:nth-child(odd) {
+  border-right: 1px solid #33322b;
+}
+
+.now-block:nth-last-child(-n + 2) {
+  border-bottom: none;
 }
 
 .now-label {
@@ -2258,7 +2266,16 @@ a:hover {
   }
   .now-panel {
     grid-template-columns: 1fr;
-    padding: 32px 28px;
+  }
+  .now-block {
+    padding: 28px 28px;
+    border-right: none !important;
+  }
+  .now-block:nth-last-child(-n + 2) {
+    border-bottom: 1px solid #33322b;
+  }
+  .now-block:last-child {
+    border-bottom: none;
   }
   .projects-list {
     gap: 64px;

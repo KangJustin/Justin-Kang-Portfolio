@@ -6,14 +6,12 @@ export function Now() {
     <section id="now" className="section">
       <SectionHead title="// 05_NOW" meta={now.lastUpdated} />
       <div className="now-panel">
-        <div className="now-block">
-          <div className="now-label">&gt; currently_building</div>
-          <div className="now-text">{now.currentlyBuilding}</div>
-        </div>
-        <div className="now-block">
-          <div className="now-label">&gt; looking_for</div>
-          <div className="now-text">{now.lookingFor}</div>
-        </div>
+        {now.blocks.map((block) => (
+          <div key={block.label} className="now-block">
+            <div className="now-label">{block.label}</div>
+            <div className="now-text">{block.text}</div>
+          </div>
+        ))}
       </div>
     </section>
   )
