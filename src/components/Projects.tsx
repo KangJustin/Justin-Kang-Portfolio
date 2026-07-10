@@ -3,12 +3,20 @@ import type { Project } from '../data/projects'
 import { SectionHead } from './SectionHead'
 import { FluxPreview } from './previews/FluxPreview'
 import { SkylinePreview } from './previews/SkylinePreview'
+import { UrbanPilotPreview } from './previews/UrbanPilotPreview'
 
 function PreviewBody({ preview }: { preview: Project['preview'] }) {
   if (preview.kind === 'image') {
     return (
       <div className="window__body window__body--image">
         <img src={preview.src} alt="" />
+      </div>
+    )
+  }
+  if (preview.mock === 'urbanpilot') {
+    return (
+      <div className="window__body window__body--dash">
+        <UrbanPilotPreview />
       </div>
     )
   }

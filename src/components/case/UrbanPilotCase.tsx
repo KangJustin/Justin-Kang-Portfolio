@@ -1,4 +1,5 @@
 import { urbanpilot as d } from '../../data/caseStudies'
+import { UrbanPilotPreview } from '../previews/UrbanPilotPreview'
 import {
   CsLabelRow,
   CsTags,
@@ -24,9 +25,7 @@ export function UrbanPilotCase() {
             <CsCta label="Code" href={d.codeUrl} />
           </div>
           <CsViewport title={d.viewportTitle} suffix={d.viewportSuffix}>
-            <div className="cs-viewimg">
-              <img src="/projects/urbanpilot-dashboard.jpg" alt="UrbanPilot scenario dashboard" />
-            </div>
+            <UrbanPilotPreview />
           </CsViewport>
         </header>
 

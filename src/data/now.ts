@@ -22,7 +22,7 @@ export const now = {
     {
       label: 'open to',
       icon: 'compass',
-      body: 'Internships in software or hardware.',
+      body: 'Internships in software or hardware, learning more about culture, and developing new skills.',
     },
   ] as NowBlock[],
 }

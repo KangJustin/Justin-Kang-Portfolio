@@ -545,6 +545,12 @@ a:hover {
   padding: 0;
 }
 
+.window__body--dash {
+  aspect-ratio: auto;
+  padding: 0;
+  background: var(--c-surface);
+}
+
 .window__body--image img {
   width: 100%;
   height: 100%;
@@ -1227,7 +1233,9 @@ a:hover {
    drafting-style 1px borders, no radius/shadows/gradients.
    ============================================================ */
 
-.case-study {
+/* Case-study tokens live on :root so the dashboard mock can also render
+   inside homepage preview windows. */
+:root {
   --c-bg: #f1ede3;
   --c-surface: #f6f3ea;
   --c-raised: #fbf9f2;
@@ -1240,6 +1248,9 @@ a:hover {
   --c-acc: #3e7a72;
   --c-mono: 'IBM Plex Mono', ui-monospace, monospace;
   --c-sans: 'Public Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.case-study {
   background: var(--c-bg);
   color: var(--c-ink);
   font-family: var(--c-sans);
@@ -1793,6 +1804,21 @@ a:hover {
   background: var(--c-acc);
   color: var(--c-surface);
   font-weight: 600;
+}
+
+.up-pills {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.up-pill {
+  font-size: 9.5px;
+  letter-spacing: 0.03em;
+  color: var(--c-acc);
+  border: 1px solid rgba(62, 122, 114, 0.55);
+  background: rgba(62, 122, 114, 0.07);
+  padding: 3px 9px;
 }
 
 .up-goal {

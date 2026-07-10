@@ -13,7 +13,9 @@ export interface Project {
   windowTitle: string // filename shown in the preview window's title bar
   // Preview panel inside the window frame: a real screenshot (16:10 crop)
   // or one of the hand-built CSS mocks ('flux' | 'skyline').
-  preview: { kind: 'image'; src: string } | { kind: 'mock'; mock: 'flux' | 'skyline' }
+  preview:
+    | { kind: 'image'; src: string }
+    | { kind: 'mock'; mock: 'flux' | 'skyline' | 'urbanpilot' }
   // Only real URLs — add 'Demo ↗' / 'Writeup ↗' entries when they exist.
   links: ProjectLink[]
   // Route of the full case-study page (e.g. '/projects/urbanpilot').
@@ -29,7 +31,7 @@ export const projects: Project[] = [
     proof:
       'Integrates + cleans 6 data sources: Census ACS, FEMA, Open-Meteo, Transit 511, Google Maps. Supports multi-variable sensitivity analysis across planning dimensions.',
     windowTitle: 'urbanpilot — scenario_dashboard',
-    preview: { kind: 'image', src: '/projects/urbanpilot-dashboard.jpg' },
+    preview: { kind: 'mock', mock: 'urbanpilot' },
     links: [{ label: 'Code ↗', href: 'https://github.com/KangJustin/urbanpilot' }],
     caseStudy: '/projects/urbanpilot',
   },
