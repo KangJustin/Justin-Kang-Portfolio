@@ -6,7 +6,6 @@ import { Projects } from './components/Projects'
 import { Skills } from './components/Skills'
 import { Experience } from './components/Experience'
 import { Now } from './components/Now'
-import { Resume } from './components/Resume'
 import { WritingArchive } from './components/WritingArchive'
 import { UrbanPilotCase } from './components/case/UrbanPilotCase'
 import { FluxCase } from './components/case/FluxCase'
@@ -59,7 +58,6 @@ export default function App() {
             <Experience />
             <Skills />
             <Now />
-            <Resume />
           </>
         )}
       </main>

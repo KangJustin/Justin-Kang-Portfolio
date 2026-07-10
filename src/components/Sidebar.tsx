@@ -2,7 +2,7 @@ import { site } from '../data/site'
 import { useScrollSpy } from '../hooks/useScrollSpy'
 import type { Page } from '../App'
 
-const sectionIds = ['about', 'projects', 'experience', 'skills', 'now', 'resume']
+const sectionIds = ['about', 'projects', 'experience', 'skills', 'now']
 
 const navItems = [
   { num: '01', label: 'About', id: 'about' },
@@ -10,7 +10,6 @@ const navItems = [
   { num: '03', label: 'Experience', id: 'experience' },
   { num: '04', label: 'Skills', id: 'skills' },
   { num: '05', label: 'Now', id: 'now' },
-  { num: '06', label: 'Resume', id: 'resume' },
 ]
 
 interface SidebarProps {
