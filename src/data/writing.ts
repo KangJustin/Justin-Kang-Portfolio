@@ -112,6 +112,20 @@ export const writingItems: WritingItem[] = [
     ctaLabel: 'Read essay ↗',
     href: '/writing/006-audiobiography-musically-expressing-group-identities.pdf',
   },
+  {
+    index: '[ 007 ]',
+    date: 'mar_2024',
+    category: 'IB History HL — internal assessment',
+    type: 'research_paper',
+    title: 'To What Extent Was the Rodney King Incident the Main Contributor for the LA Riots?',
+    summary:
+      'An IB History Internal Assessment weighing the 1991 Rodney King beating against LAPD-community tensions, Korean-Black community conflict, and judicial discrepancies (the Simi Valley venue, the all-white jury, the Soon Ja Du verdict) as causes of the 1992 Los Angeles riots.',
+    takeaway:
+      'The beating was a catalyst, not the root cause — systemic discrepancies in the judicial system, layered on years of LAPD violence and Korean-Black tension, did the most to make the riots inevitable.',
+    tags: ['History', 'IB IA', 'Los Angeles Riots', 'Civil Rights'],
+    ctaLabel: 'Read paper ↗',
+    href: '/writing/007-rodney-king-la-riots.pdf',
+  },
 ]
 
 // Shown in the sidebar panel once at least one item exists.
