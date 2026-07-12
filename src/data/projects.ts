@@ -47,7 +47,10 @@ export const projects: Project[] = [
       'Integrates + cleans 6 data sources: Census ACS, FEMA, Open-Meteo, Transit 511, Google Maps. Supports multi-variable sensitivity analysis across planning dimensions.',
     windowTitle: 'urbanpilot — scenario_dashboard',
     preview: { kind: 'mock', mock: 'urbanpilot' },
-    links: [{ label: 'Code ↗', href: 'https://github.com/KangJustin/urbanpilot' }],
+    links: [
+      { label: 'Code ↗', href: 'https://github.com/KangJustin/urbanpilot' },
+      { label: 'Devpost ↗', href: 'https://devpost.com/software/urbanpilot' },
+    ],
     caseStudy: '/projects/urbanpilot',
   },
   {
