@@ -13,6 +13,39 @@ export interface CsStage {
   body: string
 }
 
+// ---------- BuzzBuddy ----------
+
+export const buzzbuddy = {
+  index: '[001]',
+  date: 'jul_2026',
+  version: 'v0.2',
+  title: 'BuzzBuddy',
+  tags: ['Agentic AI', 'iOS · SwiftUI', 'FastAPI', 'Personal baseline'],
+  desc: 'iOS app that estimates impairment by measuring deviation from your own sober baseline — reaction time, balance, memory — using an agentic AI examiner, not a BAC guess.',
+  detail:
+    'A tool-calling loop grounds every verdict in specific test results: it retrieves your baseline, requests targeted tests, analyzes deviation, and updates a confidence score — texting a designated driver only on severe impairment.',
+  codeUrl: 'https://github.com/julianshekhtmeyster/buzzbuddy',
+  viewportTitle: 'buzzbuddy — examiner_session',
+  specs: [
+    { label: 'Baseline', value: 'Reaction / balance / memory, personal — not BAC' },
+    { label: 'Tools', value: 'retrieve_baseline / request_test / analyze_deviation / notify_contact' },
+    { label: 'Model', value: 'Claude 4.6 Sonnet · tool-calling loop' },
+    { label: 'Output', value: 'Deviation confidence, never "safe to drive"' },
+  ] as CsSpec[],
+  stages: [
+    { num: 'S.01', tag: 'baseline', title: 'Sober Baseline', body: 'User completes reaction, balance, and memory tests while sober to set a personal reference — not a population BAC average.' },
+    { num: 'S.02', tag: 'test', title: 'Adaptive Testing', body: 'On check-in, the AI examiner requests specific tests one at a time based on what it still needs to know.' },
+    { num: 'S.03', tag: 'analyze', title: 'Deviation Analysis', body: 'Each result is compared against the personal baseline, and a tool-calling loop updates a running confidence score with reasoning attached.' },
+    { num: 'S.04', tag: 'escalate', title: 'Escalation', body: 'On severe deviation, the app texts a designated driver contact — it never tells the user it’s "safe to drive."' },
+  ] as CsStage[],
+  decisions: [
+    { num: 'D.01', title: 'Personal baseline over population BAC', body: 'Everyone metabolizes and performs differently — comparing against your own sober self is a more honest signal than a fixed legal threshold.' },
+    { num: 'D.02', title: 'Agentic tool-calling over a single score', body: 'A tool-calling loop (retrieve → test → analyze → update) keeps every confidence update traceable to a specific test result, not a black box.' },
+    { num: 'D.03', title: 'Never says "safe to drive"', body: 'The app reports deviation confidence only — the call on whether someone is fit to drive stays with the person, not the model.' },
+  ],
+  footer: ['buzzbuddy / case_study', 'agentic impairment detection · 2026'],
+}
+
 // ---------- UrbanPilot ----------
 
 export const urbanpilot = {

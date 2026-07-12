@@ -10,6 +10,7 @@ import { WritingArchive } from './components/WritingArchive'
 import { UrbanPilotCase } from './components/case/UrbanPilotCase'
 import { FluxCase } from './components/case/FluxCase'
 import { SkylineCase } from './components/case/SkylineCase'
+import { BuzzBuddyCase } from './components/case/BuzzBuddyCase'
 
 // Minimal history-based routing: '/' is the single-page portfolio,
 // '/writing' is the Research & Essays archive, and '/projects/<slug>'
@@ -18,6 +19,7 @@ import { SkylineCase } from './components/case/SkylineCase'
 export type Page = 'home' | 'writing' | 'case'
 
 const caseStudies: Record<string, ComponentType> = {
+  buzzbuddy: BuzzBuddyCase,
   urbanpilot: UrbanPilotCase,
   flux: FluxCase,
   skyline: SkylineCase,

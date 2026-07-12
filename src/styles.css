@@ -2278,6 +2278,194 @@ a:hover {
   color: var(--c-faint);
 }
 
+/* ---------- BuzzBuddy examiner mock ---------- */
+
+.bb-dash {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: var(--c-mono);
+}
+
+.bb-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  border: 1px solid #b4ac93;
+  background: var(--c-raised);
+  padding: 9px 12px;
+}
+
+.bb-head-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.bb-wordmark {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--c-ink);
+}
+
+.bb-wordmark-acc {
+  color: var(--c-acc);
+}
+
+.bb-session {
+  font-size: 11px;
+  color: var(--c-soft);
+  border-left: 1px solid var(--c-line);
+  padding-left: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bb-live {
+  font-size: 9.5px;
+  letter-spacing: 0.04em;
+  color: var(--c-acc);
+}
+
+.bb-baseline {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  border: 1px solid #b4ac93;
+  background: var(--c-raised);
+  padding: 9px 12px;
+}
+
+.bb-baseline-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bb-baseline-label {
+  font-size: 8.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-mid);
+}
+
+.bb-baseline-value {
+  font-size: 12px;
+  color: var(--c-ink);
+}
+
+.bb-baseline-tag {
+  margin-left: auto;
+  font-size: 9.5px;
+  letter-spacing: 0.03em;
+  color: var(--c-acc);
+  border: 1px solid rgba(62, 122, 114, 0.55);
+  background: rgba(62, 122, 114, 0.07);
+  padding: 3px 9px;
+  white-space: nowrap;
+}
+
+.bb-trace {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  border: 1px solid var(--c-line);
+  background: var(--c-raised);
+}
+
+.bb-trace-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 6px 12px;
+  font-size: 11px;
+  color: var(--c-soft);
+  border: 1px solid transparent;
+}
+
+.bb-trace-mark {
+  width: 12px;
+  text-align: center;
+  color: var(--c-acc);
+  font-size: 10px;
+}
+
+.bb-trace-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bb-trace-note {
+  font-size: 9px;
+  color: var(--c-mid);
+}
+
+.bb-trace-row--flag {
+  color: var(--c-ink);
+  background: rgba(161, 90, 60, 0.08);
+  border-color: #a15a3c;
+}
+
+.bb-trace-row--flag .bb-trace-mark {
+  color: #a15a3c;
+}
+
+.bb-verdict {
+  border: 1px solid var(--c-ink);
+  background: var(--c-ink);
+  padding: 11px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bb-meter {
+  height: 6px;
+  background: #3b3a33;
+  overflow: hidden;
+}
+
+.bb-meter-fill {
+  height: 100%;
+  background: var(--c-acc);
+}
+
+.bb-verdict-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 10.5px;
+  color: #d8d2c0;
+}
+
+.bb-verdict-text strong {
+  color: #fff;
+}
+
+.bb-verdict-flag {
+  padding: 2px 8px;
+  border: 1px solid #c98b6f;
+  color: #e0a98c;
+  font-size: 9.5px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
 /* ---------- Case viewport image ---------- */
 
 .cs-viewimg {
