@@ -59,7 +59,10 @@ export const projects: Project[] = [
       'Constrained Gemini pipeline with a validate → repair loop converts voice transcripts into structured workflow JSON and eliminates invalid parameters.',
     windowTitle: 'flux — voice_to_workflow',
     preview: { kind: 'mock', mock: 'flux' },
-    links: [{ label: 'Code ↗', href: 'https://github.com/trigtbh/lahacks-26' }],
+    links: [
+      { label: 'Code ↗', href: 'https://github.com/trigtbh/lahacks-26' },
+      { label: 'Devpost ↗', href: 'https://devpost.com/software/idlemaxing' },
+    ],
     caseStudy: '/projects/flux',
   },
   {
