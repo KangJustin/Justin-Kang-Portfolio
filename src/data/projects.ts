@@ -27,12 +27,15 @@ export const projects: Project[] = [
     index: '[ 001 ] · jul_2026',
     title: 'BuzzBuddy',
     tags: ['Agentic AI', 'iOS · SwiftUI', 'FastAPI', 'Personal baseline'],
-    desc: 'iOS app that estimates impairment by measuring deviation from your own sober baseline — reaction time, balance, memory — using an agentic AI examiner, not a BAC guess.',
+    desc: 'iOS app that estimates impairment by measuring deviation from your own sober baseline — reaction time, balance, memory — using an agentic AI examiner, not a BAC guess. 3rd place, AI for Social Good: Hack with MLH & DigitalOcean (Jul 2026).',
     proof:
       'Tool-calling loop grounds every verdict in specific test results: retrieves baseline, requests targeted tests, analyzes deviation, updates a confidence score, and texts a designated driver only on severe impairment.',
     windowTitle: 'buzzbuddy — examiner_session',
     preview: { kind: 'mock', mock: 'buzzbuddy' },
-    links: [{ label: 'Code ↗', href: 'https://github.com/julianshekhtmeyster/buzzbuddy' }],
+    links: [
+      { label: 'Code ↗', href: 'https://github.com/julianshekhtmeyster/buzzbuddy' },
+      { label: 'Devpost ↗', href: 'https://devpost.com/software/buzzbuddy-ivr0ty' },
+    ],
     caseStudy: '/projects/buzzbuddy',
   },
   {

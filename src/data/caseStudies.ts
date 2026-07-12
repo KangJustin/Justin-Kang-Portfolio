@@ -27,6 +27,7 @@ export const buzzbuddy = {
   codeUrl: 'https://github.com/julianshekhtmeyster/buzzbuddy',
   viewportTitle: 'buzzbuddy — examiner_session',
   specs: [
+    { label: 'Award', value: '3rd · MLH × DigitalOcean AI Hackathon ’26' },
     { label: 'Baseline', value: 'Reaction / balance / memory, personal — not BAC' },
     { label: 'Tools', value: 'retrieve_baseline / request_test / analyze_deviation / notify_contact' },
     { label: 'Model', value: 'Claude 4.6 Sonnet · tool-calling loop' },
