@@ -10,7 +10,7 @@ export const site = {
   ],
   tagline: 'I build full-stack AI tools, data products, and practical software systems.',
   heroBody:
-    'UC Berkeley Data Science student with a minor in Industrial Engineering & Operations Research. I build applied AI and data tools, including an agentic iOS safety app that won 3rd place at an MLH × DigitalOcean hackathon, and a multi-agent urban planning system using six public datasets.',
+    "Lately, that's meant an award-winning agentic iOS safety app and a multi-agent urban planning system built on six public datasets.",
   email: 'justin-kang@berkeley.edu',
   links: {
     github: 'https://github.com/KangJustin',

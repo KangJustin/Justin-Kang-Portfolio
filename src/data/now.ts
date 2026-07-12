@@ -12,7 +12,7 @@ export const now = {
     {
       label: "right now, I'm making",
       icon: 'hammer',
-      body: "Fresh off building BuzzBuddy at an MLH × DigitalOcean hackathon — back to BridgeSF, and this website you're looking at.",
+      body: "Fresh off building BuzzBuddy at an MLH × DigitalOcean hackathon — now polishing this website you're looking at.",
     },
     {
       label: 'teaching myself',
