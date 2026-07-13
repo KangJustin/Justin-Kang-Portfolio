@@ -63,7 +63,9 @@ export function Sidebar({ page, navigate }: SidebarProps) {
       </div>
       <div className="sb-bottom">
         <a href={`mailto:${site.email}`} className="sb-contact">
-          {site.email}
+          justin&#8209;kang
+          <wbr />
+          @berkeley.edu
         </a>
         <a href={site.links.linkedin} className="sb-contact" target="_blank" rel="noreferrer">
           LinkedIn ↗

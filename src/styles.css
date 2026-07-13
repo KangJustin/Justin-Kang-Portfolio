@@ -2282,17 +2282,16 @@ a:hover {
 
 .bb-screens {
   padding: 24px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 20px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: end;
+  gap: 16px;
   background: var(--c-ink);
 }
 
 .bb-screen {
   margin: 0;
-  width: 140px;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2443,5 +2442,8 @@ a:hover {
   }
   .hero__name {
     font-size: 44px;
+  }
+  .bb-screens {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
