@@ -2281,10 +2281,12 @@ a:hover {
 /* ---------- BuzzBuddy real screenshots ---------- */
 
 .bb-screens {
+  flex: 1;
   padding: 24px 20px;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: end;
+  align-content: center;
   gap: 16px;
   background: var(--c-ink);
 }
