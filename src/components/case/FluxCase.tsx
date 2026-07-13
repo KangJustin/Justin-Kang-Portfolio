@@ -101,9 +101,7 @@ export function FluxCase() {
         <header className="cs-hero">
           <div className="cs-left">
             <CsLabelRow index={d.index} date={d.date} version={d.version} />
-            <h1 className="cs-title cs-title--flux">
-              BarelyAtWork<span className="cs-title-sep"> / </span>Flux
-            </h1>
+            <h1 className="cs-title">{d.title}</h1>
             <CsTags tags={d.tags} />
             <p className="cs-desc cs-desc--wide">{d.desc}</p>
             <p className="cs-detail">{d.detail}</p>

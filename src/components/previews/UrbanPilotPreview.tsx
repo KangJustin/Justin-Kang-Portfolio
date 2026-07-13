@@ -61,20 +61,25 @@ export function UrbanPilotPreview() {
         <div className="up-panel up-panel--focal">
           <div className="up-panel-title">Scenario performance</div>
           <table className="up-table">
+            <caption className="visually-hidden">
+              Projected scenario scores by category for Current, 2040, and 2075
+            </caption>
             <thead>
               <tr>
-                <th></th>
-                <th>Current</th>
-                <th className="hl">
+                <th scope="col">
+                  <span className="visually-hidden">Category</span>
+                </th>
+                <th scope="col">Current</th>
+                <th scope="col" className="hl">
                   <span className="up-th-chip">2040</span>
                 </th>
-                <th>2075</th>
+                <th scope="col">2075</th>
               </tr>
             </thead>
             <tbody>
               {d.scenarioRows.map((row) => (
                 <tr key={row.name} className={row.name === 'Overall' ? 'total' : undefined}>
-                  <td>{row.name}</td>
+                  <th scope="row">{row.name}</th>
                   <td className="num">{row.current}</td>
                   <td className="num hl">
                     {row.y2040}

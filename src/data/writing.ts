@@ -144,7 +144,7 @@ export const writingPage = {
   terminalCmd: 'ls archive',
   title: 'Research & Essays',
   subtitle:
-    'A curated archive for research papers, essays, and class writing. Each entry will include a concise summary, central argument, evidence, and key takeaway.',
+    'Selected research and essays on infrastructure, technology, and culture. Each entry includes the argument, evidence, and takeaway.',
   includes: [
     'Thesis / central argument',
     'Why it matters',

@@ -1,14 +1,14 @@
 import { lazy, Suspense, useEffect, useState } from 'react'
 import type { ComponentType } from 'react'
 import { Sidebar } from './components/Sidebar'
+import { MobileHeader } from './components/MobileHeader'
 import { Hero } from './components/Hero'
 import { Projects } from './components/Projects'
 import { Skills } from './components/Skills'
 import { Experience } from './components/Experience'
 import { Now } from './components/Now'
-import { site } from './data/site'
-import { projects } from './data/projects'
-import { writingPage } from './data/writing'
+import { Footer } from './components/Footer'
+import { metaForPath, SITE_URL } from './seo'
 
 // Lazy-loaded: a visitor reading only the homepage shouldn't have to
 // download every case study's mock illustrations (Skyline's inline CAD
@@ -40,43 +40,31 @@ const caseStudies: Record<string, ComponentType> = {
   skyline: SkylineCase,
 }
 
-const DEFAULT_TITLE = 'Justin Kang — Software · AI · Data'
-const DEFAULT_DESCRIPTION =
-  'Justin Kang — UC Berkeley Data Science student building full-stack AI tools, data products, and practical software systems.'
-
-function metaForPath(clean: string): { title: string; description: string } {
-  if (clean === '/writing') {
-    return { title: `${writingPage.title} — Justin Kang`, description: writingPage.subtitle }
-  }
-  const slug = clean.match(/^\/projects\/([a-z-]+)$/)?.[1]
-  const project = slug && projects.find((p) => p.caseStudy === `/projects/${slug}`)
-  if (project) {
-    return { title: `${project.title} — Justin Kang`, description: project.desc }
-  }
-  return { title: DEFAULT_TITLE, description: DEFAULT_DESCRIPTION }
-}
-
 function setMetaContent(selector: string, content: string) {
   document.querySelector(selector)?.setAttribute('content', content)
 }
 
-// Updates the tab title and meta/OG/Twitter description per route. This is
-// a client-side patch only: it's real for the browser tab and for crawlers
-// that execute JS (Google), but does NOT fix link-preview cards on
-// platforms that scrape raw HTML without running JS (LinkedIn, Slack,
-// iMessage) -- vercel.json rewrites every route to the same static
-// index.html, so those still see the homepage's title/OG tags. Fixing
-// that fully needs SSR/prerendering or an edge function per route.
+function setLinkHref(rel: string, href: string) {
+  document.querySelector(`link[rel="${rel}"]`)?.setAttribute('href', href)
+}
+
+// Updates the tab title, meta/OG/Twitter description, og:url, and canonical
+// per route on client-side navigation (SPA route changes via pushState).
+// The *initial* HTML for each route already has correct per-route metadata
+// baked in by scripts/prerender.tsx (see vercel.json), so this only needs
+// to keep things correct across in-app navigation after that first load.
 function useDocumentMeta(path: string) {
   useEffect(() => {
-    const clean = path.replace(/\/+$/, '') || '/'
-    const { title, description } = metaForPath(clean)
+    const { title, description, path: canonicalPath } = metaForPath(path)
+    const url = `${SITE_URL}${canonicalPath === '/' ? '/' : canonicalPath}`
     document.title = title
     setMetaContent('meta[name="description"]', description)
     setMetaContent('meta[property="og:title"]', title)
     setMetaContent('meta[property="og:description"]', description)
+    setMetaContent('meta[property="og:url"]', url)
     setMetaContent('meta[name="twitter:title"]', title)
     setMetaContent('meta[name="twitter:description"]', description)
+    setLinkHref('canonical', url)
   }, [path])
 }
 
@@ -104,8 +92,12 @@ export default function App() {
 
   return (
     <div className="shell">
+      <a href="#main-content" className="skip-link">
+        Skip to content
+      </a>
       <Sidebar page={page} navigate={navigate} />
-      <main className="main">
+      <MobileHeader page={page} navigate={navigate} />
+      <main id="main-content" className="main">
         {CaseComponent || page === 'writing' ? (
           <Suspense fallback={<div className="page-loading">loading…</div>}>
             {CaseComponent ? <CaseComponent /> : <WritingArchive />}
@@ -119,6 +111,11 @@ export default function App() {
             <Now />
           </>
         )}
+        {/* Rendered on every page (not just home): the sidebar carrying
+            contact info is hidden at <=900px, so this is the only place
+            mobile visitors can reach email/résumé/LinkedIn/GitHub from a
+            case study or the writing archive. */}
+        <Footer />
       </main>
     </div>
   )

@@ -8,6 +8,8 @@ import {
   CsSectionHead,
   CsSpecStrip,
   CsStageCards,
+  CsProof,
+  CsListSection,
   CsFooter,
 } from './CaseShared'
 
@@ -20,9 +22,9 @@ export function BuzzBuddyCase() {
             <CsLabelRow index={d.index} date={d.date} version={d.version} />
             <h1 className="cs-title">{d.title}</h1>
             <CsTags tags={d.tags} />
+            <CsProof data={d.proof} />
             <p className="cs-desc">{d.desc}</p>
             <p className="cs-detail">{d.detail}</p>
-            <CsCta label="Code" href={d.codeUrl} />
           </div>
           <CsViewport title={d.viewportTitle} suffix="4 screens">
             <BuzzBuddyPreview />
@@ -30,6 +32,8 @@ export function BuzzBuddyCase() {
         </header>
 
         <CsSpecStrip specs={d.specs} size="sm" />
+
+        <CsListSection title="What I Contributed" items={d.contributions} />
 
         <section className="cs-section">
           <CsSectionHead title="How It Works" note="4 stages" />
@@ -46,6 +50,18 @@ export function BuzzBuddyCase() {
                 <p>{dec.body}</p>
               </article>
             ))}
+          </div>
+        </section>
+
+        <CsListSection title="Evaluation & Evidence" items={d.evidence} />
+        <CsListSection title="Constraints & Limitations" items={d.limitations} />
+        <CsListSection title="What I'd Improve Next" items={d.nextSteps} />
+
+        <section className="cs-section">
+          <CsSectionHead title="Demo, Code & Artifacts" />
+          <div className="cs-artifact-links">
+            <CsCta label="Code" href={d.codeUrl} />
+            <CsCta label="Devpost" href={d.devpostUrl} />
           </div>
         </section>
 

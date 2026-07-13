@@ -120,6 +120,70 @@ export function CsStageCards({ stages }: { stages: CsStage[] }) {
   )
 }
 
+// Verified project metadata + safety framing, rendered immediately below
+// title/tags. Every field is optional -- only fields with real, verified
+// values are ever passed in, and each is rendered independently so an
+// unset field is simply absent (no bracketed placeholders).
+export interface CsProofData {
+  safetyNote?: string
+  role?: string
+  team?: string
+  timeline?: string
+  status?: string
+}
+
+export function CsProof({ data }: { data: CsProofData }) {
+  const fields = [
+    { label: 'Role', value: data.role },
+    { label: 'Team', value: data.team },
+    { label: 'Timeline', value: data.timeline },
+    { label: 'Status', value: data.status },
+  ].filter((f): f is { label: string; value: string } => Boolean(f.value))
+
+  if (!data.safetyNote && fields.length === 0) return null
+
+  return (
+    <div className="cs-proof">
+      {data.safetyNote && <p className="cs-proof-safety">{data.safetyNote}</p>}
+      {fields.length > 0 && (
+        <dl className="cs-proof-meta">
+          {fields.map((f) => (
+            <div key={f.label} className="cs-proof-meta-item">
+              <dt>{f.label}</dt>
+              <dd>{f.value}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
+    </div>
+  )
+}
+
+// Generic labeled bullet list -- reused for Contributions / Evidence /
+// Limitations / Next Steps. Renders nothing if there's no real content,
+// so a case study missing one of these sections just skips it.
+export function CsListSection({
+  title,
+  note,
+  items,
+}: {
+  title: string
+  note?: string
+  items?: string[]
+}) {
+  if (!items || items.length === 0) return null
+  return (
+    <section className="cs-section">
+      <CsSectionHead title={title} note={note} />
+      <ul className="cs-list">
+        {items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
 export function CsFooter({ left, right }: { left: string; right: string }) {
   return (
     <footer className="cs-footer">

@@ -25,12 +25,16 @@ export function Hero({ navigate }: { navigate: (to: string) => void }) {
         </div>
         <p className="hero__tagline">{site.tagline}</p>
         <p className="hero__body">{site.heroBody}</p>
+        {site.gradInternshipLine && <p className="hero__grad">{site.gradInternshipLine}</p>}
         <div className="hero__ctas">
           <a href="#projects" className="btn-dark">
-            View projects <span>→</span>
+            View selected work <span>→</span>
+          </a>
+          <a href={`mailto:${site.email}`} className="link-underline">
+            Email Justin
           </a>
           <a href={site.links.resume} className="link-underline" target="_blank" rel="noreferrer">
-            Resume ↓
+            View résumé ↗
           </a>
           <a href={site.links.github} className="link-underline" target="_blank" rel="noreferrer">
             GitHub ↗

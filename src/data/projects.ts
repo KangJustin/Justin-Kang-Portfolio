@@ -29,7 +29,7 @@ export const projects: Project[] = [
     tags: ['Agentic AI', 'iOS · SwiftUI', 'FastAPI', 'Personal baseline'],
     desc: 'iOS app that estimates impairment by measuring deviation from your own sober baseline — reaction time, balance, memory — using an agentic AI examiner, not a BAC guess. 3rd place, AI for Social Good: Hack with MLH & DigitalOcean (Jul 2026).',
     proof:
-      'Tool-calling loop grounds every verdict in specific test results: retrieves baseline, requests targeted tests, analyzes deviation, updates a confidence score, and texts a designated driver only on severe impairment.',
+      'Tool-calling loop grounds every verdict in specific test results: retrieves baseline, requests targeted tests, analyzes deviation, and updates a confidence score.',
     windowTitle: 'buzzbuddy — examiner_session',
     preview: { kind: 'mock', mock: 'buzzbuddy' },
     links: [
@@ -44,7 +44,7 @@ export const projects: Project[] = [
     tags: ['Multi-agent AI', 'Python', 'Data pipelines', 'Public datasets'],
     desc: 'Multi-agent AI system that runs parallel scenario analyses — climate, housing, accessibility, urban design — for any real address.',
     proof:
-      'Integrates + cleans 6 data sources: Census ACS, FEMA, Open-Meteo, Transit 511, Google Maps. Supports multi-variable sensitivity analysis across planning dimensions.',
+      'Integrates + cleans 6 data sources: Census ACS, FEMA NFHL, Open-Meteo, 511 GTFS transit, NLCD tree canopy, and Google Maps. Supports multi-variable sensitivity analysis across planning dimensions.',
     windowTitle: 'urbanpilot — scenario_dashboard',
     preview: { kind: 'mock', mock: 'urbanpilot' },
     links: [
@@ -55,9 +55,9 @@ export const projects: Project[] = [
   },
   {
     index: '[ 003 ] · apr_2026',
-    title: 'BarelyAtWork / Flux',
+    title: 'Flux',
     tags: ['Voice AI', 'Gemini', 'Workflow JSON', '12+ integrations'],
-    desc: 'Voice-first automation platform on Meta Ray-Ban glasses — one spoken command triggers multi-step workflows across 12+ services, including Gmail, Slack, Notion, and Fetch.ai Agentverse.',
+    desc: 'Voice-first automation platform on Meta Ray-Ban glasses — one spoken command triggers multi-step workflows across 12+ services, including Gmail, Slack, Notion, and Fetch.ai Agentverse. Built as BarelyAtWork at LA Hacks 2026, in a team of four over 36 hours.',
     proof:
       'Constrained Gemini pipeline with a validate → repair loop converts voice transcripts into structured workflow JSON and eliminates invalid parameters.',
     windowTitle: 'flux — voice_to_workflow',

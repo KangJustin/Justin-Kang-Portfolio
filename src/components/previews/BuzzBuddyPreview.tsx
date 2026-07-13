@@ -20,7 +20,7 @@ const screens = [
   {
     src: '/projects/buzzbuddy-verdict.jpg',
     label: 'verdict',
-    alt: 'BuzzBuddy verdict screen reading "Severely Impaired" with 81% confidence and a designated-driver notification banner',
+    alt: 'BuzzBuddy verdict screen reading "Severely Impaired" with 81% confidence, a plain-language summary, and a disclaimer that it does not estimate BAC or legal driving status',
   },
 ]
 
