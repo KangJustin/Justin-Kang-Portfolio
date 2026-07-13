@@ -29,9 +29,6 @@ export const buzzbuddy = {
     safetyNote:
       'Hackathon prototype that detects performance deviation from a personal baseline. It does not determine sobriety or fitness to drive.',
     role: 'Backend + agentic loop; wired the AI-driven flow into the shared iOS app',
-    team: '3 (with Julian Shekhtmeyster, Max DeWeese)',
-    timeline: '~36 hrs · Jul 10–11, 2026',
-    status: 'Hackathon prototype · 3rd place, MLH × DigitalOcean AI Hackathon',
   },
   contributions: [
     'Built the FastAPI backend and the agentic tool-calling loop (retrieve_baseline → analyze_deviation → update_confidence → request_test) against DigitalOcean Serverless Inference.',
@@ -90,9 +87,6 @@ export const urbanpilot = {
     safetyNote:
       'Decision-support prototype. Results depend on public-data coverage, scoring assumptions, geographic availability, and source freshness.',
     role: 'Primary author: React/Leaflet frontend, Node/Express backend, Claude multi-agent coordinator, Midjourney vision integration',
-    team: '2 (with kdai05)',
-    timeline: '~2 days · Jun 20–21, 2026',
-    status: 'Hackathon prototype · UC Berkeley AI Hackathon 2026',
   },
   contributions: [
     'Built the React (Create React App + Tailwind + Leaflet) frontend and the Node/Express backend.',

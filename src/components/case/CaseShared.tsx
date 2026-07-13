@@ -127,18 +127,12 @@ export function CsStageCards({ stages }: { stages: CsStage[] }) {
 export interface CsProofData {
   safetyNote?: string
   role?: string
-  team?: string
-  timeline?: string
-  status?: string
 }
 
 export function CsProof({ data }: { data: CsProofData }) {
-  const fields = [
-    { label: 'Role', value: data.role },
-    { label: 'Team', value: data.team },
-    { label: 'Timeline', value: data.timeline },
-    { label: 'Status', value: data.status },
-  ].filter((f): f is { label: string; value: string } => Boolean(f.value))
+  const fields = [{ label: 'Role', value: data.role }].filter(
+    (f): f is { label: string; value: string } => Boolean(f.value)
+  )
 
   if (!data.safetyNote && fields.length === 0) return null
 
