@@ -2292,12 +2292,12 @@ a:hover {
 
 .bb-screens {
   flex: 1;
-  padding: 24px 20px;
+  padding: 14px 12px;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: end;
   align-content: center;
-  gap: 16px;
+  gap: 8px;
   background: var(--c-ink);
 }
 
