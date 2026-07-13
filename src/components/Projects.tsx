@@ -10,7 +10,7 @@ function PreviewBody({ preview }: { preview: Project['preview'] }) {
   if (preview.kind === 'image') {
     return (
       <div className="window__body window__body--image">
-        <img src={preview.src} alt="" />
+        <img src={preview.src} alt={preview.alt} />
       </div>
     )
   }

@@ -14,7 +14,7 @@ export interface Project {
   // Preview panel inside the window frame: a real screenshot (16:10 crop)
   // or one of the hand-built CSS mocks ('flux' | 'skyline').
   preview:
-    | { kind: 'image'; src: string }
+    | { kind: 'image'; src: string; alt: string }
     | { kind: 'mock'; mock: 'flux' | 'skyline' | 'urbanpilot' | 'buzzbuddy' }
   // Only real URLs — add 'Demo ↗' / 'Writeup ↗' entries when they exist.
   links: ProjectLink[]

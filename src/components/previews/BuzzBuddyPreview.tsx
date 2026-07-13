@@ -2,10 +2,26 @@
 // the AI examiner's reasoning reveal, and the final verdict.
 
 const screens = [
-  { src: '/projects/buzzbuddy-start.jpg', label: 'start_test' },
-  { src: '/projects/buzzbuddy-game.jpg', label: 'reaction_test' },
-  { src: '/projects/buzzbuddy-reasoning.jpg', label: 'ai_reasoning' },
-  { src: '/projects/buzzbuddy-verdict.jpg', label: 'verdict' },
+  {
+    src: '/projects/buzzbuddy-start.jpg',
+    label: 'start_test',
+    alt: 'BuzzBuddy check-in screen with a large "Start Test" button',
+  },
+  {
+    src: '/projects/buzzbuddy-game.jpg',
+    label: 'reaction_test',
+    alt: 'BuzzBuddy reaction-time mini-game showing a green "TAP!" prompt',
+  },
+  {
+    src: '/projects/buzzbuddy-reasoning.jpg',
+    label: 'ai_reasoning',
+    alt: 'BuzzBuddy AI examiner reasoning reveal, showing its evolving confidence in monospaced text',
+  },
+  {
+    src: '/projects/buzzbuddy-verdict.jpg',
+    label: 'verdict',
+    alt: 'BuzzBuddy verdict screen reading "Severely Impaired" with 81% confidence and a designated-driver notification banner',
+  },
 ]
 
 export function BuzzBuddyPreview() {
@@ -14,7 +30,7 @@ export function BuzzBuddyPreview() {
       {screens.map((s) => (
         <figure key={s.label} className="bb-screen">
           <div className="bb-screen-frame">
-            <img src={s.src} alt="" loading="lazy" />
+            <img src={s.src} alt={s.alt} loading="lazy" />
           </div>
           <figcaption>{s.label}</figcaption>
         </figure>

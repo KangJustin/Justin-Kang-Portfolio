@@ -12,7 +12,7 @@
   --ink: #20221a;
   --ink-soft: #4a4c42;
   --ink-muted: #6b6d61;
-  --ink-faint: #9b998a;
+  --ink-faint: #6d6f61; /* was #9b998a (2.56:1 on --bg, fails WCAG AA); now ~4.57:1 */
   --sidebar-bg: #090907;
   --sidebar-text: #f4f2e8;
   --accent: #2f6f6b;
@@ -117,6 +117,13 @@ a:hover {
   min-width: 0;
   display: flex;
   flex-direction: column;
+}
+
+.page-loading {
+  padding: 88px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink-muted);
 }
 
 /* ---------- Sidebar ---------- */
