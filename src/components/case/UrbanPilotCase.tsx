@@ -24,7 +24,6 @@ export function UrbanPilotCase() {
             <CsTags tags={d.tags} />
             <CsProof data={d.proof} />
             <p className="cs-desc">{d.desc}</p>
-            <p className="cs-detail">{d.detail}</p>
           </div>
           <CsViewport title={d.viewportTitle} suffix={d.viewportSuffix}>
             <UrbanPilotPreview />

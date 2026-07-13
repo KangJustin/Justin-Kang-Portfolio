@@ -22,8 +22,6 @@ export const buzzbuddy = {
   title: 'BuzzBuddy',
   tags: ['Agentic AI', 'iOS · SwiftUI', 'FastAPI', 'Personal baseline'],
   desc: 'iOS app that estimates impairment by measuring deviation from your own sober baseline — reaction time, balance, memory — using an agentic AI examiner, not a BAC guess.',
-  detail:
-    'A tool-calling loop grounds every verdict in specific test results: it retrieves your baseline, requests targeted tests, analyzes deviation, and updates a confidence score.',
   codeUrl: 'https://github.com/julianshekhtmeyster/buzzbuddy',
   devpostUrl: 'https://devpost.com/software/buzzbuddy-ivr0ty',
   viewportTitle: 'buzzbuddy — examiner_session',
@@ -72,11 +70,6 @@ export const buzzbuddy = {
     { num: 'S.03', tag: 'analyze', title: 'Deviation Analysis', body: 'Each result is compared against the personal baseline, and a tool-calling loop updates a running confidence score with reasoning attached.' },
     { num: 'S.04', tag: 'verdict', title: 'Final Summary', body: 'The examiner concludes the session with a plain-language summary — it never tells the user it’s "safe to drive."' },
   ] as CsStage[],
-  decisions: [
-    { num: 'D.01', title: 'Personal baseline over population BAC', body: 'Everyone metabolizes and performs differently — comparing against your own sober self is a more honest signal than a fixed legal threshold.' },
-    { num: 'D.02', title: 'Agentic tool-calling over a single score', body: 'A tool-calling loop (retrieve → test → analyze → update) keeps every confidence update traceable to a specific test result, not a black box.' },
-    { num: 'D.03', title: 'Never says "safe to drive"', body: 'The app reports deviation confidence only — the call on whether someone is fit to drive stays with the person, not the model.' },
-  ],
   footer: ['buzzbuddy / case_study', 'agentic impairment detection · 2026'],
 }
 
@@ -89,8 +82,6 @@ export const urbanpilot = {
   title: 'UrbanPilot',
   tags: ['Multi-agent AI', 'Python', 'Data pipelines', 'Public datasets'],
   desc: 'Multi-agent AI system that runs parallel scenario analyses — climate, housing, accessibility, urban design — for any real address.',
-  detail:
-    'Integrates + cleans 6 data sources: Census ACS, FEMA NFHL, Open-Meteo, 511 GTFS transit, NLCD tree canopy, and Google Maps. Supports multi-variable sensitivity analysis across planning dimensions.',
   codeUrl: 'https://github.com/KangJustin/urbanpilot',
   devpostUrl: 'https://devpost.com/software/urbanpilot',
   viewportTitle: 'urbanpilot — scenario_dashboard',
@@ -175,8 +166,6 @@ export const flux = {
   title: 'Flux',
   tags: ['Voice AI', 'Gemini', 'Workflow JSON', '12+ integrations'],
   desc: 'Voice-first automation platform on Meta Ray-Ban glasses — one spoken command triggers multi-step workflows across 12+ services, including Gmail, Slack, Notion, and Fetch.ai Agentverse. Built as BarelyAtWork at LA Hacks 2026, in a team of four over 36 hours.',
-  detail:
-    'Constrained Gemini pipeline with a validate → repair loop converts voice transcripts into structured workflow JSON and eliminates invalid parameters.',
   codeUrl: 'https://github.com/trigtbh/lahacks-26',
   viewportTitle: 'flux — voice_to_workflow',
   quote: '"send yesterday\'s demo clips to the team and block 30 minutes tomorrow morning"',
@@ -204,8 +193,7 @@ export const flux = {
   ] as CsStage[],
   decisions: [
     { num: 'D.01', title: 'Structured JSON over freeform agents', body: 'Reliable workflows require predictable schemas, not open-ended model output.' },
-    { num: 'D.02', title: 'Validate before execution', body: 'Every generated action is checked before touching external services.' },
-    { num: 'D.03', title: 'Repair loop for messy speech', body: 'Voice commands are incomplete by nature, so the system fills and corrects parameters before running.' },
+    { num: 'D.02', title: 'Repair loop for messy speech', body: 'Voice commands are incomplete by nature, so the system fills and corrects parameters before running.' },
   ],
   footer: ['flux / case_study', 'voice → workflow · 2026'],
 }

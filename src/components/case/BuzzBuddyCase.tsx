@@ -24,7 +24,6 @@ export function BuzzBuddyCase() {
             <CsTags tags={d.tags} />
             <CsProof data={d.proof} />
             <p className="cs-desc">{d.desc}</p>
-            <p className="cs-detail">{d.detail}</p>
           </div>
           <CsViewport title={d.viewportTitle} suffix="4 screens">
             <BuzzBuddyPreview layout="grid2" />
@@ -38,19 +37,6 @@ export function BuzzBuddyCase() {
         <section className="cs-section">
           <CsSectionHead title="How It Works" note="4 stages" />
           <CsStageCards stages={d.stages} />
-        </section>
-
-        <section className="cs-section">
-          <CsSectionHead title="Technical Decisions" note="3 tradeoffs" />
-          <div className="cs-decisions">
-            {d.decisions.map((dec) => (
-              <article key={dec.num} className="cs-decision">
-                <span className="cs-decision-num">{dec.num}</span>
-                <h3>{dec.title}</h3>
-                <p>{dec.body}</p>
-              </article>
-            ))}
-          </div>
         </section>
 
         <CsListSection title="Evaluation & Evidence" items={d.evidence} />

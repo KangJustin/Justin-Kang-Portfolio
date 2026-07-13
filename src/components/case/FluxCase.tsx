@@ -104,7 +104,6 @@ export function FluxCase() {
             <h1 className="cs-title">{d.title}</h1>
             <CsTags tags={d.tags} />
             <p className="cs-desc cs-desc--wide">{d.desc}</p>
-            <p className="cs-detail">{d.detail}</p>
             <CsCta label="Code" href={d.codeUrl} />
           </div>
           <CsViewport title={d.viewportTitle} suffix={<span className="fx2-dot">●</span>} dark>
@@ -120,7 +119,7 @@ export function FluxCase() {
         </section>
 
         <section className="cs-section">
-          <CsSectionHead title="Technical Decisions" note="3 tradeoffs" />
+          <CsSectionHead title="Technical Decisions" note="2 tradeoffs" />
           <div className="cs-decisions">
             {d.decisions.map((dec) => (
               <article key={dec.num} className="cs-decision">
