@@ -33,9 +33,9 @@
   --mono: 'JetBrains Mono', ui-monospace, monospace;
   --sans: Helvetica, Arial, sans-serif;
 
-  --sidebar-w: 240px;
+  --sidebar-w: 216px;
   --pad-x: 88px;
-  --maxw: 1040px;
+  --maxw: 1140px;
 }
 
 * {
@@ -122,7 +122,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 40px 32px;
+  padding: 40px 24px;
 }
 
 .sb-top {
@@ -133,7 +133,7 @@ a:hover {
 
 .sb-wordmark {
   font-family: var(--mono);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.02em;
   color: var(--sidebar-text);
