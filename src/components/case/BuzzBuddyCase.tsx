@@ -24,7 +24,7 @@ export function BuzzBuddyCase() {
             <p className="cs-detail">{d.detail}</p>
             <CsCta label="Code" href={d.codeUrl} />
           </div>
-          <CsViewport title={d.viewportTitle} suffix="3 screens">
+          <CsViewport title={d.viewportTitle} suffix="4 screens">
             <BuzzBuddyPreview />
           </CsViewport>
         </header>

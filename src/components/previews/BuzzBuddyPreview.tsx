@@ -3,6 +3,7 @@
 
 const screens = [
   { src: '/projects/buzzbuddy-start.jpg', label: 'start_test' },
+  { src: '/projects/buzzbuddy-game.jpg', label: 'reaction_test' },
   { src: '/projects/buzzbuddy-reasoning.jpg', label: 'ai_reasoning' },
   { src: '/projects/buzzbuddy-verdict.jpg', label: 'verdict' },
 ]
