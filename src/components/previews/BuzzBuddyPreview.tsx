@@ -24,9 +24,9 @@ const screens = [
   },
 ]
 
-export function BuzzBuddyPreview() {
+export function BuzzBuddyPreview({ layout = 'row' }: { layout?: 'row' | 'grid2' }) {
   return (
-    <div className="bb-screens">
+    <div className={`bb-screens${layout === 'grid2' ? ' bb-screens--grid2' : ''}`}>
       {screens.map((s) => (
         <figure key={s.label} className="bb-screen">
           <div className="bb-screen-frame">

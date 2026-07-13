@@ -27,7 +27,7 @@ export function BuzzBuddyCase() {
             <p className="cs-detail">{d.detail}</p>
           </div>
           <CsViewport title={d.viewportTitle} suffix="4 screens">
-            <BuzzBuddyPreview />
+            <BuzzBuddyPreview layout="grid2" />
           </CsViewport>
         </header>
 
