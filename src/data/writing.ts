@@ -126,6 +126,48 @@ export const writingItems: WritingItem[] = [
     ctaLabel: 'Read paper ↗',
     href: '/writing/007-rodney-king-la-riots.pdf',
   },
+  {
+    index: '[ 008 ]',
+    date: 'may_2025',
+    category: 'UC Berkeley SCANDIN 160 — Scandinavian myth and religion',
+    type: 'literary_analysis',
+    title: 'A Comparative Study of Thor and Thorstein',
+    summary:
+      'A close comparison of Thor’s trials in Gylfaginning and Skáldskaparmál against the saga hero Thorstein Mansion-Might, tracing how the same mythic pattern — a hero entering a dangerous realm and besting its guardians — produces two very different protagonists.',
+    takeaway:
+      'Thor wins through raw, reactive strength that is also his flaw; Thorstein wins through alliance, strategy, and Christian moral clarity. The shift in what counts as heroic tracks Scandinavia’s conversion from paganism to Christianity, not just a change in taste.',
+    tags: ['Norse Mythology', 'Comparative Literature', 'Religious Studies', 'Close Reading'],
+    ctaLabel: 'Read essay ↗',
+    href: '/writing/008-thor-and-thorstein-comparative-study.pdf',
+  },
+  {
+    index: '[ 009 ]',
+    date: 'spring_2024',
+    category: 'IB Mathematics Analysis and Approaches HL — internal assessment',
+    type: 'research_paper',
+    title: 'Are There Other Methods of Evaluating the Determinant of a 3×3 Matrix?',
+    summary:
+      'An exploration comparing three ways of computing a 3×3 determinant — cofactor expansion (the standard US approach), the Rule of Sarrus, and a Russian-taught diagonal method — then attempting to derive a personal method and verifying it against the determinant-of-a-transpose identity.',
+    takeaway:
+      'Every method — American, Russian, or self-derived — reduces to the same six-term expansion. The value of having several isn’t a better answer, it’s a clearer view of why the formula has to look the way it does.',
+    tags: ['Linear Algebra', 'Mathematics', 'Matrices', 'IB IA'],
+    ctaLabel: 'Read paper ↗',
+    href: '/writing/009-3x3-matrix-determinant-methods.pdf',
+  },
+  {
+    index: '[ 010 ]',
+    date: 'fall_2023',
+    category: 'IB English HL — internal assessment',
+    type: 'literary_analysis',
+    title: 'How Does Anchee Min’s Allusions to Poetry Reflect Communist Values in Red Azalea?',
+    summary:
+      'A close reading of the poems and songs embedded in Anchee Min’s Cultural Revolution memoir — Mao’s own verse, the labor-camp anthem “My Motherland,” and the folk tale “A Wolf in a Sheep’s Skin” — tracing how each one launders exploitation, enforces conformity, or stages the paranoia of a surveillance state.',
+    takeaway:
+      'The poetry in Red Azalea isn’t decoration — it’s the mechanism. Each embedded verse reframes exploitation as virtue, which is exactly how Min shows ideology getting inside a person rather than just being imposed on one.',
+    tags: ['Literary Analysis', 'Red Azalea', 'Chinese History', 'IB IA'],
+    ctaLabel: 'Read essay ↗',
+    href: '/writing/010-red-azalea-poetry-communist-values.pdf',
+  },
 ]
 
 // Shown in the sidebar panel once at least one item exists.
