@@ -26,6 +26,9 @@ const SkylineCase = lazy(() =>
 const BuzzBuddyCase = lazy(() =>
   import('./components/case/BuzzBuddyCase').then((m) => ({ default: m.BuzzBuddyCase }))
 )
+const BlastRadiusCase = lazy(() =>
+  import('./components/case/BlastRadiusCase').then((m) => ({ default: m.BlastRadiusCase }))
+)
 
 // Minimal history-based routing: '/' is the single-page portfolio,
 // '/writing' is the Research & Essays archive, and '/projects/<slug>'
@@ -38,6 +41,7 @@ const caseStudies: Record<string, ComponentType> = {
   urbanpilot: UrbanPilotCase,
   flux: FluxCase,
   skyline: SkylineCase,
+  blastradius: BlastRadiusCase,
 }
 
 function setMetaContent(selector: string, content: string) {

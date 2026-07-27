@@ -5,6 +5,7 @@ import { FluxPreview } from './previews/FluxPreview'
 import { SkylinePreview } from './previews/SkylinePreview'
 import { UrbanPilotPreview } from './previews/UrbanPilotPreview'
 import { BuzzBuddyPreview } from './previews/BuzzBuddyPreview'
+import { BlastRadiusPreview } from './previews/BlastRadiusPreview'
 
 function PreviewBody({ preview }: { preview: Project['preview'] }) {
   if (preview.kind === 'image') {
@@ -25,6 +26,13 @@ function PreviewBody({ preview }: { preview: Project['preview'] }) {
     return (
       <div className="window__body window__body--dash">
         <BuzzBuddyPreview />
+      </div>
+    )
+  }
+  if (preview.mock === 'blastradius') {
+    return (
+      <div className="window__body">
+        <BlastRadiusPreview />
       </div>
     )
   }

@@ -192,6 +192,64 @@ export const flux = {
   footer: ['flux / case_study', 'voice → workflow · 2026'],
 }
 
+// ---------- BlastRadius ----------
+
+export const blastradius = {
+  index: '[005]',
+  date: 'jul_2026',
+  version: 'v0.1',
+  title: 'BlastRadius',
+  tags: ['Agentic AI', 'Jac · fullstack', 'Graph traversal', 'Static analysis'],
+  desc: 'Agentic code-risk analyst: point it at a real repository, click a function you’re about to change, and a graph walker computes exactly what’s downstream — then an LLM agent explains the risk, grounded in the real source. Built for JacHacks SF 2026.',
+  codeUrl: 'https://github.com/KangJustin/blastradius',
+  viewportTitle: 'blastradius — call_graph',
+  proof: {
+    safetyNote:
+      'Prototype scoped to Python repositories, resolves calls by name (not full static analysis), and runs as a local tool — not a hosted service a visitor can point at their own repo yet.',
+    role: 'Solo build: graph schema, walker traversal, agentic risk explainer, and the fullstack Jac frontend.',
+  },
+  contributions: [
+    'Designed the graph schema (File/Function nodes, Calls/Imports edges) and the ast-based Python repo parser.',
+    'Built the BlastRadius walker — a bounded, cycle-guarded traversal that computes the real call-graph blast radius of a target function.',
+    'Built the explain_risk agent: a typed by llm() call returning a structured RiskAssessment, grounded via a read_source tool call rather than trusting the model to reason about code it hasn’t seen.',
+    'Iterated the fullstack Jac frontend (ingest → select → analyze flow, interactive call-graph visualization, RiskReport) in JacHammer, and found and reported two real rendering bugs back into the build loop.',
+    'Wrote deterministic test coverage for the parser, walker, and ingest pipeline, plus MockLLM-based tests for the agent so CI doesn’t require a live API key.',
+  ],
+  evidence: [
+    'Verified against a known fixture repo: ingesting a 2-file, 4-function call chain (helper → process → main) correctly finds the full chain and excludes an unrelated function in the same file.',
+    'Verified against a real, unrelated codebase: ingesting a separate hackathon project’s FastAPI backend (20 files) correctly found 19 functions and traced a real 2-hop caller chain for a target function, with the agent flagging it high severity based on those actual callers.',
+    'Severity is normalized server-side after the LLM call rather than just prompted for — the model doesn’t reliably return a bare enum, so output like "Low - blast radius is small..." is mapped down to a strict low/medium/high before it reaches the UI.',
+  ],
+  limitations: [
+    'Call resolution is name-based, not full static analysis — ambiguous on repos with many same-named functions.',
+    'Only direct ast.Call targets are tracked; dynamic dispatch and decorators that rewrite call sites aren’t followed.',
+    'Only .py files are parsed.',
+    'Local tool, not hosted SaaS: ingest_repo reads a filesystem path on whatever machine the server runs on, so a deployed instance can’t yet ingest an arbitrary visitor’s repo without an upload or clone step.',
+  ],
+  nextSteps: [
+    'Replace name-only call resolution with real import-aware static analysis.',
+    'Support languages beyond Python.',
+    'Add a repo-upload or clone-by-URL flow so a deployed instance can analyze a visitor’s own repo, not just one already on the server’s filesystem.',
+  ],
+  specs: [
+    { label: 'Language', value: 'Jac (jaclang) — fullstack, one codebase' },
+    { label: 'Traversal', value: 'walker:pub BlastRadius, bounded + cycle-guarded' },
+    { label: 'Model', value: 'Claude Sonnet · typed by llm(), read_source tool' },
+    { label: 'Output', value: 'summary / why_risky / could_break / severity' },
+  ] as CsSpec[],
+  stages: [
+    { num: 'S.01', tag: 'ingest', title: 'Repo Ingest', body: 'A def:pub function parses a real repository with Python’s own ast module into File/Function nodes and Calls/Imports edges — the same graph the rest of the app reasons over.' },
+    { num: 'S.02', tag: 'select', title: 'Select Target', body: 'Click a function node in the rendered call graph, or type a name directly, to set it as the blast-radius target.' },
+    { num: 'S.03', tag: 'traverse', title: 'Walker Traversal', body: 'The BlastRadius walker makes real traversal decisions at runtime — bounded by hop count, guarded against cycles — to compute exactly what’s downstream.' },
+    { num: 'S.04', tag: 'explain', title: 'Grounded Explanation', body: 'An agent explains the risk with a typed by llm() call, grounded by a read_source tool call against the real source — labeled AI-generated, distinct from the computed result beside it.' },
+  ] as CsStage[],
+  whyPull:
+    'Blast radius is invisible. Before you change a function, you either guess what depends on it, or you grep and hope.',
+  whyBody:
+    'BlastRadius traverses the real call graph to compute exactly what’s downstream, then has an agent explain the risk in plain English — grounded in the graph’s own output, not a guess. Every claim in the UI is labeled by where it actually came from: computed from traversal, or AI-generated.',
+  footer: ['blastradius / case_study', 'agentic code-risk analysis · 2026'],
+}
+
 // ---------- Skyline Transport ----------
 
 export const skyline = {

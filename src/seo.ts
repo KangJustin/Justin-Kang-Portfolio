@@ -13,6 +13,7 @@ const CASE_STUDY_TITLES: Record<string, string> = {
   urbanpilot: 'UrbanPilot Case Study — Public-Data Planning Tool | Justin Kang',
   flux: 'Flux Case Study — Voice-First Workflow Automation | Justin Kang',
   skyline: 'Skyline Transport Case Study — Cleanroom Material Handling | Justin Kang',
+  blastradius: 'BlastRadius Case Study — Agentic Code-Risk Analysis | Justin Kang',
 }
 
 export interface RouteMeta {

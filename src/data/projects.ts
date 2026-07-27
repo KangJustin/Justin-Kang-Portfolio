@@ -15,7 +15,7 @@ export interface Project {
   // or one of the hand-built CSS mocks ('flux' | 'skyline').
   preview:
     | { kind: 'image'; src: string; alt: string }
-    | { kind: 'mock'; mock: 'flux' | 'skyline' | 'urbanpilot' | 'buzzbuddy' }
+    | { kind: 'mock'; mock: 'flux' | 'skyline' | 'urbanpilot' | 'buzzbuddy' | 'blastradius' }
   // Only real URLs — add 'Demo ↗' / 'Writeup ↗' entries when they exist.
   links: ProjectLink[]
   // Route of the full case-study page (e.g. '/projects/urbanpilot').
@@ -79,5 +79,17 @@ export const projects: Project[] = [
     preview: { kind: 'mock', mock: 'skyline' },
     links: [{ label: 'Writeup ↗', href: '/skyline-transport-writeup.pdf' }],
     caseStudy: '/projects/skyline',
+  },
+  {
+    index: '[ 005 ] · jul_2026',
+    title: 'BlastRadius',
+    tags: ['Agentic AI', 'Jac · fullstack', 'Graph traversal', 'Static analysis'],
+    desc: 'Agentic code-risk analyst: point it at a real repository, click a function you’re about to change, and a graph walker computes exactly what’s downstream — then an LLM agent explains the risk, grounded in the real source. Built for JacHacks SF 2026.',
+    proof:
+      'Every claim in the UI is labeled by source: affected functions and suggested tests are computed from real call-graph traversal, while the risk narrative and severity are AI-generated — the agent reads real source via a tool call before it answers.',
+    windowTitle: 'blastradius — call_graph',
+    preview: { kind: 'mock', mock: 'blastradius' },
+    links: [{ label: 'Code ↗', href: 'https://github.com/KangJustin/blastradius' }],
+    caseStudy: '/projects/blastradius',
   },
 ]
