@@ -16,7 +16,7 @@ export interface CsStage {
 // ---------- BuzzBuddy ----------
 
 export const buzzbuddy = {
-  index: '[002]',
+  index: '[001]',
   date: 'jul_2026',
   version: 'v0.2',
   title: 'BuzzBuddy',
@@ -195,7 +195,7 @@ export const flux = {
 // ---------- BlastRadius ----------
 
 export const blastradius = {
-  index: '[001]',
+  index: '[002]',
   date: 'jul_2026',
   version: 'v0.1',
   title: 'BlastRadius',

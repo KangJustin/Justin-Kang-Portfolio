@@ -25,18 +25,6 @@ export interface Project {
 export const projects: Project[] = [
   {
     index: '[ 001 ] · jul_2026',
-    title: 'BlastRadius',
-    tags: ['Agentic AI', 'Jac · fullstack', 'Graph traversal', 'Static analysis'],
-    desc: 'Agentic code-risk analyst: point it at a real repository, click a function you’re about to change, and a graph walker computes exactly what’s downstream — then an LLM agent explains the risk, grounded in the real source. Built for JacHacks SF 2026.',
-    proof:
-      'Every claim in the UI is labeled by source: affected functions and suggested tests are computed from real call-graph traversal, while the risk narrative and severity are AI-generated — the agent reads real source via a tool call before it answers.',
-    windowTitle: 'blastradius — call_graph',
-    preview: { kind: 'mock', mock: 'blastradius' },
-    links: [{ label: 'Code ↗', href: 'https://github.com/KangJustin/blastradius' }],
-    caseStudy: '/projects/blastradius',
-  },
-  {
-    index: '[ 002 ] · jul_2026',
     title: 'BuzzBuddy',
     tags: ['Agentic AI', 'iOS · SwiftUI', 'FastAPI', 'Personal baseline'],
     desc: 'iOS app that estimates impairment by measuring deviation from your own sober baseline — reaction time, balance, memory — using an agentic AI examiner, not a BAC guess. 3rd place, AI for Social Good: Hack with MLH & DigitalOcean (Jul 2026).',
@@ -49,6 +37,18 @@ export const projects: Project[] = [
       { label: 'Devpost ↗', href: 'https://devpost.com/software/buzzbuddy-ivr0ty' },
     ],
     caseStudy: '/projects/buzzbuddy',
+  },
+  {
+    index: '[ 002 ] · jul_2026',
+    title: 'BlastRadius',
+    tags: ['Agentic AI', 'Jac · fullstack', 'Graph traversal', 'Static analysis'],
+    desc: 'Agentic code-risk analyst: point it at a real repository, click a function you’re about to change, and a graph walker computes exactly what’s downstream — then an LLM agent explains the risk, grounded in the real source. Built for JacHacks SF 2026.',
+    proof:
+      'Every claim in the UI is labeled by source: affected functions and suggested tests are computed from real call-graph traversal, while the risk narrative and severity are AI-generated — the agent reads real source via a tool call before it answers.',
+    windowTitle: 'blastradius — call_graph',
+    preview: { kind: 'mock', mock: 'blastradius' },
+    links: [{ label: 'Code ↗', href: 'https://github.com/KangJustin/blastradius' }],
+    caseStudy: '/projects/blastradius',
   },
   {
     index: '[ 003 ] · jun_2026',
