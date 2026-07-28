@@ -16,7 +16,7 @@ export interface CsStage {
 // ---------- BuzzBuddy ----------
 
 export const buzzbuddy = {
-  index: '[001]',
+  index: '[002]',
   date: 'jul_2026',
   version: 'v0.2',
   title: 'BuzzBuddy',
@@ -73,7 +73,7 @@ export const buzzbuddy = {
 // ---------- UrbanPilot ----------
 
 export const urbanpilot = {
-  index: '[002]',
+  index: '[003]',
   date: 'jun_2026',
   version: 'v1.0',
   title: 'UrbanPilot',
@@ -154,7 +154,7 @@ export const urbanpilot = {
 const waveHeights = [6, 10, 18, 24, 14, 20, 26, 12, 8, 16, 22, 10, 18, 6, 12, 20, 9, 5]
 
 export const flux = {
-  index: '[003]',
+  index: '[004]',
   date: 'apr_2026',
   version: 'v0.9',
   title: 'Flux',
@@ -195,7 +195,7 @@ export const flux = {
 // ---------- BlastRadius ----------
 
 export const blastradius = {
-  index: '[005]',
+  index: '[001]',
   date: 'jul_2026',
   version: 'v0.1',
   title: 'BlastRadius',
@@ -253,7 +253,7 @@ export const blastradius = {
 // ---------- Skyline Transport ----------
 
 export const skyline = {
-  index: '[004]',
+  index: '[005]',
   date: 'apr_2025',
   version: 'rev_B',
   tags: ['CAD', 'Cleanroom Systems', 'Mechanical Design', 'Trade-off Analysis'],
