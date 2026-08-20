@@ -27,6 +27,8 @@ import { BuzzBuddyCase } from '../src/components/case/BuzzBuddyCase'
 import { UrbanPilotCase } from '../src/components/case/UrbanPilotCase'
 import { FluxCase } from '../src/components/case/FluxCase'
 import { SkylineCase } from '../src/components/case/SkylineCase'
+import { BlastRadiusCase } from '../src/components/case/BlastRadiusCase'
+import { ExoplanetCase } from '../src/components/case/ExoplanetCase'
 import { ALL_ROUTES, metaForPath, SITE_URL } from '../src/seo'
 import type { Page } from '../src/App'
 
@@ -37,6 +39,8 @@ const caseComponents: Record<string, () => React.JSX.Element> = {
   '/projects/urbanpilot': UrbanPilotCase,
   '/projects/flux': FluxCase,
   '/projects/skyline': SkylineCase,
+  '/projects/blastradius': BlastRadiusCase,
+  '/projects/exoplanet': ExoplanetCase,
 }
 
 function pageFor(path: string): Page {

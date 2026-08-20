@@ -15,7 +15,7 @@ export interface Project {
   // or one of the hand-built CSS mocks ('flux' | 'skyline').
   preview:
     | { kind: 'image'; src: string; alt: string }
-    | { kind: 'mock'; mock: 'flux' | 'skyline' | 'urbanpilot' | 'buzzbuddy' | 'blastradius' }
+    | { kind: 'mock'; mock: 'flux' | 'skyline' | 'urbanpilot' | 'buzzbuddy' | 'blastradius' | 'exoplanet' }
   // Only real URLs — add 'Demo ↗' / 'Writeup ↗' entries when they exist.
   links: ProjectLink[]
   // Route of the full case-study page (e.g. '/projects/urbanpilot').
@@ -91,5 +91,17 @@ export const projects: Project[] = [
     preview: { kind: 'mock', mock: 'skyline' },
     links: [{ label: 'Writeup ↗', href: '/skyline-transport-writeup.pdf' }],
     caseStudy: '/projects/skyline',
+  },
+  {
+    index: '[ 006 ] · aug_2026',
+    title: 'Exoplanet Transit',
+    tags: ['Astrophysics', 'Python · lightkurve', 'Signal Processing', 'Kepler data'],
+    desc: 'Kepler photometry pipeline that detects, characterizes, and stress-tests a real exoplanet transit signal — built with a 7-person team for Astron 9 (Introduction to Python for Astrophysics).',
+    proof:
+      'A Box Least Squares periodogram recovers a 3.52-day period at power ≈570 against a ≈10–50 noise floor, matching the published orbital period of Kepler-8b — an independently confirmed exoplanet, recovered from raw NASA brightness data alone.',
+    windowTitle: 'exoplanet — kic6922244_lightcurve',
+    preview: { kind: 'mock', mock: 'exoplanet' },
+    links: [{ label: 'Writeup ↗', href: '/exoplanet-transit-writeup.pdf' }],
+    caseStudy: '/projects/exoplanet',
   },
 ]

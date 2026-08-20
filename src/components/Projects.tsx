@@ -6,6 +6,7 @@ import { SkylinePreview } from './previews/SkylinePreview'
 import { UrbanPilotPreview } from './previews/UrbanPilotPreview'
 import { BuzzBuddyPreview } from './previews/BuzzBuddyPreview'
 import { BlastRadiusPreview } from './previews/BlastRadiusPreview'
+import { ExoplanetPreview } from './previews/ExoplanetPreview'
 
 function PreviewBody({ preview }: { preview: Project['preview'] }) {
   if (preview.kind === 'image') {
@@ -33,6 +34,13 @@ function PreviewBody({ preview }: { preview: Project['preview'] }) {
     return (
       <div className="window__body">
         <BlastRadiusPreview />
+      </div>
+    )
+  }
+  if (preview.mock === 'exoplanet') {
+    return (
+      <div className="window__body">
+        <ExoplanetPreview />
       </div>
     )
   }

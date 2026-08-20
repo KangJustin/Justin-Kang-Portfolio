@@ -1086,6 +1086,89 @@ a:hover {
   color: var(--accent);
 }
 
+/* ---------- Exoplanet Transit preview ---------- */
+
+.trn-sheet {
+  flex: 1;
+  background: var(--panel-card);
+  border: 1px solid var(--panel-border);
+  padding: 10px;
+  display: flex;
+  min-height: 0;
+}
+
+.trn-canvas {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+}
+
+.trn-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.trn-axis {
+  stroke: var(--panel-border);
+  stroke-width: 1;
+}
+
+.trn-noise {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+}
+
+.trn-peakline {
+  stroke: var(--ink-faint);
+  stroke-width: 1;
+}
+
+.trn-scatter circle {
+  fill: var(--ink-muted);
+}
+
+.trn-dip circle {
+  fill: var(--accent);
+}
+
+.trn-titleblock {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 1px solid var(--panel-border);
+  background: var(--panel-card);
+}
+
+.trn-cell {
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.trn-cell + .trn-cell {
+  border-left: 1px solid var(--panel-border);
+}
+
+.trn-cell-label {
+  font-family: var(--mono);
+  font-size: 8px;
+  color: var(--ink-faint);
+}
+
+.trn-cell-value {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink-soft);
+}
+
+.trn-cell-value.is-accent {
+  color: var(--accent);
+}
+
 /* ---------- Experience ---------- */
 
 .xp-list {
@@ -2763,6 +2846,79 @@ a:hover {
   inset: 0;
   width: 100%;
   height: 100%;
+}
+
+/* ---------- Exoplanet Transit case diagram ---------- */
+
+.exo-axis {
+  stroke: var(--c-ink);
+  stroke-width: 1;
+  opacity: 0.4;
+}
+
+.exo-trace {
+  fill: none;
+  stroke: var(--c-acc);
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+}
+
+.exo-peakline {
+  stroke: var(--c-mid);
+  stroke-width: 1;
+}
+
+.exo-scatter circle {
+  fill: var(--c-mid);
+}
+
+.exo-dip circle {
+  fill: var(--c-acc);
+}
+
+.exo-label {
+  font-family: var(--c-mono);
+  font-size: 10.5px;
+  fill: var(--c-soft);
+}
+
+.exo-label--acc {
+  fill: var(--c-acc);
+}
+
+.exo-axis-label {
+  font-family: var(--c-mono);
+  font-size: 9px;
+  fill: var(--c-faint);
+}
+
+.exo-leader-group {
+  stroke: var(--c-mid);
+}
+
+.exo-leader {
+  stroke: var(--c-mid);
+  stroke-width: 1;
+}
+
+.exo-leader-dot {
+  fill: var(--c-ink);
+}
+
+.exo-ruler {
+  stroke: var(--c-line);
+  stroke-width: 1.4;
+}
+
+.exo-zone-band {
+  fill: rgba(58, 113, 107, 0.14);
+  stroke: var(--c-acc);
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+}
+
+.exo-planet-dot {
+  fill: var(--c-ink);
 }
 
 /* ---------- Responsive ---------- */

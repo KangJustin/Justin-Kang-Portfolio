@@ -300,3 +300,81 @@ export const skyline = {
   ],
   footer: ['skyline_transport / case_study', 'ASME UC Berkeley · CADathon S25'],
 }
+
+// ---------- Exoplanet Transit ----------
+
+export const exoplanet = {
+  index: '[006]',
+  date: 'aug_2026',
+  version: 'final',
+  tags: ['Astrophysics', 'Python · lightkurve', 'Signal Processing', 'Kepler Photometry'],
+  desc: 'Kepler photometry pipeline that detects, characterizes, and stress-tests a real exoplanet transit signal — built with a 7-person team for Astron 9 (Introduction to Python for Astrophysics).',
+  writeupUrl: '/exoplanet-transit-writeup.pdf',
+  viewportTitle: 'exoplanet_transit — kic6922244.dat',
+  viewportSuffix: 'KIC 6922244',
+  specs: [
+    { label: 'Target', value: 'Kepler-8b · KIC 6922244' },
+    { label: 'Period', value: '3.52 d · BLS power ≈570' },
+    { label: 'Transit depth', value: '0.45% · Rp ≈ 0.115 R☉' },
+    { label: 'Habitability', value: '1661.7 K · not habitable' },
+  ] as CsSpec[],
+  breakdown: [
+    {
+      num: 'B.01',
+      title: 'Data Cleaning & Detrending',
+      body: 'Pulled Kepler photometry with lightkurve, stripped NaNs and 5σ outliers, normalized flux, then flattened the curve to remove stellar rotation and starspot drift while preserving the short transit dips.',
+      footnote: 'lightkurve · remove_outliers · flatten()',
+      glyph: 'curve',
+    },
+    {
+      num: 'B.02',
+      title: 'Transit Detection (BLS)',
+      body: 'A Box Least Squares periodogram returned a dominant peak at 3.52 days, power ≈570 against a ≈10–50 noise floor. Phase-folding at that period produced a clean, repeating box-shaped dip — not a one-off event.',
+      footnote: 'BLS periodogram · phase fold',
+      glyph: 'periodogram',
+    },
+    {
+      num: 'B.03',
+      title: 'Radius & Companion Check',
+      body: 'Transit depth gives planet radius via Rp = R*√δ: 0.115 solar radii against Kepler-8b’s published 0.146 (21% error, mostly limb darkening). A scipy N-body simulator then tested transit-timing variations for signs of a hidden second planet.',
+      footnote: 'scipy.curve_fit · solve_ivp N-body',
+      glyph: 'orbit',
+    },
+    {
+      num: 'B.04',
+      title: 'Habitability',
+      body: 'Kepler’s third law places the planet 0.0483 AU out — 8× closer than Mercury — with an equilibrium temperature of 1661.7 K. The computed habitable zone spans 1.642–2.365 AU, well outside the planet’s orbit.',
+      footnote: "Kepler's 3rd law · equilibrium temp",
+      glyph: 'zone',
+    },
+  ] as { num: string; title: string; body: string; footnote: string; glyph: 'curve' | 'periodogram' | 'orbit' | 'zone' }[],
+  phases: [
+    {
+      num: 'P1',
+      name: 'Method Selection',
+      note: 'Compared transit, radial velocity, direct imaging, and microlensing; chose transit for reliability and open data.',
+    },
+    { num: 'P2', name: 'Data Acquisition', note: 'Pulled Kepler photometry for KIC 6922244 (Kepler-8) with lightkurve.' },
+    {
+      num: 'P3',
+      name: 'Cleaning & Detrending',
+      note: 'Removed NaNs/outliers, normalized flux, flattened long-term stellar variability.',
+    },
+    {
+      num: 'P4',
+      name: 'Period Search',
+      note: 'Ran a BLS periodogram, found the dominant 3.52-day peak, phase-folded the light curve.',
+    },
+    {
+      num: 'P5',
+      name: 'Physical Characterization',
+      note: 'Derived planet radius, semi-major axis, equilibrium temperature, and habitable-zone boundaries.',
+    },
+    {
+      num: 'P6',
+      name: 'Companion Check',
+      note: 'Built a scipy N-body simulator to test whether timing variations hinted at a hidden second planet.',
+    },
+  ],
+  footer: ['exoplanet_transit / case_study', 'Astron 9 · Intro to Python for Astrophysics'],
+}
