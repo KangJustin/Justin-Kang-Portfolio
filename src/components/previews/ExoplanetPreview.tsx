@@ -1,6 +1,6 @@
 // Hand-built mock preview — a stylized instrument readout standing in for
 // a real light-curve plot: BLS periodogram peak on the left, phase-folded
-// transit dip on the right.
+// transit dip on the right, each in its own bordered panel.
 
 export function ExoplanetPreview() {
   return (
@@ -10,28 +10,30 @@ export function ExoplanetPreview() {
           <svg
             className="trn-svg"
             viewBox="0 0 300 150"
-            preserveAspectRatio="none"
+            preserveAspectRatio="xMidYMid meet"
             role="img"
             aria-label="BLS periodogram showing a dominant peak, next to a phase-folded light curve showing a transit dip"
           >
-            {/* periodogram */}
+            {/* periodogram panel */}
+            <rect x="6" y="10" width="130" height="100" className="trn-panel" />
+            <line x1="6" y1="100" x2="136" y2="100" className="trn-axis" />
             <polyline
-              className="trn-noise"
-              points="4,116 16,110 28,114 40,106 52,112 64,100 76,92 84,60 90,20 96,54 104,88 112,104 122,112 132,108 140,114"
+              className="trn-trace"
+              points="12,88 24,84 36,86 48,80 58,84 68,66 74,24 80,68 90,86 100,92 112,94 124,96"
             />
-            <line className="trn-peakline" x1="90" y1="10" x2="90" y2="120" strokeDasharray="2 2" />
-            <line className="trn-axis" x1="2" y1="120" x2="140" y2="120" />
+            <line x1="74" y1="14" x2="74" y2="100" className="trn-peakline" strokeDasharray="2 2" />
 
-            {/* phase-fold */}
-            <line className="trn-axis" x1="160" y1="120" x2="298" y2="120" />
+            {/* phase-fold panel */}
+            <rect x="164" y="10" width="130" height="100" className="trn-panel" />
+            <line x1="164" y1="52" x2="294" y2="52" className="trn-axis" />
             <g className="trn-scatter">
-              {[164, 172, 180, 188, 196, 204, 252, 260, 268, 276, 284, 292].map((x) => (
-                <circle key={x} cx={x} cy={62 + (x % 5)} r="1.4" />
+              {[172, 182, 192, 202, 212, 262, 272, 282].map((x, i) => (
+                <circle key={x} cx={x} cy={52 + [-3, 2, -2, 3, -3, 2, -3, 3][i]} r="1.6" />
               ))}
             </g>
             <g className="trn-dip">
-              {[214, 220, 226, 232, 238, 244].map((x, i) => (
-                <circle key={x} cx={x} cy={62 + [4, 10, 14, 14, 10, 4][i]} r="1.4" />
+              {[222, 232, 242, 252].map((x, i) => (
+                <circle key={x} cx={x} cy={52 + [8, 16, 16, 8][i]} r="1.6" />
               ))}
             </g>
           </svg>

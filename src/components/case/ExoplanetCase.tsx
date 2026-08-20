@@ -44,28 +44,22 @@ function TransitDiagram() {
         <text x="34" y="46" className="exo-label">
           POWER ≈570
         </text>
-        <text x="34" y="224" className="exo-axis-label">
-          PERIOD [d] · 0–10
-        </text>
 
         {/* 02 phase-folded transit */}
         <rect x="330" y="30" width="280" height="190" fill="var(--c-raised)" stroke="var(--c-ink)" strokeWidth="2" />
-        <line x1="330" y1="120" x2="610" y2="120" className="exo-axis" />
+        <line x1="330" y1="100" x2="610" y2="100" className="exo-axis" />
         <g className="exo-scatter">
           {[338, 350, 362, 374, 386, 398, 546, 558, 570, 582, 594, 604].map((x, i) => (
-            <circle key={x} cx={x} cy={78 + ((i * 13) % 22)} r="1.6" />
+            <circle key={x} cx={x} cy={100 + [-3, 2, -4, 3, -2, 4, 4, -2, 3, -4, 2, -3][i]} r="1.8" />
           ))}
         </g>
         <g className="exo-dip">
           {[430, 444, 458, 472, 486, 500].map((x, i) => (
-            <circle key={x} cx={x} cy={78 + [10, 30, 46, 46, 30, 10][i]} r="1.6" />
+            <circle key={x} cx={x} cy={100 + [14, 28, 36, 36, 28, 14][i]} r="1.8" />
           ))}
         </g>
-        <text x="464" y="182" textAnchor="middle" className="exo-label exo-label--acc">
+        <text x="464" y="164" textAnchor="middle" className="exo-label exo-label--acc">
           depth 0.45%
-        </text>
-        <text x="334" y="224" className="exo-axis-label">
-          PHASE [JD] · −1.5–1.75
         </text>
 
         {/* leader callouts */}
@@ -76,8 +70,8 @@ function TransitDiagram() {
             <tspan className="exo-label--acc">01</tspan> bls_peak · period 3.52 d, power ≈570
           </text>
 
-          <line x1="464" y1="108" x2="464" y2="290" className="exo-leader" />
-          <circle cx="464" cy="108" r="2" className="exo-leader-dot" />
+          <line x1="464" y1="136" x2="464" y2="290" className="exo-leader" />
+          <circle cx="464" cy="136" r="2" className="exo-leader-dot" />
           <text x="330" y="304" className="exo-label">
             <tspan className="exo-label--acc">02</tspan> transit_dip · depth 0.45%, Rp ≈0.115 R☉
           </text>
