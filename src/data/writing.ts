@@ -168,6 +168,20 @@ export const writingItems: WritingItem[] = [
     ctaLabel: 'Read essay ↗',
     href: '/writing/010-red-azalea-poetry-communist-values.pdf',
   },
+  {
+    index: '[ 011 ]',
+    date: 'sep_2026',
+    category: 'business course — visionary leadership & futurism',
+    type: 'business_profile',
+    title: 'Walt Disney: Architect of Imagination',
+    summary:
+      'A researched business-leader/futurist profile poster on Walt Disney — his upbringing, the founding of Disney, his value proposition, the conditions that enabled his success, his definition of success, competitive differentiation, and lasting impact. Primary research across multiple sources was synthesized into a structured brief, then an engineered generation prompt produced the final poster design.',
+    takeaway:
+      'He didn’t predict the future. He built the tooling, the ownership, and the financing needed to ship it.',
+    tags: ['Walt Disney', 'Business Leadership', 'Futurism', 'AI-Assisted Design'],
+    ctaLabel: 'View poster ↗',
+    href: '/writing/011-walt-disney-futurist-profile-poster.pdf',
+  },
 ]
 
 // Shown in the sidebar panel once at least one item exists.
