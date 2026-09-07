@@ -225,11 +225,3 @@ export const writingPage = {
     ctaHref: 'https://github.com/KangJustin/Justin-Kang-Portfolio/blob/main/src/data/writing.ts',
   },
 }
-
-// Compact homepage callout linking to /writing.
-export const writingCallout = {
-  label: '// WRITING_ARCHIVE',
-  title: 'Research & Essays',
-  body: 'A separate archive for selected research papers, class essays, and analytical writing. Each entry will eventually include the central argument, key evidence, limitations, and takeaway.',
-  ctaLabel: 'View writing archive →',
-}

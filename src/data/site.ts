@@ -21,5 +21,4 @@ export const site = {
     linkedin: 'https://www.linkedin.com/in/justinkang06',
     resume: '/resume.pdf',
   },
-  resumeMeta: '1 page · updated jul_2026',
 }

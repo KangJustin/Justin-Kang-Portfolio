@@ -11,9 +11,12 @@ This portfolio is built around a systems/terminal visual language: a near-black 
 
 The site highlights:
 
+- **BuzzBuddy** — agentic iOS impairment-detection app, 3rd place at an MLH × DigitalOcean hackathon.
+- **BlastRadius** — agentic code-risk analyst combining real call-graph traversal with an LLM explainer.
 - **UrbanPilot** — multi-agent urban planning scenario dashboard using public datasets.
-- **BarelyAtWork / Flux** — voice-to-workflow automation system for Meta Ray-Ban glasses.
+- **Flux (BarelyAtWork)** — voice-to-workflow automation system for Meta Ray-Ban glasses.
 - **Skyline Transport** — CADathon-winning overhead gantry/cart system for cleanroom material handling.
+- **Exoplanet Transit** — Kepler photometry pipeline that detects and characterizes a real transit signal.
 - **Research & Essays** — separate writing archive for selected papers, essays, and analytical writing.
 
 ## Tech stack
@@ -60,7 +63,7 @@ Most portfolio copy lives in `src/data/`, so updates usually do not require comp
 | --- | --- |
 | `src/data/site.ts` | Name, hero copy, status tags, email, resume, GitHub, and LinkedIn links |
 | `src/data/projects.ts` | Homepage project cards, tags, descriptions, preview type, links, and case-study routes |
-| `src/data/caseStudies.ts` | Full project case-study content for UrbanPilot, Flux, and Skyline Transport |
+| `src/data/caseStudies.ts` | Full case-study content for all six projects |
 | `src/data/writing.ts` | Research & Essays archive entries, featured writing, and writing page copy |
 | `src/data/experience.ts` | Experience and involvement entries |
 | `src/data/skills.ts` | Skill groups and tools |
@@ -106,10 +109,11 @@ Each writing item supports:
 
 Expected static assets:
 
-- `public/resume.pdf` — linked from the hero Resume button
-- `public/skyline-transport-writeup.pdf` — Skyline Transport writeup
+- `public/resume.pdf` — linked from the hero résumé link
+- `public/skyline-transport-writeup.pdf`, `public/exoplanet-transit-writeup.pdf` — project writeups
 - `public/writing/*.pdf` — writing archive PDFs/articles
-- optional project screenshots or generated visuals
+- `public/og-image.png` — social-preview image (og:image / twitter:image)
+- `public/projects/buzzbuddy-*.jpg` — real device screenshots used in the BuzzBuddy preview
 
 ## Design notes
 
@@ -125,32 +129,22 @@ Core styling is defined in `src/styles.css` using CSS variables. The current des
 
 ## Deployment
 
-### Vercel
-
-Import the repository and use the Vite defaults:
+Deployed on Vercel with the Vite defaults:
 
 ```txt
 Build command: npm run build
 Output directory: dist
 ```
 
-### Netlify
+`npm run build` runs three stages in order: `tsc -b` (typecheck), `vite build`
+(bundle), then `vite-node scripts/prerender.tsx`, which writes a real,
+fully-rendered `index.html` for every route in `src/seo.ts`'s `ALL_ROUTES`
+(home, `/writing`, and every project's case-study page) with correct
+per-route `<title>`/description/OG tags baked in. `vercel.json` only
+normalizes URL shape (`cleanUrls`, no trailing slash) — no rewrite rule is
+needed, since every route is already a real static file after prerendering.
 
-```txt
-Build command: npm run build
-Publish directory: dist
-```
-
-### GitHub Pages
-
-If deploying to GitHub Pages, set the Vite base path in `vite.config.ts`:
-
-```ts
-base: '/Justin-Kang-Portfolio/'
-```
-
-Then build and publish the `dist/` folder.
-
-## Notes
-
-This README is meant to document the portfolio as a living site. Keep it updated when project data, writing entries, design direction, or deployment setup changes.
+Every route assumes it's served from the domain root. Deploying under a
+subpath (e.g. GitHub Pages project pages) would require reworking the
+root-relative paths throughout `src/seo.ts`, `index.html`, and the router in
+`src/App.tsx` — not just a Vite `base` config change.
