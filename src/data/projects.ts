@@ -39,7 +39,19 @@ export const projects: Project[] = [
     caseStudy: '/projects/buzzbuddy',
   },
   {
-    index: '[ 002 ] · jul_2026',
+    index: '[ 002 ] · apr_2025',
+    title: 'Skyline Transport',
+    tags: ['CAD', 'Trade-off analysis', 'ISO 14644'],
+    desc: 'Modular overhead gantry and cart system for semiconductor cleanroom material handling, co-designed to ISO 14644 standards. 2nd place, ASME UC Berkeley CADathon Spring 2025.',
+    proof:
+      'Trade-off analysis across layout alternatives; materials selected within a $2,300 BOM to meet cleanroom and conveyance requirements.',
+    windowTitle: 'skyline_transport — assembly_dwg_03',
+    preview: { kind: 'mock', mock: 'skyline' },
+    links: [{ label: 'Writeup ↗', href: '/skyline-transport-writeup.pdf' }],
+    caseStudy: '/projects/skyline',
+  },
+  {
+    index: '[ 003 ] · jul_2026',
     title: 'BlastRadius',
     tags: ['Agentic AI', 'Jac · fullstack', 'Graph traversal', 'Static analysis'],
     desc: 'Agentic code-risk analyst: point it at a real repository, click a function you’re about to change, and a graph walker computes exactly what’s downstream — then an LLM agent explains the risk, grounded in the real source. Built for JacHacks SF 2026.',
@@ -51,7 +63,7 @@ export const projects: Project[] = [
     caseStudy: '/projects/blastradius',
   },
   {
-    index: '[ 003 ] · jun_2026',
+    index: '[ 004 ] · jun_2026',
     title: 'UrbanPilot',
     tags: ['Multi-agent AI', 'Python', 'Data pipelines', 'Public datasets'],
     desc: 'Multi-agent AI system that runs parallel scenario analyses — climate, housing, accessibility, urban design — for any real address.',
@@ -66,7 +78,7 @@ export const projects: Project[] = [
     caseStudy: '/projects/urbanpilot',
   },
   {
-    index: '[ 004 ] · apr_2026',
+    index: '[ 005 ] · apr_2026',
     title: 'Flux',
     tags: ['Voice AI', 'Gemini', 'Workflow JSON', '12+ integrations'],
     desc: 'Voice-first automation platform on Meta Ray-Ban glasses — one spoken command triggers multi-step workflows across 12+ services, including Gmail, Slack, Notion, and Fetch.ai Agentverse. Built as BarelyAtWork at LA Hacks 2026, in a team of four over 36 hours.',
@@ -79,18 +91,6 @@ export const projects: Project[] = [
       { label: 'Devpost ↗', href: 'https://devpost.com/software/idlemaxing' },
     ],
     caseStudy: '/projects/flux',
-  },
-  {
-    index: '[ 005 ] · apr_2025',
-    title: 'Skyline Transport',
-    tags: ['CAD', 'Trade-off analysis', 'ISO 14644'],
-    desc: 'Modular overhead gantry and cart system for semiconductor cleanroom material handling, co-designed to ISO 14644 standards. 2nd place, ASME UC Berkeley CADathon Spring 2025.',
-    proof:
-      'Trade-off analysis across layout alternatives; materials selected within a $2,300 BOM to meet cleanroom and conveyance requirements.',
-    windowTitle: 'skyline_transport — assembly_dwg_03',
-    preview: { kind: 'mock', mock: 'skyline' },
-    links: [{ label: 'Writeup ↗', href: '/skyline-transport-writeup.pdf' }],
-    caseStudy: '/projects/skyline',
   },
   {
     index: '[ 006 ] · aug_2026',

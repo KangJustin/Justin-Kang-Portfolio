@@ -6,11 +6,12 @@ export const site = {
   statusTags: [
     { text: '[ BERKELEY, CA ]', accent: false },
     { text: '[ DATA SCIENCE + INDUSTRIAL ENGINEERING ]', accent: false },
-    { text: '[ ● OPEN TO SOFTWARE · AI · DATA ROLES ]', accent: true },
+    { text: '[ ● OPEN TO SOFTWARE · HARDWARE · AI ROLES ]', accent: true },
   ],
-  tagline: 'I build full-stack AI tools, data products, and practical software systems.',
+  tagline:
+    'I build full-stack AI tools and validate the hardware systems that have to work in the real world.',
   heroBody:
-    "Lately, that's meant an award-winning agentic iOS safety app and a multi-agent urban planning system built on six public datasets.",
+    "Lately, that's meant testing pick-and-place robotics systems at Ambi Robotics, an award-winning agentic iOS safety app, and a multi-agent urban planning system built on six public datasets.",
   email: 'justin-kang@berkeley.edu',
   // Set once verified (graduation month/year + internship-search term/year)
   // e.g. 'Data Science + Industrial Engineering · Expected May 2027 · Seeking Summer 2027 software or ML engineering internships.'
