@@ -10,6 +10,14 @@ export interface Experience {
 
 export const experience: Experience[] = [
   {
+    dates: 'fall_2026 — present',
+    loc: 'berkeley, ca',
+    org: 'Ambi Robotics',
+    role: 'Robotics QA Intern',
+    summary:
+      'Work with the CTO and software team to validate the AmbiSort and AmbiStack pick-and-place robotic systems, testing electromechanical subsystems (sensors, actuators, and mechanical components) for reliability under real operating conditions.',
+  },
+  {
     dates: 'oct_2024 — may_2026',
     loc: 'berkeley, ca',
     org: 'Berkeley AI Research — Robotic AI & Learning Lab',
