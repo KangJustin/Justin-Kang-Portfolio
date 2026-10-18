@@ -16,7 +16,7 @@ export interface CsStage {
 // ---------- BuzzBuddy ----------
 
 export const buzzbuddy = {
-  index: '[001]',
+  index: '[002]',
   date: 'jul_2026',
   version: 'v0.2',
   title: 'BuzzBuddy',
@@ -73,11 +73,11 @@ export const buzzbuddy = {
 // ---------- UrbanPilot ----------
 
 export const urbanpilot = {
-  index: '[003]',
+  index: '[005]',
   date: 'jun_2026',
   version: 'v1.0',
   title: 'UrbanPilot',
-  tags: ['Multi-agent AI', 'Python', 'Data pipelines', 'Public datasets'],
+  tags: ['Multi-agent AI', 'React · Node.js', 'Data pipelines', 'Public datasets'],
   desc: 'Multi-agent AI system that runs parallel scenario analyses — climate, housing, accessibility, urban design — for any real address.',
   codeUrl: 'https://github.com/KangJustin/urbanpilot',
   devpostUrl: 'https://devpost.com/software/urbanpilot',
@@ -154,7 +154,7 @@ export const urbanpilot = {
 const waveHeights = [6, 10, 18, 24, 14, 20, 26, 12, 8, 16, 22, 10, 18, 6, 12, 20, 9, 5]
 
 export const flux = {
-  index: '[004]',
+  index: '[006]',
   date: 'apr_2026',
   version: 'v0.9',
   title: 'Flux',
@@ -195,7 +195,7 @@ export const flux = {
 // ---------- BlastRadius ----------
 
 export const blastradius = {
-  index: '[002]',
+  index: '[004]',
   date: 'jul_2026',
   version: 'v0.1',
   title: 'BlastRadius',
@@ -253,7 +253,7 @@ export const blastradius = {
 // ---------- Skyline Transport ----------
 
 export const skyline = {
-  index: '[005]',
+  index: '[003]',
   date: 'apr_2025',
   version: 'rev_B',
   tags: ['CAD', 'Cleanroom Systems', 'Mechanical Design', 'Trade-off Analysis'],
@@ -304,7 +304,7 @@ export const skyline = {
 // ---------- Exoplanet Transit ----------
 
 export const exoplanet = {
-  index: '[006]',
+  index: '[007]',
   date: 'aug_2026',
   version: 'final',
   tags: ['Astrophysics', 'Python · lightkurve', 'Signal Processing', 'Kepler Photometry'],
@@ -377,4 +377,56 @@ export const exoplanet = {
     },
   ],
   footer: ['exoplanet_transit / case_study', 'Astron 9 · Intro to Python for Astrophysics'],
+}
+
+// ---------- EXCA-Scan ----------
+
+export const excascan = {
+  index: '[001]',
+  date: 'sep_2026',
+  version: 'v0.1',
+  tags: ['Hardware', 'ESP32', 'Imitation learning', 'Physical Intelligence'],
+  desc: 'An RC excavator put under learned control at the act-athon physical AI hackathon (Actor Labs × Physical Intelligence). The bucket comes off, a camera goes on, and a fine-tuned policy moves the arm around an object so it can be scanned into a to-scale CAD model.',
+  viewportTitle: 'exca_scan — control_path.sch',
+  viewportSuffix: 'rev_A',
+  role: 'Owned control and autonomy: driving the excavator from a computer through its own transmitter, collecting teleoperated demonstrations, and fine-tuning the policy. Teammates removed the bucket and mounted the camera, and built the reconstruction tool.',
+  specs: [
+    { label: 'Platform', value: 'RC excavator · stock 2.4 GHz TX' },
+    { label: 'Control', value: 'ESP32 → digital pots + MOSFETs' },
+    { label: 'Policy', value: 'Physical Intelligence · teleop fine-tune' },
+    { label: 'Output', value: 'To-scale CAD via ArUco markers' },
+  ] as CsSpec[],
+  breakdown: [
+    {
+      num: 'B.01',
+      title: 'Transmitter Hijack',
+      body: 'The stock transmitter is a bare toy board — joystick potentiometers and pushbuttons into an encoder chip, with no digital or serial interface. Instead of modifying the RF link or receiver, an ESP32 drives digital potentiometers on the joystick lines and MOSFETs on the button contacts.',
+      footnote: 'esp32 · digital pots · mosfet switches',
+    },
+    {
+      num: 'B.02',
+      title: 'Learned Motion',
+      body: 'Teleoperated demonstrations recorded through the same control path were used to fine-tune a Physical Intelligence model via its API, so the policy moves the camera arm around the target object.',
+      footnote: 'teleop demos · pi api fine-tune',
+    },
+    {
+      num: 'B.03',
+      title: 'Scale-True Scanning',
+      body: 'A U20CAM-720P camera replaces the bucket, and ArUco markers placed around the object give the reconstruction pipeline real-world scale, so the output is a CAD model at true dimensions.',
+      footnote: 'u20cam-720p · aruco markers',
+    },
+  ],
+  phases: [
+    { num: 'P1', name: 'Constraint', note: 'Stock toy transmitter with no digital or serial interface.' },
+    { num: 'P2', name: 'Control Path', note: 'ESP32 driving digital pots and MOSFETs on the transmitter, built on a breadboard.' },
+    { num: 'P3', name: 'Camera Mount', note: 'Bucket removed; camera mounted so the arm gives it up/down travel.' },
+    { num: 'P4', name: 'Demonstrations', note: 'Teleoperated scanning runs recorded through the same control path.' },
+    { num: 'P5', name: 'Fine-Tune', note: 'Physical Intelligence model fine-tuned on the demos via API.' },
+    { num: 'P6', name: 'Reconstruction', note: "Swapped our COLMAP pipeline for a teammate's tool; ArUco markers set the scale." },
+  ],
+  limitations: [
+    'None of the scanned CAD models were 3D-printed before the deadline, so scan-to-part accuracy is untested.',
+    'Control electronics are still on a breadboard.',
+  ],
+  footer: ['exca_scan / case_study', 'act-athon physical AI hackathon · 2026'],
 }

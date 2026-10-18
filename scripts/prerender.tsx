@@ -29,12 +29,14 @@ import { FluxCase } from '../src/components/case/FluxCase'
 import { SkylineCase } from '../src/components/case/SkylineCase'
 import { BlastRadiusCase } from '../src/components/case/BlastRadiusCase'
 import { ExoplanetCase } from '../src/components/case/ExoplanetCase'
+import { ExcaScanCase } from '../src/components/case/ExcaScanCase'
 import { ALL_ROUTES, metaForPath, SITE_URL } from '../src/seo'
 import type { Page } from '../src/App'
 
 const noopNavigate = () => {}
 
 const caseComponents: Record<string, () => React.JSX.Element> = {
+  '/projects/excascan': ExcaScanCase,
   '/projects/buzzbuddy': BuzzBuddyCase,
   '/projects/urbanpilot': UrbanPilotCase,
   '/projects/flux': FluxCase,

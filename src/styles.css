@@ -502,10 +502,25 @@ a:hover {
   margin-bottom: 44px;
 }
 
+.hero__grad {
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink);
+  opacity: 0.75;
+  margin: 0 0 32px;
+  max-width: 640px;
+}
+
 .hero__ctas {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 32px;
+  gap: 16px 32px;
+}
+
+.hero__ctas .link-underline {
+  white-space: nowrap;
 }
 
 /* ---------- Buttons & links ---------- */
