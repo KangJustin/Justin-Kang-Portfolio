@@ -36,6 +36,9 @@ export function Hero({ navigate }: { navigate: (to: string) => void }) {
           <a href={site.links.resume} className="link-underline" target="_blank" rel="noreferrer">
             View résumé ↗
           </a>
+          <a href={site.links.portfolio} className="link-underline" target="_blank" rel="noreferrer">
+            Engineering portfolio ↗
+          </a>
           <a href={site.links.github} className="link-underline" target="_blank" rel="noreferrer">
             GitHub ↗
           </a>

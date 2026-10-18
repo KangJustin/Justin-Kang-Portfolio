@@ -4,11 +4,12 @@ import { writingPage } from './data/writing'
 export const SITE_URL = 'https://justin-kang.vercel.app'
 export const OG_IMAGE = `${SITE_URL}/og-image.png`
 
-export const DEFAULT_TITLE = 'Justin Kang — Software & ML Engineering'
+export const DEFAULT_TITLE = 'Justin Kang — Robotics Test & AI Engineering'
 export const DEFAULT_DESCRIPTION =
-  'Justin Kang — UC Berkeley Data Science student building full-stack AI tools, data products, and practical software systems.'
+  'Justin Kang — UC Berkeley Data Science student testing and building real robots: robotics QA at Ambi Robotics, robot learning research at Berkeley AI Research, and an RC excavator under learned control.'
 
 const CASE_STUDY_TITLES: Record<string, string> = {
+  excascan: 'EXCA-Scan Case Study — RC Excavator Under Learned Control | Justin Kang',
   buzzbuddy: 'BuzzBuddy Case Study — Agentic iOS Prototype | Justin Kang',
   urbanpilot: 'UrbanPilot Case Study — Public-Data Planning Tool | Justin Kang',
   flux: 'Flux Case Study — Voice-First Workflow Automation | Justin Kang',

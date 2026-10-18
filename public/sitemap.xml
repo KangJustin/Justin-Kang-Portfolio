@@ -2,13 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://justin-kang.vercel.app/</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://justin-kang.vercel.app/writing</loc>
     <lastmod>2026-07-13</lastmod>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://justin-kang.vercel.app/projects/excascan</loc>
+    <lastmod>2026-10-17</lastmod>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://justin-kang.vercel.app/projects/buzzbuddy</loc>

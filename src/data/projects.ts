@@ -15,7 +15,7 @@ export interface Project {
   // or one of the hand-built CSS mocks ('flux' | 'skyline').
   preview:
     | { kind: 'image'; src: string; alt: string }
-    | { kind: 'mock'; mock: 'flux' | 'skyline' | 'urbanpilot' | 'buzzbuddy' | 'blastradius' | 'exoplanet' }
+    | { kind: 'mock'; mock: 'flux' | 'skyline' | 'urbanpilot' | 'buzzbuddy' | 'blastradius' | 'exoplanet' | 'excascan' }
   // Only real URLs — add 'Demo ↗' / 'Writeup ↗' entries when they exist.
   links: ProjectLink[]
   // Route of the full case-study page (e.g. '/projects/urbanpilot').
@@ -24,7 +24,19 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    index: '[ 001 ] · jul_2026',
+    index: '[ 001 ] · sep_2026',
+    title: 'EXCA-Scan',
+    tags: ['Hardware', 'ESP32', 'Imitation learning', 'Physical Intelligence'],
+    desc: 'An RC excavator put under learned control at the act-athon physical AI hackathon: the bucket swapped for a camera, the stock transmitter driven by an ESP32, and a fine-tuned robot policy moving the arm around objects to scan them into to-scale CAD.',
+    proof:
+      'The toy transmitter had no digital interface, so I drove it in hardware — digital potentiometers on the joystick lines, MOSFET switches on the buttons — then fine-tuned a Physical Intelligence model on my own teleoperated demonstrations.',
+    windowTitle: 'exca_scan — control_path',
+    preview: { kind: 'mock', mock: 'excascan' },
+    links: [],
+    caseStudy: '/projects/excascan',
+  },
+  {
+    index: '[ 002 ] · jul_2026',
     title: 'BuzzBuddy',
     tags: ['Agentic AI', 'iOS · SwiftUI', 'FastAPI', 'Personal baseline'],
     desc: 'iOS app that estimates impairment by measuring deviation from your own sober baseline — reaction time, balance, memory — using an agentic AI examiner, not a BAC guess. 3rd place, AI for Social Good: Hack with MLH & DigitalOcean (Jul 2026).',
@@ -39,7 +51,7 @@ export const projects: Project[] = [
     caseStudy: '/projects/buzzbuddy',
   },
   {
-    index: '[ 002 ] · apr_2025',
+    index: '[ 003 ] · apr_2025',
     title: 'Skyline Transport',
     tags: ['CAD', 'Trade-off analysis', 'ISO 14644'],
     desc: 'Modular overhead gantry and cart system for semiconductor cleanroom material handling, co-designed to ISO 14644 standards. 2nd place, ASME UC Berkeley CADathon Spring 2025.',
@@ -51,7 +63,7 @@ export const projects: Project[] = [
     caseStudy: '/projects/skyline',
   },
   {
-    index: '[ 003 ] · jul_2026',
+    index: '[ 004 ] · jul_2026',
     title: 'BlastRadius',
     tags: ['Agentic AI', 'Jac · fullstack', 'Graph traversal', 'Static analysis'],
     desc: 'Agentic code-risk analyst: point it at a real repository, click a function you’re about to change, and a graph walker computes exactly what’s downstream — then an LLM agent explains the risk, grounded in the real source. Built for JacHacks SF 2026.',
@@ -63,9 +75,9 @@ export const projects: Project[] = [
     caseStudy: '/projects/blastradius',
   },
   {
-    index: '[ 004 ] · jun_2026',
+    index: '[ 005 ] · jun_2026',
     title: 'UrbanPilot',
-    tags: ['Multi-agent AI', 'Python', 'Data pipelines', 'Public datasets'],
+    tags: ['Multi-agent AI', 'React · Node.js', 'Data pipelines', 'Public datasets'],
     desc: 'Multi-agent AI system that runs parallel scenario analyses — climate, housing, accessibility, urban design — for any real address.',
     proof:
       'Integrates + cleans 6 data sources: Census ACS, FEMA NFHL, Open-Meteo, 511 GTFS transit, NLCD tree canopy, and Google Maps. Supports multi-variable sensitivity analysis across planning dimensions.',
@@ -78,7 +90,7 @@ export const projects: Project[] = [
     caseStudy: '/projects/urbanpilot',
   },
   {
-    index: '[ 005 ] · apr_2026',
+    index: '[ 006 ] · apr_2026',
     title: 'Flux',
     tags: ['Voice AI', 'Gemini', 'Workflow JSON', '12+ integrations'],
     desc: 'Voice-first automation platform on Meta Ray-Ban glasses — one spoken command triggers multi-step workflows across 12+ services, including Gmail, Slack, Notion, and Fetch.ai Agentverse. Built as BarelyAtWork at LA Hacks 2026, in a team of four over 36 hours.',
@@ -93,7 +105,7 @@ export const projects: Project[] = [
     caseStudy: '/projects/flux',
   },
   {
-    index: '[ 006 ] · aug_2026',
+    index: '[ 007 ] · aug_2026',
     title: 'Exoplanet Transit',
     tags: ['Astrophysics', 'Python · lightkurve', 'Signal Processing', 'Kepler data'],
     desc: 'Kepler photometry pipeline that detects, characterizes, and stress-tests a real exoplanet transit signal — built with a 7-person team for Astron 9 (Introduction to Python for Astrophysics).',

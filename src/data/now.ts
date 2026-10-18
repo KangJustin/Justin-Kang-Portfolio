@@ -7,22 +7,22 @@ export interface NowBlock {
 }
 
 export const now = {
-  lastUpdated: 'last_updated: jul_2026',
+  lastUpdated: 'last_updated: oct_2026',
   blocks: [
     {
       label: "right now, I'm making",
       icon: 'hammer',
-      body: "Fresh off building BuzzBuddy at an MLH × DigitalOcean hackathon — now polishing this website you're looking at.",
+      body: 'Testing AI pick-and-place robots at Ambi Robotics, and writing up EXCA-Scan — the RC excavator I put under learned control at act-athon.',
     },
     {
       label: 'teaching myself',
       icon: 'bulb',
-      body: 'A summer course learning about Python for astrophysics.',
+      body: 'Machine learning (IEOR 142A) and reproducible data science (STAT 159) this fall.',
     },
     {
       label: 'open to',
       icon: 'compass',
-      body: 'Internships in software or hardware, learning more about culture, and developing new skills.',
+      body: '2027 internships in robotics test, validation, and deployment — anywhere AI meets real hardware.',
     },
   ] as NowBlock[],
 }

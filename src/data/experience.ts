@@ -6,7 +6,7 @@ export interface Experience {
   summary: string
 }
 
-// Verified entries from Justin's resume (July 2026). Most recent first.
+// Verified entries from Justin's resume (Oct 2026). Most recent first.
 
 export const experience: Experience[] = [
   {
@@ -15,7 +15,7 @@ export const experience: Experience[] = [
     org: 'Ambi Robotics',
     role: 'Robotics QA Intern',
     summary:
-      'Work with the CTO and software team to validate the AmbiSort and AmbiStack pick-and-place robotic systems, testing electromechanical subsystems (sensors, actuators, and mechanical components) for reliability under real operating conditions.',
+      'Test and validate the AI-powered AmbiSort and AmbiStack pick-and-place systems alongside the CTO and software team. Diagnose failures from system logs and Grafana dashboards and triage 1–2 defect tickets a day in Jira and Asana; caught a recurring gantry collision fault and reported it with suggested fixes. Led 3 customer demos of the conveyor system and operator HMI.',
   },
   {
     dates: 'oct_2024 — may_2026',

@@ -29,6 +29,9 @@ const BuzzBuddyCase = lazy(() =>
 const BlastRadiusCase = lazy(() =>
   import('./components/case/BlastRadiusCase').then((m) => ({ default: m.BlastRadiusCase }))
 )
+const ExcaScanCase = lazy(() =>
+  import('./components/case/ExcaScanCase').then((m) => ({ default: m.ExcaScanCase }))
+)
 const ExoplanetCase = lazy(() =>
   import('./components/case/ExoplanetCase').then((m) => ({ default: m.ExoplanetCase }))
 )
@@ -40,6 +43,7 @@ const ExoplanetCase = lazy(() =>
 export type Page = 'home' | 'writing' | 'case'
 
 const caseStudies: Record<string, ComponentType> = {
+  excascan: ExcaScanCase,
   buzzbuddy: BuzzBuddyCase,
   urbanpilot: UrbanPilotCase,
   flux: FluxCase,
