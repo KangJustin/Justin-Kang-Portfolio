@@ -8,9 +8,10 @@ export const site = {
     { text: '[ DATA SCIENCE + INDUSTRIAL ENGINEERING ]', accent: false },
     { text: '[ ● OPEN TO ROBOTICS · TEST · AI ROLES ]', accent: true },
   ],
-  tagline: 'I test, integrate, and build robots — and I care most about finding out why they fail.',
+  tagline:
+    'I build full-stack AI tools and validate the hardware systems that have to work in the real world.',
   heroBody:
-    "Right now that's QA on AI-powered pick-and-place robots at Ambi Robotics. Before that, 20 months benchmarking robot learning policies at Berkeley AI Research — and on the side, an RC excavator I put under learned control.",
+    "Lately, that's meant testing pick-and-place robotics systems at Ambi Robotics, an award-winning agentic iOS safety app, and a multi-agent urban planning system built on six public datasets.",
   email: 'justin-kang@berkeley.edu',
   // Set once verified (graduation month/year + internship-search term/year)
   // e.g. 'Data Science + Industrial Engineering · Expected May 2027 · Seeking Summer 2027 software or ML engineering internships.'
@@ -20,6 +21,5 @@ export const site = {
     github: 'https://github.com/KangJustin',
     linkedin: 'https://www.linkedin.com/in/justinkang06',
     resume: '/resume.pdf',
-    portfolio: '/justin-kang-engineering-portfolio.pdf',
   },
 }

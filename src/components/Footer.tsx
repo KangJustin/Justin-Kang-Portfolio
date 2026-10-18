@@ -10,9 +10,6 @@ export function Footer() {
         <a href={site.links.resume} className="site-footer-link" target="_blank" rel="noreferrer">
           View résumé ↗
         </a>
-        <a href={site.links.portfolio} className="site-footer-link" target="_blank" rel="noreferrer">
-          Engineering portfolio ↗
-        </a>
         <a href={site.links.linkedin} className="site-footer-link" target="_blank" rel="noreferrer">
           LinkedIn ↗
         </a>
