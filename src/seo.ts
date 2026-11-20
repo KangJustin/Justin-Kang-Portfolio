@@ -18,6 +18,38 @@ const CASE_STUDY_TITLES: Record<string, string> = {
   exoplanet: 'Exoplanet Transit Case Study — Kepler Photometry Pipeline | Justin Kang',
 }
 
+// The pages a card on the poker-table home opens.
+const SECTION_META: Record<string, { title: string; description: string }> = {
+  '/about': {
+    title: 'About | Justin Kang',
+    description:
+      'Justin Kang studies Data Science and Industrial Engineering at UC Berkeley, tests AI pick-and-place robots at Ambi Robotics, and builds agentic tools at hackathons.',
+  },
+  '/experience': {
+    title: 'Experience | Justin Kang',
+    description:
+      'Robotics QA at Ambi Robotics, undergraduate research at Berkeley AI Research (RAIL), and football operations with the Los Angeles Rams.',
+  },
+  '/projects': {
+    title: 'Projects | Justin Kang',
+    description:
+      'Seven projects across robotics hardware, agentic AI, and CAD: EXCA-Scan, BuzzBuddy, BlastRadius, UrbanPilot, Flux, Exoplanet Transit, and Skyline Transport.',
+  },
+  '/leadership': {
+    title: 'Leadership & Community | Justin Kang',
+    description:
+      'Mentoring high school seniors with the Hispanic Scholarship Fund and facilitating its national Young Leaders Summits.',
+  },
+  '/resume': {
+    title: 'Résumé | Justin Kang',
+    description: 'Justin Kang’s one-page résumé, current as of Fall 2026: roles, projects, and skills.',
+  },
+  '/contact': {
+    title: 'Contact | Justin Kang',
+    description: 'Reach Justin Kang about robotics test, validation, and AI roles: email, LinkedIn, and GitHub.',
+  },
+}
+
 export interface RouteMeta {
   path: string
   title: string
@@ -29,12 +61,16 @@ export interface RouteMeta {
 // prerender script and sitemap generator share one source of truth.
 export const ALL_ROUTES: string[] = [
   '/',
+  ...Object.keys(SECTION_META),
   '/writing',
   ...projects.filter((p): p is typeof p & { caseStudy: string } => Boolean(p.caseStudy)).map((p) => p.caseStudy),
 ]
 
 export function metaForPath(rawPath: string): RouteMeta {
   const clean = rawPath.replace(/\/+$/, '') || '/'
+
+  const section = SECTION_META[clean]
+  if (section) return { path: clean, ...section }
 
   if (clean === '/writing') {
     return { path: '/writing', title: 'Research & Essays | Justin Kang', description: writingPage.subtitle }

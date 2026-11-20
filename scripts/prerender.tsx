@@ -16,12 +16,14 @@ import { fileURLToPath } from 'node:url'
 
 import { Sidebar } from '../src/components/Sidebar'
 import { MobileHeader } from '../src/components/MobileHeader'
-import { Hero } from '../src/components/Hero'
-import { Projects } from '../src/components/Projects'
-import { Experience } from '../src/components/Experience'
-import { Skills } from '../src/components/Skills'
-import { Now } from '../src/components/Now'
 import { Footer } from '../src/components/Footer'
+import { TableHome } from '../src/components/table/TableHome'
+import { AboutPage } from '../src/components/table/AboutPage'
+import { ExperiencePage } from '../src/components/table/ExperiencePage'
+import { ProjectsPage } from '../src/components/table/ProjectsPage'
+import { LeadershipPage } from '../src/components/table/LeadershipPage'
+import { ResumePage } from '../src/components/table/ResumePage'
+import { ContactPage } from '../src/components/table/ContactPage'
 import { WritingArchive } from '../src/components/WritingArchive'
 import { BuzzBuddyCase } from '../src/components/case/BuzzBuddyCase'
 import { UrbanPilotCase } from '../src/components/case/UrbanPilotCase'
@@ -45,6 +47,15 @@ const caseComponents: Record<string, () => React.JSX.Element> = {
   '/projects/exoplanet': ExoplanetCase,
 }
 
+const tablePages: Record<string, (props: { navigate: (to: string) => void }) => React.JSX.Element> = {
+  '/about': AboutPage,
+  '/experience': ExperiencePage,
+  '/projects': ProjectsPage,
+  '/leadership': LeadershipPage,
+  '/resume': ResumePage,
+  '/contact': ContactPage,
+}
+
 function pageFor(path: string): Page {
   if (path in caseComponents) return 'case'
   if (path === '/writing') return 'writing'
@@ -55,6 +66,16 @@ function renderRoute(path: string): string {
   const page = pageFor(path)
   const CaseComponent = caseComponents[path]
 
+  // The poker-table pages render without the sidebar shell. '/' is baked
+  // in its intro state; the client skips straight to the dealt table for
+  // returning visitors and reduced-motion users.
+  if (page === 'home') {
+    const TablePage = tablePages[path]
+    return renderToString(
+      TablePage ? <TablePage navigate={noopNavigate} /> : <TableHome navigate={noopNavigate} initialPhase="spin" />
+    )
+  }
+
   return renderToString(
     <div className="shell">
       <a href="#main-content" className="skip-link">
@@ -63,19 +84,7 @@ function renderRoute(path: string): string {
       <Sidebar page={page} navigate={noopNavigate} />
       <MobileHeader page={page} navigate={noopNavigate} />
       <main id="main-content" className="main">
-        {CaseComponent ? (
-          <CaseComponent />
-        ) : page === 'writing' ? (
-          <WritingArchive />
-        ) : (
-          <>
-            <Hero navigate={noopNavigate} />
-            <Projects navigate={noopNavigate} />
-            <Experience />
-            <Skills />
-            <Now />
-          </>
-        )}
+        {CaseComponent ? <CaseComponent /> : <WritingArchive />}
         <Footer />
       </main>
     </div>

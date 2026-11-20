@@ -1,9 +1,6 @@
 import { site } from '../data/site'
 import { navItems } from '../data/nav'
-import { useScrollSpy } from '../hooks/useScrollSpy'
 import type { Page } from '../App'
-
-const sectionIds = ['about', 'projects', 'experience', 'skills', 'now']
 
 interface SidebarProps {
   page: Page
@@ -11,8 +8,6 @@ interface SidebarProps {
 }
 
 export function Sidebar({ page, navigate }: SidebarProps) {
-  const spyActive = useScrollSpy(sectionIds)
-
   return (
     <nav className="sidebar">
       <div className="sb-top">
@@ -27,21 +22,21 @@ export function Sidebar({ page, navigate }: SidebarProps) {
           {site.wordmark}
         </a>
         <div className="sb-nav">
-          {navItems.map((item) => {
-            const active = page === 'home' && spyActive === item.id
-            return (
-              <a
-                key={item.num}
-                href={page === 'home' ? `#${item.id}` : `/#${item.id}`}
-                className={`sb-link${active ? ' is-active' : ''}`}
-                aria-current={active ? 'true' : undefined}
-              >
-                <span className="sb-dot" />
-                <span className="sb-num">{item.num}</span>
-                <span className="sb-label">{item.label}</span>
-              </a>
-            )
-          })}
+          {navItems.map((item) => (
+            <a
+              key={item.num}
+              href={item.path}
+              className="sb-link"
+              onClick={(e) => {
+                e.preventDefault()
+                navigate(item.path)
+              }}
+            >
+              <span className="sb-dot" />
+              <span className="sb-num">{item.num}</span>
+              <span className="sb-label">{item.label}</span>
+            </a>
+          ))}
           <div className="sb-nav-divider" />
           <a
             href="/writing"

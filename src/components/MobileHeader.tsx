@@ -11,7 +11,7 @@ interface MobileHeaderProps {
 // Compact sticky header shown only at <=900px (see .mobile-header /
 // .sidebar media queries in styles.css) -- replaces the desktop sidebar,
 // which stays visible unchanged above that width.
-export function MobileHeader({ page, navigate }: MobileHeaderProps) {
+export function MobileHeader({ navigate }: MobileHeaderProps) {
   const [open, setOpen] = useState(false)
   const dialogRef = useRef<HTMLDialogElement>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
@@ -86,20 +86,20 @@ export function MobileHeader({ page, navigate }: MobileHeaderProps) {
         }}
       >
         <nav className="mh-menu">
-          {navItems.map((item) => {
-            const href = page === 'home' ? `#${item.id}` : `/#${item.id}`
-            return (
-              <a
-                key={item.num}
-                href={href}
-                className="mh-menu-link"
-                onClick={() => dialogRef.current?.close()}
-              >
-                <span className="mh-menu-num">{item.num}</span>
-                {item.label}
-              </a>
-            )
-          })}
+          {navItems.map((item) => (
+            <a
+              key={item.num}
+              href={item.path}
+              className="mh-menu-link"
+              onClick={(e) => {
+                e.preventDefault()
+                closeAndNavigate(item.path)
+              }}
+            >
+              <span className="mh-menu-num">{item.num}</span>
+              {item.label}
+            </a>
+          ))}
           <div className="mh-menu-divider" />
           <a
             href="/writing"

@@ -2,12 +2,14 @@ import { lazy, Suspense, useEffect, useState } from 'react'
 import type { ComponentType } from 'react'
 import { Sidebar } from './components/Sidebar'
 import { MobileHeader } from './components/MobileHeader'
-import { Hero } from './components/Hero'
-import { Projects } from './components/Projects'
-import { Skills } from './components/Skills'
-import { Experience } from './components/Experience'
-import { Now } from './components/Now'
 import { Footer } from './components/Footer'
+import { TableHome } from './components/table/TableHome'
+import { AboutPage } from './components/table/AboutPage'
+import { ExperiencePage } from './components/table/ExperiencePage'
+import { ProjectsPage } from './components/table/ProjectsPage'
+import { LeadershipPage } from './components/table/LeadershipPage'
+import { ResumePage } from './components/table/ResumePage'
+import { ContactPage } from './components/table/ContactPage'
 import { metaForPath, SITE_URL } from './seo'
 
 // Lazy-loaded: a visitor reading only the homepage shouldn't have to
@@ -36,11 +38,23 @@ const ExoplanetCase = lazy(() =>
   import('./components/case/ExoplanetCase').then((m) => ({ default: m.ExoplanetCase }))
 )
 
-// Minimal history-based routing: '/' is the single-page portfolio,
-// '/writing' is the Research & Essays archive, and '/projects/<slug>'
-// are the project case studies. vercel.json rewrites unknown paths to
-// index.html so deep links work in production.
+// Minimal history-based routing: '/' is the poker-table home (carousel
+// intro + dealt cards), each card opens a section page ('/about',
+// '/projects', ...), '/writing' is the Research & Essays archive, and
+// '/projects/<slug>' are the project case studies. vercel.json rewrites
+// unknown paths to index.html so deep links work in production.
 export type Page = 'home' | 'writing' | 'case'
+
+type Navigate = (to: string) => void
+
+const tablePages: Record<string, ComponentType<{ navigate: Navigate }>> = {
+  '/about': AboutPage,
+  '/experience': ExperiencePage,
+  '/projects': ProjectsPage,
+  '/leadership': LeadershipPage,
+  '/resume': ResumePage,
+  '/contact': ContactPage,
+}
 
 const caseStudies: Record<string, ComponentType> = {
   excascan: ExcaScanCase,
@@ -102,6 +116,13 @@ export default function App() {
   const CaseComponent = caseMatch ? caseStudies[caseMatch[1]] : undefined
   const page: Page = CaseComponent ? 'case' : clean === '/writing' ? 'writing' : 'home'
 
+  // The table pages bring their own full-screen chrome; the sidebar shell
+  // below is kept for the case studies and the writing archive.
+  if (page === 'home') {
+    const TablePage = tablePages[clean]
+    return TablePage ? <TablePage navigate={navigate} /> : <TableHome navigate={navigate} />
+  }
+
   return (
     <div className="shell">
       <a href="#main-content" className="skip-link">
@@ -110,23 +131,12 @@ export default function App() {
       <Sidebar page={page} navigate={navigate} />
       <MobileHeader page={page} navigate={navigate} />
       <main id="main-content" className="main">
-        {CaseComponent || page === 'writing' ? (
-          <Suspense fallback={<div className="page-loading">loading…</div>}>
-            {CaseComponent ? <CaseComponent /> : <WritingArchive />}
-          </Suspense>
-        ) : (
-          <>
-            <Hero navigate={navigate} />
-            <Projects navigate={navigate} />
-            <Experience />
-            <Skills />
-            <Now />
-          </>
-        )}
-        {/* Rendered on every page (not just home): the sidebar carrying
-            contact info is hidden at <=900px, so this is the only place
-            mobile visitors can reach email/résumé/LinkedIn/GitHub from a
-            case study or the writing archive. */}
+        <Suspense fallback={<div className="page-loading">loading…</div>}>
+          {CaseComponent ? <CaseComponent /> : <WritingArchive />}
+        </Suspense>
+        {/* The sidebar carrying contact info is hidden at <=900px, so this
+            is the only place mobile visitors can reach email/résumé/
+            LinkedIn/GitHub from a case study or the writing archive. */}
         <Footer />
       </main>
     </div>
