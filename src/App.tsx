@@ -1,70 +1,6 @@
-import { lazy, Suspense, useEffect, useState } from 'react'
-import type { ComponentType } from 'react'
-import { Sidebar } from './components/Sidebar'
-import { MobileHeader } from './components/MobileHeader'
-import { Footer } from './components/Footer'
-import { TableHome } from './components/table/TableHome'
-import { AboutPage } from './components/table/AboutPage'
-import { ExperiencePage } from './components/table/ExperiencePage'
-import { ProjectsPage } from './components/table/ProjectsPage'
-import { LeadershipPage } from './components/table/LeadershipPage'
-import { ResumePage } from './components/table/ResumePage'
-import { ContactPage } from './components/table/ContactPage'
+import { useEffect, useState } from 'react'
+import { Router } from './components/simple/Router'
 import { metaForPath, SITE_URL } from './seo'
-
-// Lazy-loaded: a visitor reading only the homepage shouldn't have to
-// download every case study's mock illustrations (Skyline's inline CAD
-// SVG, Flux's pipeline mock, etc.) or the writing archive up front.
-const WritingArchive = lazy(() =>
-  import('./components/WritingArchive').then((m) => ({ default: m.WritingArchive }))
-)
-const UrbanPilotCase = lazy(() =>
-  import('./components/case/UrbanPilotCase').then((m) => ({ default: m.UrbanPilotCase }))
-)
-const FluxCase = lazy(() => import('./components/case/FluxCase').then((m) => ({ default: m.FluxCase })))
-const SkylineCase = lazy(() =>
-  import('./components/case/SkylineCase').then((m) => ({ default: m.SkylineCase }))
-)
-const BuzzBuddyCase = lazy(() =>
-  import('./components/case/BuzzBuddyCase').then((m) => ({ default: m.BuzzBuddyCase }))
-)
-const BlastRadiusCase = lazy(() =>
-  import('./components/case/BlastRadiusCase').then((m) => ({ default: m.BlastRadiusCase }))
-)
-const ExcaScanCase = lazy(() =>
-  import('./components/case/ExcaScanCase').then((m) => ({ default: m.ExcaScanCase }))
-)
-const ExoplanetCase = lazy(() =>
-  import('./components/case/ExoplanetCase').then((m) => ({ default: m.ExoplanetCase }))
-)
-
-// Minimal history-based routing: '/' is the poker-table home (carousel
-// intro + dealt cards), each card opens a section page ('/about',
-// '/projects', ...), '/writing' is the Research & Essays archive, and
-// '/projects/<slug>' are the project case studies. vercel.json rewrites
-// unknown paths to index.html so deep links work in production.
-export type Page = 'home' | 'writing' | 'case'
-
-type Navigate = (to: string) => void
-
-const tablePages: Record<string, ComponentType<{ navigate: Navigate }>> = {
-  '/about': AboutPage,
-  '/experience': ExperiencePage,
-  '/projects': ProjectsPage,
-  '/leadership': LeadershipPage,
-  '/resume': ResumePage,
-  '/contact': ContactPage,
-}
-
-const caseStudies: Record<string, ComponentType> = {
-  excascan: ExcaScanCase,
-  buzzbuddy: BuzzBuddyCase,
-  urbanpilot: UrbanPilotCase,
-  flux: FluxCase,
-  skyline: SkylineCase,
-  blastradius: BlastRadiusCase,
-  exoplanet: ExoplanetCase,
-}
 
 function setMetaContent(selector: string, content: string) {
   document.querySelector(selector)?.setAttribute('content', content)
@@ -75,10 +11,8 @@ function setLinkHref(rel: string, href: string) {
 }
 
 // Updates the tab title, meta/OG/Twitter description, og:url, and canonical
-// per route on client-side navigation (SPA route changes via pushState).
-// The *initial* HTML for each route already has correct per-route metadata
-// baked in by scripts/prerender.tsx (see vercel.json), so this only needs
-// to keep things correct across in-app navigation after that first load.
+// per route on client-side navigation. The *initial* HTML for each route
+// already has correct metadata baked in by scripts/prerender.tsx.
 function useDocumentMeta(path: string) {
   useEffect(() => {
     const { title, description, path: canonicalPath } = metaForPath(path)
@@ -94,6 +28,8 @@ function useDocumentMeta(path: string) {
   }, [path])
 }
 
+// Minimal history-based routing; vercel.json rewrites unknown paths to
+// index.html so deep links work in production.
 export default function App() {
   const [path, setPath] = useState(window.location.pathname)
 
@@ -111,34 +47,5 @@ export default function App() {
 
   useDocumentMeta(path)
 
-  const clean = path.replace(/\/+$/, '')
-  const caseMatch = clean.match(/^\/projects\/([a-z-]+)$/)
-  const CaseComponent = caseMatch ? caseStudies[caseMatch[1]] : undefined
-  const page: Page = CaseComponent ? 'case' : clean === '/writing' ? 'writing' : 'home'
-
-  // The table pages bring their own full-screen chrome; the sidebar shell
-  // below is kept for the case studies and the writing archive.
-  if (page === 'home') {
-    const TablePage = tablePages[clean]
-    return TablePage ? <TablePage navigate={navigate} /> : <TableHome navigate={navigate} />
-  }
-
-  return (
-    <div className="shell">
-      <a href="#main-content" className="skip-link">
-        Skip to content
-      </a>
-      <Sidebar page={page} navigate={navigate} />
-      <MobileHeader page={page} navigate={navigate} />
-      <main id="main-content" className="main">
-        <Suspense fallback={<div className="page-loading">loading…</div>}>
-          {CaseComponent ? <CaseComponent /> : <WritingArchive />}
-        </Suspense>
-        {/* The sidebar carrying contact info is hidden at <=900px, so this
-            is the only place mobile visitors can reach email/résumé/
-            LinkedIn/GitHub from a case study or the writing archive. */}
-        <Footer />
-      </main>
-    </div>
-  )
+  return <Router path={path} navigate={navigate} />
 }

@@ -18,7 +18,7 @@ const CASE_STUDY_TITLES: Record<string, string> = {
   exoplanet: 'Exoplanet Transit Case Study — Kepler Photometry Pipeline | Justin Kang',
 }
 
-// The pages a card on the poker-table home opens.
+// The section pages linked from the home page.
 const SECTION_META: Record<string, { title: string; description: string }> = {
   '/about': {
     title: 'About | Justin Kang',
@@ -34,15 +34,6 @@ const SECTION_META: Record<string, { title: string; description: string }> = {
     title: 'Projects | Justin Kang',
     description:
       'Seven projects across robotics hardware, agentic AI, and CAD: EXCA-Scan, BuzzBuddy, BlastRadius, UrbanPilot, Flux, Exoplanet Transit, and Skyline Transport.',
-  },
-  '/leadership': {
-    title: 'Leadership & Community | Justin Kang',
-    description:
-      'Mentoring high school seniors with the Hispanic Scholarship Fund and facilitating its national Young Leaders Summits.',
-  },
-  '/resume': {
-    title: 'Résumé | Justin Kang',
-    description: 'Justin Kang’s one-page résumé, current as of Fall 2026: roles, projects, and skills.',
   },
   '/contact': {
     title: 'Contact | Justin Kang',
