@@ -13,6 +13,12 @@ export const education = {
 // shown under each photo; alt text describes the photo for screen readers.
 export const photos = [
   {
+    src: '/photos/yc-hackathon-2026.jpg',
+    alt: 'Justin and a friend smiling and holding up gift boxes at a table at the YC hackathon',
+    caption: 'YC Consumer Mobile Hackathon, San Francisco, Nov 2026',
+    focus: '90% 50%',
+  },
+  {
     src: '/photos/flux-glasses.jpg',
     alt: 'Justin wearing Meta Ray-Ban glasses, tapping the frame to give a voice command',
     caption: 'Testing Flux on Meta Ray-Bans, LA Hacks 2026',
