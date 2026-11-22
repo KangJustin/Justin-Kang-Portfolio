@@ -1,5 +1,4 @@
 import type { MouseEvent, ReactNode } from 'react'
-import { site } from '../../data/site'
 import { navItems } from '../../data/nav'
 
 export type Navigate = (to: string) => void
@@ -38,7 +37,7 @@ export function Link({
   )
 }
 
-// Every page except home: name (back home) at the top, a big title,
+// Every page except home: a back link at the top, a big title,
 // one text column, and the section links again at the bottom.
 export function Layout({
   title,
@@ -57,19 +56,11 @@ export function Layout({
     <div className="sb-page">
       <div className="sb-wrap">
         <header className="sb-top">
-          <Link href="/" navigate={navigate} className="sb-name">
-            {site.name}
+          {/* Back link: home from a section page, the project list from a case study. */}
+          <Link href={back?.href ?? '/'} navigate={navigate} className="sb-back">
+            <span aria-hidden="true">← </span>
+            {back?.label ?? 'Home'}
           </Link>
-          {back && (
-            <>
-              <span className="sb-top__sep" aria-hidden="true">
-                /
-              </span>
-              <Link href={back.href} navigate={navigate} className="sb-top__back">
-                {back.label}
-              </Link>
-            </>
-          )}
         </header>
         <main id="main-content">
           <h1 className="sb-title">{title}</h1>
