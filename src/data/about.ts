@@ -23,7 +23,7 @@ export const photos = [
     alt: 'Justin and two teammates smiling and holding up their Apple Watch prize boxes at the YC hackathon',
     caption: '3rd place, YC Consumer Mobile Hackathon, San Francisco, Nov 2026. We won an Apple Watch each.',
     link: { label: 'See it on Vibe Apps', href: 'https://vibeapps.dev/s/next-stop' },
-    ratio: 1600 / 1382,
+    ratio: 1.19, // a hair wider than the photo so the caption fits on two lines
   },
   {
     src: '/photos/asme-cadathon.jpg',
