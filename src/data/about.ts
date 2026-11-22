@@ -16,7 +16,7 @@ export const photos = [
     src: '/photos/yc-hackathon-2026.jpg',
     alt: 'Justin and two teammates smiling and holding up their Apple Watch prize boxes at the YC hackathon',
     caption: '3rd place, YC Consumer Mobile Hackathon, San Francisco, Nov 2026. We each won an Apple Watch.',
-    ratio: 4 / 3,
+    ratio: 1600 / 1382,
   },
   {
     src: '/photos/flux-glasses.jpg',
@@ -42,6 +42,7 @@ export const photos = [
     src: '/photos/downtown-magnets.jpg',
     alt: 'Justin at a podium on stage giving a speech, with Downtown Magnets High School on the screen behind him',
     caption: 'Speaking at the Plus Me Project’s My Story Matters: IMPACT event, May 2024, as one of six Los Angeles seniors awarded',
+    link: { label: 'Watch the speech', href: 'https://www.youtube.com/watch?v=NATPwf2gIms&t=6s' },
   },
   {
     src: '/photos/cif-spirit-award.jpg',
