@@ -235,6 +235,13 @@ a.sb-name:hover {
   margin-bottom: 2em;
 }
 
+/* Full-column image on a case study. */
+.sb-figure {
+  display: block;
+  width: 100%;
+  margin: 2em 0;
+}
+
 /* ---------- sections ---------- */
 
 .sb-section {
