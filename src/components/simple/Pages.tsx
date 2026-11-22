@@ -22,7 +22,7 @@ const projectDate = (index: string) => fmtDate((index.split('·')[1] ?? '').trim
 export function AboutPage({ navigate }: { navigate: Navigate }) {
   return (
     <Layout title="About" current="/about" navigate={navigate}>
-      <PhotoStrip photos={[{ src: '/justin-kang.jpg', alt: `Portrait of ${site.name}` }, ...photos]} />
+      <PhotoStrip photos={photos} />
       <p className="sb-lede">{aboutBio}</p>
 
       <Section title="Now">

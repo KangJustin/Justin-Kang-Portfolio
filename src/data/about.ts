@@ -37,17 +37,17 @@ export const photos = [
   {
     src: '/photos/yls-2025.jpg',
     alt: 'Justin kneeling front and center with his squad at the 2025 Young Leaders Summit',
-    caption: 'My squad at the Young Leaders Summit, Princeton 2025',
+    caption: 'Young Leaders Summit, Princeton 2025',
   },
   {
     src: '/photos/downtown-magnets.jpg',
     alt: 'Justin at a podium on stage giving a speech, with Downtown Magnets High School on the screen behind him',
-    caption: 'Speaking at the Plus Me Project’s My Story Matters: IMPACT event, May 2024, as one of six Los Angeles seniors awarded',
-    link: { label: 'Watch the speech', href: 'https://www.youtube.com/watch?v=NATPwf2gIms&t=6s' },
+    caption: 'Plus Me Project scholarship, May 2024: one of six LA seniors',
+    link: { label: 'Watch the event video', href: 'https://www.youtube.com/watch?v=NATPwf2gIms&t=6s' },
   },
   {
     src: '/photos/cif-spirit-award.jpg',
     alt: 'Justin holding the CIF Spirit of Sport Award trophy, with three others posing playfully beside him',
-    caption: 'CIF Spirit of Sport Award, 2023–24: one of six statewide winners, with a $2,500 scholarship',
+    caption: 'CIF Spirit of Sport Award, 2023–24: one of six statewide winners in California',
   },
 ]
