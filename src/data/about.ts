@@ -16,6 +16,7 @@ export const photos = [
     src: '/photos/flux-glasses.jpg',
     alt: 'Justin wearing Meta Ray-Ban glasses, tapping the frame to give a voice command',
     caption: 'Testing Flux on Meta Ray-Bans, LA Hacks 2026',
+    link: { label: 'See it on Devpost', href: 'https://devpost.com/software/idlemaxing' },
   },
   {
     src: '/photos/yc-hackathon-2026.jpg',
@@ -38,6 +39,7 @@ export const photos = [
     src: '/photos/yls-2025.jpg',
     alt: 'Justin kneeling front and center with his squad at the 2025 Young Leaders Summit',
     caption: 'Young Leaders Summit, Princeton 2025',
+    ratio: 0.94, // just wide enough to keep the caption on one line
   },
   {
     src: '/photos/downtown-magnets.jpg',
