@@ -13,12 +13,6 @@ export const education = {
 // shown under each photo; alt text describes the photo for screen readers.
 export const photos = [
   {
-    src: '/photos/puppy-yoga.jpg',
-    alt: 'Justin sitting cross-legged at a puppy yoga class, with an inset close-up of a small puppy resting on his lap',
-    caption: 'Invited to a puppy yoga event at Puppy Sphere',
-    ratio: 0.75, // show the whole photo so the inset in the corner isn't cropped
-  },
-  {
     src: '/photos/flux-glasses.jpg',
     alt: 'Justin wearing Meta Ray-Ban glasses, tapping the frame to give a voice command',
     caption: 'Testing Flux on Meta Ray-Bans, LA Hacks 2026',
@@ -29,7 +23,7 @@ export const photos = [
     alt: 'Justin and two teammates smiling and holding up their Apple Watch prize boxes at the YC hackathon',
     caption: '3rd place, YC Consumer Mobile Hackathon, San Francisco, Nov 2026. We won an Apple Watch each.',
     link: { label: 'See it on Vibe Apps', href: 'https://vibeapps.dev/s/next-stop' },
-    ratio: 1600 / 1382,
+    ratio: 1.19, // a hair wider than the photo so the caption fits on two lines
   },
   {
     src: '/photos/asme-cadathon.jpg',
@@ -60,5 +54,10 @@ export const photos = [
     caption: 'CIF Spirit of Sport Award, 2023–24: one of six statewide winners in California',
     ratio: 1600 / 1182,
     link: { label: 'See the Instagram post', href: 'https://www.instagram.com/p/C5cF9fZvwh5/' },
+  },
+  {
+    src: '/photos/united-in-harmony-2023.jpg',
+    alt: 'A hand holding an instant photo of Justin with his group of young campers and fellow counselors at camp',
+    caption: 'Camp counselor for United in Harmony, Ojai, Summer 2023',
   },
 ]
