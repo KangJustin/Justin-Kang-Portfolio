@@ -47,7 +47,8 @@ export const photos = [
   },
   {
     src: '/photos/cif-spirit-award.jpg',
-    alt: 'Justin holding the CIF Spirit of Sport Award trophy, with three others posing playfully beside him',
+    alt: 'Justin holding the CIF Spirit of Sport Award trophy, with his family posing playfully beside him',
     caption: 'CIF Spirit of Sport Award, 2023–24: one of six statewide winners in California',
+    ratio: 1600 / 1182,
   },
 ]
