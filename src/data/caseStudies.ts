@@ -237,6 +237,7 @@ export const skyline = {
   date: 'apr_2025',
   tags: ['CAD', 'Cleanroom Systems', 'Mechanical Design', 'Trade-off Analysis'],
   desc: 'Modular overhead gantry and motorized cart system for semiconductor cleanroom material handling, designed around ISO 14644 constraints, vibration control, and a $2,300 BOM.',
+  image: { src: '/projects/skyline-asme.jpg', alt: 'Justin and a teammate holding up ASME CADathon award gears next to the project write-up' },
   writeupUrl: '/skyline-transport-writeup.pdf',
   specs: [
     { label: 'Award', value: '2nd · ASME CADathon ’25' },

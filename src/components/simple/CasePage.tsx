@@ -87,7 +87,7 @@ export function CasePage({ slug, navigate }: { slug: string; navigate: Navigate 
       </p>
       <p className="sb-lede">{d.desc}</p>
       {d.image && (
-        <img className="sb-figure" src={d.image.src} alt={d.image.alt} width={1600} height={1200} loading="lazy" />
+        <img className="sb-figure" src={d.image.src} alt={d.image.alt} loading="lazy" />
       )}
       {d.quote && <blockquote className="sb-quote">{d.quote}</blockquote>}
 

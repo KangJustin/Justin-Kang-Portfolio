@@ -66,6 +66,9 @@ export function ExperiencePage({ navigate }: { navigate: Navigate }) {
             <h2 className="sb-entry__head">{e.org}</h2>
             <p className="sb-entry__role">{e.role}</p>
             <p>{e.summary}</p>
+            {e.image && (
+              <img className="sb-figure" src={e.image.src} alt={e.image.alt} loading="lazy" />
+            )}
           </li>
         ))}
       </ol>
