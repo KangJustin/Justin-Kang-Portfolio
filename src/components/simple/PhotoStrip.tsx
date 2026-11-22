@@ -12,6 +12,8 @@ export interface Photo {
   // Use the photo's real ratio (e.g. 4 / 3) to show a wide photo whole;
   // it stays the same height as the others, just wider.
   ratio?: number
+  // Optional link shown under the caption, e.g. a video of the event.
+  link?: { label: string; href: string }
 }
 
 // A sideways-scrolling row of photos. Swipe or trackpad-scroll it; the
@@ -39,7 +41,19 @@ export function PhotoStrip({ photos }: { photos: Photo[] }) {
                 loading={i < 2 ? 'eager' : 'lazy'}
                 style={ph.focus ? { objectPosition: ph.focus } : undefined}
               />
-              {ph.caption && <figcaption>{ph.caption}</figcaption>}
+              {(ph.caption || ph.link) && (
+                <figcaption>
+                  {ph.caption}
+                  {ph.link && (
+                    <>
+                      {ph.caption && <br />}
+                      <a href={ph.link.href} target="_blank" rel="noreferrer" className="sb-link-u">
+                        {ph.link.label}
+                      </a>
+                    </>
+                  )}
+                </figcaption>
+              )}
             </figure>
           </li>
         ))}
