@@ -24,6 +24,19 @@ export function AboutPage({ navigate }: { navigate: Navigate }) {
       <img className="sb-photo" src="/justin-kang.jpg" alt={`Portrait of ${site.name}`} width={600} height={700} />
       <p className="sb-lede">{aboutBio}</p>
 
+      <Section title="Photos">
+        <ul className="sb-photos">
+          {photos.map((ph) => (
+            <li key={ph.src}>
+              <figure>
+                <img src={ph.src} alt={ph.alt} loading="lazy" />
+                <figcaption>{ph.caption}</figcaption>
+              </figure>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
       <Section title="Now">
         <dl className="sb-dl">
           {now.blocks.map((b) => (
@@ -49,19 +62,6 @@ export function AboutPage({ navigate }: { navigate: Navigate }) {
             </div>
           ))}
         </dl>
-      </Section>
-
-      <Section title="Photos">
-        <ul className="sb-photos">
-          {photos.map((ph) => (
-            <li key={ph.src}>
-              <figure>
-                <img src={ph.src} alt={ph.alt} loading="lazy" />
-                <figcaption>{ph.caption}</figcaption>
-              </figure>
-            </li>
-          ))}
-        </ul>
       </Section>
     </Layout>
   )
