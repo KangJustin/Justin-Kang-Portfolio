@@ -4,6 +4,9 @@ export interface Photo {
   src: string
   alt: string
   caption?: string
+  // Which part of the photo to keep when it's cropped to the strip's
+  // shape, as a CSS object-position (e.g. '85% 50%'). Default: center.
+  focus?: string
 }
 
 // A sideways-scrolling row of photos. Swipe or trackpad-scroll it; the
@@ -25,7 +28,12 @@ export function PhotoStrip({ photos }: { photos: Photo[] }) {
         {photos.map((ph, i) => (
           <li key={ph.src}>
             <figure>
-              <img src={ph.src} alt={ph.alt} loading={i < 2 ? 'eager' : 'lazy'} />
+              <img
+                src={ph.src}
+                alt={ph.alt}
+                loading={i < 2 ? 'eager' : 'lazy'}
+                style={ph.focus ? { objectPosition: ph.focus } : undefined}
+              />
               {ph.caption && <figcaption>{ph.caption}</figcaption>}
             </figure>
           </li>

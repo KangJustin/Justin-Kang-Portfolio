@@ -13,6 +13,12 @@ export const education = {
 // shown under each photo; alt text describes the photo for screen readers.
 export const photos = [
   {
+    src: '/photos/yc-hackathon-2026.jpg',
+    alt: 'Justin and a friend smiling and holding up gift boxes at a table at the YC hackathon',
+    caption: 'YC Consumer Mobile Hackathon, San Francisco, Nov 2026',
+    focus: '90% 50%',
+  },
+  {
     src: '/photos/flux-glasses.jpg',
     alt: 'Justin wearing Meta Ray-Ban glasses, tapping the frame to give a voice command',
     caption: 'Testing Flux on Meta Ray-Bans, LA Hacks 2026',
@@ -25,11 +31,21 @@ export const photos = [
   {
     src: '/photos/yls-2024.jpg',
     alt: 'Justin with four other summit leaders holding certificates of recognition',
-    caption: 'Young Leaders Summit, 2024',
+    caption: 'Young Leaders Summit, USC 2024',
+  },
+  {
+    src: '/photos/yls-2025.jpg',
+    alt: 'Justin kneeling front and center with his squad at the 2025 Young Leaders Summit',
+    caption: 'My squad at the Young Leaders Summit, Princeton 2025',
   },
   {
     src: '/photos/downtown-magnets.jpg',
-    alt: 'Justin at a podium on stage, with Downtown Magnets High School on the screen behind him',
-    caption: 'Downtown Magnets High School',
+    alt: 'Justin at a podium on stage giving a speech, with Downtown Magnets High School on the screen behind him',
+    caption: 'Speech after receiving a Plus Me Project scholarship, Los Angeles',
+  },
+  {
+    src: '/photos/cif-spirit-award.jpg',
+    alt: 'Justin holding the CIF Spirit of the Sport Award trophy, with three others posing playfully beside him',
+    caption: 'CIF Spirit of the Sport Award ceremony, 2024',
   },
 ]
