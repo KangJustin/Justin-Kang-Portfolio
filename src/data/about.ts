@@ -27,6 +27,7 @@ export const photos = [
     src: '/photos/asme-cadathon.jpg',
     alt: 'Justin and a teammate holding up ASME CADathon award gears',
     caption: '2nd place, ASME CADathon, Spring 2025',
+    link: { label: 'Read the Skyline Transport proposal', href: 'https://drive.google.com/file/d/1nXT0CxWb6JOubhBfQj1hJTWlA6WEJGrj/view' },
   },
   {
     src: '/photos/yls-2024.jpg',
