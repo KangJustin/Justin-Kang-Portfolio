@@ -14,72 +14,13 @@ import { writeFileSync, mkdirSync, readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import { Sidebar } from '../src/components/Sidebar'
-import { MobileHeader } from '../src/components/MobileHeader'
-import { Hero } from '../src/components/Hero'
-import { Projects } from '../src/components/Projects'
-import { Experience } from '../src/components/Experience'
-import { Skills } from '../src/components/Skills'
-import { Now } from '../src/components/Now'
-import { Footer } from '../src/components/Footer'
-import { WritingArchive } from '../src/components/WritingArchive'
-import { BuzzBuddyCase } from '../src/components/case/BuzzBuddyCase'
-import { UrbanPilotCase } from '../src/components/case/UrbanPilotCase'
-import { FluxCase } from '../src/components/case/FluxCase'
-import { SkylineCase } from '../src/components/case/SkylineCase'
-import { BlastRadiusCase } from '../src/components/case/BlastRadiusCase'
-import { ExoplanetCase } from '../src/components/case/ExoplanetCase'
-import { ExcaScanCase } from '../src/components/case/ExcaScanCase'
+import { Router } from '../src/components/simple/Router'
 import { ALL_ROUTES, metaForPath, SITE_URL } from '../src/seo'
-import type { Page } from '../src/App'
 
 const noopNavigate = () => {}
 
-const caseComponents: Record<string, () => React.JSX.Element> = {
-  '/projects/excascan': ExcaScanCase,
-  '/projects/buzzbuddy': BuzzBuddyCase,
-  '/projects/urbanpilot': UrbanPilotCase,
-  '/projects/flux': FluxCase,
-  '/projects/skyline': SkylineCase,
-  '/projects/blastradius': BlastRadiusCase,
-  '/projects/exoplanet': ExoplanetCase,
-}
-
-function pageFor(path: string): Page {
-  if (path in caseComponents) return 'case'
-  if (path === '/writing') return 'writing'
-  return 'home'
-}
-
 function renderRoute(path: string): string {
-  const page = pageFor(path)
-  const CaseComponent = caseComponents[path]
-
-  return renderToString(
-    <div className="shell">
-      <a href="#main-content" className="skip-link">
-        Skip to content
-      </a>
-      <Sidebar page={page} navigate={noopNavigate} />
-      <MobileHeader page={page} navigate={noopNavigate} />
-      <main id="main-content" className="main">
-        {CaseComponent ? (
-          <CaseComponent />
-        ) : page === 'writing' ? (
-          <WritingArchive />
-        ) : (
-          <>
-            <Hero navigate={noopNavigate} />
-            <Projects navigate={noopNavigate} />
-            <Experience />
-            <Skills />
-            <Now />
-          </>
-        )}
-        <Footer />
-      </main>
-    </div>
-  )
+  return renderToString(<Router path={path} navigate={noopNavigate} />)
 }
 
 // Replaces a whole <meta .../> or <link .../> tag identified by one marker

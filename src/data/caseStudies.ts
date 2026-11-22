@@ -1,5 +1,5 @@
-// Content for the three project case-study pages (/projects/<slug>),
-// extracted from the design handoff. Copy is final per the handoff README.
+// Content for the project case-study pages (/projects/<slug>). Every
+// field is optional in the page template; see components/simple/CasePage.tsx.
 
 export interface CsSpec {
   label: string
@@ -16,15 +16,12 @@ export interface CsStage {
 // ---------- BuzzBuddy ----------
 
 export const buzzbuddy = {
-  index: '[002]',
   date: 'jul_2026',
-  version: 'v0.2',
   title: 'BuzzBuddy',
   tags: ['Agentic AI', 'iOS · SwiftUI', 'FastAPI', 'Personal baseline'],
   desc: 'iOS app that estimates impairment by measuring deviation from your own sober baseline — reaction time, balance, memory — using an agentic AI examiner, not a BAC guess.',
   codeUrl: 'https://github.com/julianshekhtmeyster/buzzbuddy',
   devpostUrl: 'https://devpost.com/software/buzzbuddy-ivr0ty',
-  viewportTitle: 'buzzbuddy — examiner_session',
   proof: {
     safetyNote:
       'Hackathon prototype that detects performance deviation from a personal baseline. It does not determine sobriety or fitness to drive.',
@@ -67,22 +64,17 @@ export const buzzbuddy = {
     { num: 'S.03', tag: 'analyze', title: 'Deviation Analysis', body: 'Each result is compared against the personal baseline, and a tool-calling loop updates a running confidence score with reasoning attached.' },
     { num: 'S.04', tag: 'verdict', title: 'Final Summary', body: 'The examiner concludes the session with a plain-language summary — it never tells the user it’s "safe to drive."' },
   ] as CsStage[],
-  footer: ['buzzbuddy / case_study', 'agentic impairment detection · 2026'],
 }
 
 // ---------- UrbanPilot ----------
 
 export const urbanpilot = {
-  index: '[005]',
   date: 'jun_2026',
-  version: 'v1.0',
   title: 'UrbanPilot',
   tags: ['Multi-agent AI', 'React · Node.js', 'Data pipelines', 'Public datasets'],
   desc: 'Multi-agent AI system that runs parallel scenario analyses — climate, housing, accessibility, urban design — for any real address.',
   codeUrl: 'https://github.com/KangJustin/urbanpilot',
   devpostUrl: 'https://devpost.com/software/urbanpilot',
-  viewportTitle: 'urbanpilot — scenario_dashboard',
-  viewportSuffix: 'live',
   proof: {
     safetyNote:
       'Decision-support prototype. Results depend on public-data coverage, scoring assumptions, geographic availability, and source freshness.',
@@ -119,10 +111,10 @@ export const urbanpilot = {
     { name: 'Overall', current: 78, y2040: 84, y2075: 91 },
   ],
   risks: [
-    { name: 'Heat island amplification', level: 'High', badgeColor: '#A15A3C' },
-    { name: 'Stormwater management gap', level: 'Moderate', badgeColor: '#8A7A2E' },
-    { name: 'Construction emissions', level: 'Moderate', badgeColor: '#8A7A2E' },
-    { name: 'Pedestrian-vehicle conflict zones', level: 'Moderate', badgeColor: '#8A7A2E' },
+    { name: 'Heat island amplification', level: 'High' },
+    { name: 'Stormwater management gap', level: 'Moderate' },
+    { name: 'Construction emissions', level: 'Moderate' },
+    { name: 'Pedestrian-vehicle conflict zones', level: 'Moderate' },
   ],
   interventions: [
     '+ Add tree canopy',
@@ -146,24 +138,17 @@ export const urbanpilot = {
     "Planning decisions trade off development, climate exposure, mobility, and affordability — usually across tools that don't talk to each other.",
   whyBody:
     'UrbanPilot puts those tradeoffs in one view. Planners, students, and community teams enter a real address and get parallel agent analyses grounded in verified public data — enough to compare scenarios and defend a recommendation in minutes, not weeks.',
-  footer: ['urbanpilot / case_study', 'multi-agent scenario analysis · 2026'],
 }
 
 // ---------- BarelyAtWork / Flux ----------
 
-const waveHeights = [6, 10, 18, 24, 14, 20, 26, 12, 8, 16, 22, 10, 18, 6, 12, 20, 9, 5]
-
 export const flux = {
-  index: '[006]',
   date: 'apr_2026',
-  version: 'v0.9',
   title: 'Flux',
   tags: ['Voice AI', 'Gemini', 'Workflow JSON', '12+ integrations'],
   desc: 'Voice-first automation platform on Meta Ray-Ban glasses — one spoken command triggers multi-step workflows across 12+ services, including Gmail, Slack, Notion, and Fetch.ai Agentverse. Built as BarelyAtWork at LA Hacks 2026, in a team of four over 36 hours.',
   codeUrl: 'https://github.com/trigtbh/lahacks-26',
-  viewportTitle: 'flux — voice_to_workflow',
   quote: '"send yesterday\'s demo clips to the team and block 30 minutes tomorrow morning"',
-  waveBars: waveHeights.map((h, i) => ({ h, dim: i >= 12 })),
   pipelineSteps: [
     { name: 'transcribe', mark: '✓', kind: 'done', note: '42 ms' },
     { name: 'parse intent', mark: '✓', kind: 'done', note: '' },
@@ -189,20 +174,16 @@ export const flux = {
     { num: 'D.01', title: 'Structured JSON over freeform agents', body: 'Reliable workflows require predictable schemas, not open-ended model output.' },
     { num: 'D.02', title: 'Repair loop for messy speech', body: 'Voice commands are incomplete by nature, so the system fills and corrects parameters before running.' },
   ],
-  footer: ['flux / case_study', 'voice → workflow · 2026'],
 }
 
 // ---------- BlastRadius ----------
 
 export const blastradius = {
-  index: '[004]',
   date: 'jul_2026',
-  version: 'v0.1',
   title: 'BlastRadius',
   tags: ['Agentic AI', 'Jac · fullstack', 'Graph traversal', 'Static analysis'],
   desc: 'Agentic code-risk analyst: point it at a real repository, click a function you’re about to change, and a graph walker computes exactly what’s downstream — then an LLM agent explains the risk, grounded in the real source. Built for JacHacks SF 2026.',
   codeUrl: 'https://github.com/KangJustin/blastradius',
-  viewportTitle: 'blastradius — call_graph',
   proof: {
     safetyNote:
       'Prototype scoped to Python repositories, resolves calls by name (not full static analysis), and runs as a local tool — not a hosted service a visitor can point at their own repo yet.',
@@ -247,20 +228,15 @@ export const blastradius = {
     'Blast radius is invisible. Before you change a function, you either guess what depends on it, or you grep and hope.',
   whyBody:
     'BlastRadius traverses the real call graph to compute exactly what’s downstream, then has an agent explain the risk in plain English — grounded in the graph’s own output, not a guess. Every claim in the UI is labeled by where it actually came from: computed from traversal, or AI-generated.',
-  footer: ['blastradius / case_study', 'agentic code-risk analysis · 2026'],
 }
 
 // ---------- Skyline Transport ----------
 
 export const skyline = {
-  index: '[003]',
   date: 'apr_2025',
-  version: 'rev_B',
   tags: ['CAD', 'Cleanroom Systems', 'Mechanical Design', 'Trade-off Analysis'],
   desc: 'Modular overhead gantry and motorized cart system for semiconductor cleanroom material handling, designed around ISO 14644 constraints, vibration control, and a $2,300 BOM.',
   writeupUrl: '/skyline-transport-writeup.pdf',
-  viewportTitle: 'skyline_transport — system_overview.dwg',
-  viewportSuffix: '1:24',
   specs: [
     { label: 'Award', value: '2nd · ASME CADathon ’25' },
     { label: 'Standard', value: 'ISO 14644 cleanroom' },
@@ -273,23 +249,20 @@ export const skyline = {
       title: 'Overhead Gantry',
       body: 'Modular T-slot rail system for scalable cleanroom layouts — routes reconfigure without floor changes, keeping traffic off ISO-controlled floorspace.',
       footnote: 't-slot extrusion · modular routing',
-      glyph: 'gantry',
     },
     {
       num: 'A.02',
       title: 'Locking Tray Assembly',
       body: 'Rotary mechanical locking head attaches and releases the storage unit — a passive interface with no powered actuation at the payload, verified to FoS ≈ 4.',
       footnote: 'rotary lock · pull-out tray',
-      glyph: 'lock',
     },
     {
       num: 'A.03',
       title: 'Motorized Cart Elevator',
       body: 'Standalone cart raises the storage unit to the handoff height — offloading lift duty from the gantry to cut structural load and improve operator safety.',
       footnote: 'scissor lift · standalone drive',
-      glyph: 'cart',
     },
-  ] as { num: string; title: string; body: string; footnote: string; glyph: 'gantry' | 'lock' | 'cart' }[],
+  ] as { num: string; title: string; body: string; footnote: string }[],
   phases: [
     { num: 'P1', name: 'Research', note: 'ISO 14644 airflow, particulate + ESD constraints for fab material handling.' },
     { num: 'P2', name: 'Brainstorm', note: 'Floor AGVs vs. overhead routing vs. hybrid transfer concepts.' },
@@ -298,20 +271,15 @@ export const skyline = {
     { num: 'P5', name: 'Stress Testing', note: 'Tray assembly holds 5–50 lbs with FoS ≈ 4 under static load.' },
     { num: 'P6', name: 'Future Work', note: 'Powered trolley drive, closed-loop positioning, multi-bay routing.' },
   ],
-  footer: ['skyline_transport / case_study', 'ASME UC Berkeley · CADathon S25'],
 }
 
 // ---------- Exoplanet Transit ----------
 
 export const exoplanet = {
-  index: '[007]',
   date: 'aug_2026',
-  version: 'final',
   tags: ['Astrophysics', 'Python · lightkurve', 'Signal Processing', 'Kepler Photometry'],
   desc: 'Kepler photometry pipeline that detects, characterizes, and stress-tests a real exoplanet transit signal — built with a 7-person team for Astron 9 (Introduction to Python for Astrophysics).',
   writeupUrl: '/exoplanet-transit-writeup.pdf',
-  viewportTitle: 'exoplanet_transit — kic6922244.dat',
-  viewportSuffix: 'KIC 6922244',
   specs: [
     { label: 'Target', value: 'Kepler-8b · KIC 6922244' },
     { label: 'Period', value: '3.52 d · BLS power ≈570' },
@@ -324,30 +292,26 @@ export const exoplanet = {
       title: 'Data Cleaning & Detrending',
       body: 'Pulled Kepler photometry with lightkurve, stripped NaNs and 5σ outliers, normalized flux, then flattened the curve to remove stellar rotation and starspot drift while preserving the short transit dips.',
       footnote: 'lightkurve · remove_outliers · flatten()',
-      glyph: 'curve',
     },
     {
       num: 'B.02',
       title: 'Transit Detection (BLS)',
       body: 'A Box Least Squares periodogram returned a dominant peak at 3.52 days, power ≈570 against a ≈10–50 noise floor. Phase-folding at that period produced a clean, repeating box-shaped dip — not a one-off event.',
       footnote: 'BLS periodogram · phase fold',
-      glyph: 'periodogram',
     },
     {
       num: 'B.03',
       title: 'Radius & Companion Check',
       body: 'Transit depth gives planet radius via Rp = R*√δ: 0.115 solar radii against Kepler-8b’s published 0.146 (21% error, mostly limb darkening). A scipy N-body simulator then tested transit-timing variations for signs of a hidden second planet.',
       footnote: 'scipy.curve_fit · solve_ivp N-body',
-      glyph: 'orbit',
     },
     {
       num: 'B.04',
       title: 'Habitability',
       body: 'Kepler’s third law places the planet 0.0483 AU out — 8× closer than Mercury — with an equilibrium temperature of 1661.7 K. The computed habitable zone spans 1.642–2.365 AU, well outside the planet’s orbit.',
       footnote: "Kepler's 3rd law · equilibrium temp",
-      glyph: 'zone',
     },
-  ] as { num: string; title: string; body: string; footnote: string; glyph: 'curve' | 'periodogram' | 'orbit' | 'zone' }[],
+  ] as { num: string; title: string; body: string; footnote: string }[],
   phases: [
     {
       num: 'P1',
@@ -376,19 +340,14 @@ export const exoplanet = {
       note: 'Built a scipy N-body simulator to test whether timing variations hinted at a hidden second planet.',
     },
   ],
-  footer: ['exoplanet_transit / case_study', 'Astron 9 · Intro to Python for Astrophysics'],
 }
 
 // ---------- EXCA-Scan ----------
 
 export const excascan = {
-  index: '[001]',
   date: 'sep_2026',
-  version: 'v0.1',
   tags: ['Hardware', 'ESP32', 'Imitation learning', 'Physical Intelligence'],
   desc: 'An RC excavator put under learned control at the act-athon physical AI hackathon (Actor Labs × Physical Intelligence). The bucket comes off, a camera goes on, and a fine-tuned policy moves the arm around an object so it can be scanned into a to-scale CAD model.',
-  viewportTitle: 'exca_scan — control_path.sch',
-  viewportSuffix: 'rev_A',
   role: 'Owned control and autonomy: driving the excavator from a computer through its own transmitter, collecting teleoperated demonstrations, and fine-tuning the policy. Teammates removed the bucket and mounted the camera, and built the reconstruction tool.',
   specs: [
     { label: 'Platform', value: 'RC excavator · stock 2.4 GHz TX' },
@@ -428,5 +387,4 @@ export const excascan = {
     'None of the scanned CAD models were 3D-printed before the deadline, so scan-to-part accuracy is untested.',
     'Control electronics are still on a breadboard.',
   ],
-  footer: ['exca_scan / case_study', 'act-athon physical AI hackathon · 2026'],
 }

@@ -188,40 +188,8 @@ export const writingItems: WritingItem[] = [
   },
 ]
 
-// Shown in the sidebar panel once at least one item exists. Pinned to a
-// specific item by title (not array position 0) so reordering the archive
-// above doesn't silently swap out this curated spotlight.
-const FEATURED_TITLE = 'What IRIS Actually Fixed'
-
-export const featuredPaper = (() => {
-  const item = writingItems.find((w) => w.title === FEATURED_TITLE)
-  if (!item) return null
-  return {
-    item,
-    filename: '001_what_iris_actually_fixed.md',
-    excerpt:
-      'Iceland’s third cable gets the credit for the country’s swing from crypto to AI infrastructure. The record supports something narrower, and points at the grid.',
-  }
-})()
-
 export const writingPage = {
-  terminalPath: '~/writing',
-  terminalCmd: 'ls archive',
-  title: 'Research & Essays',
+  title: 'Writing',
   subtitle:
     'Selected research and essays on infrastructure, technology, and culture. Each entry includes the argument, evidence, and takeaway.',
-  includes: [
-    'Thesis / central argument',
-    'Why it matters',
-    'Evidence & sources',
-    'Key insight',
-    'Takeaway',
-  ],
-  empty: {
-    heading: 'No papers published yet.',
-    body: 'I’m currently organizing selected research papers, essays, and class writing into concise summaries. Each entry will include the central argument, key evidence, limitations, and what I took away.',
-    ctaLabel: 'Add first paper →',
-    // Points at the data file in the repo — replace with the first real entry.
-    ctaHref: 'https://github.com/KangJustin/Justin-Kang-Portfolio/blob/main/src/data/writing.ts',
-  },
 }

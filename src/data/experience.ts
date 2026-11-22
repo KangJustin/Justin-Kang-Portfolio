@@ -41,12 +41,4 @@ export const experience: Experience[] = [
     summary:
       'Managed training camp operations for 4,000+ attendees, coordinating logistics against team and fan-engagement goals. Streamlined internal workflows by communicating across executive, coaching, and event stakeholders.',
   },
-  {
-    dates: 'aug_2020 — apr_2024',
-    loc: 'los angeles, ca',
-    org: 'MustemUSA (eBay Store)',
-    role: 'Founder',
-    summary:
-      'Managed pricing, inventory, and fulfillment for an e-commerce resale business generating $100K+ in revenue. Scaled to international markets while sustaining 100% positive feedback and eBay Top-Rated Seller status.',
-  },
 ]
