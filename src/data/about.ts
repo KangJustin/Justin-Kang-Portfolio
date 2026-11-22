@@ -39,6 +39,7 @@ export const photos = [
     src: '/photos/yls-2025.jpg',
     alt: 'Justin kneeling front and center with his squad at the 2025 Young Leaders Summit',
     caption: 'Young Leaders Summit, Princeton 2025',
+    ratio: 0.94, // just wide enough to keep the caption on one line
   },
   {
     src: '/photos/downtown-magnets.jpg',
