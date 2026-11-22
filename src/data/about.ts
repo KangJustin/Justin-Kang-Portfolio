@@ -41,7 +41,7 @@ export const photos = [
   {
     src: '/photos/downtown-magnets.jpg',
     alt: 'Justin at a podium on stage giving a speech, with Downtown Magnets High School on the screen behind him',
-    caption: 'Speech after receiving a Plus Me Project scholarship, Los Angeles',
+    caption: 'Speaking at the Plus Me Project’s My Story Matters: IMPACT event, May 2024, as one of six Los Angeles seniors awarded',
   },
   {
     src: '/photos/cif-spirit-award.jpg',
