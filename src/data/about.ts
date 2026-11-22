@@ -31,6 +31,12 @@ export const photos = [
     link: { label: 'Read the Skyline Transport proposal', href: 'https://drive.google.com/file/d/1nXT0CxWb6JOubhBfQj1hJTWlA6WEJGrj/view' },
   },
   {
+    src: '/photos/puppy-yoga.jpg',
+    alt: 'Justin sitting cross-legged at a puppy yoga class, with an inset close-up of a small puppy resting on his lap',
+    caption: 'Invited to a puppy yoga event at Puppy Sphere',
+    ratio: 0.75, // show the whole photo so the inset in the corner isn't cropped
+  },
+  {
     src: '/photos/yls-2024.jpg',
     alt: 'Justin with four other summit leaders holding certificates of recognition',
     caption: 'Young Leaders Summit, USC 2024',
