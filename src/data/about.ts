@@ -14,9 +14,9 @@ export const education = {
 export const photos = [
   {
     src: '/photos/yc-hackathon-2026.jpg',
-    alt: 'Justin and a friend smiling and holding up gift boxes at a table at the YC hackathon',
-    caption: 'YC Consumer Mobile Hackathon, San Francisco, Nov 2026',
-    focus: '90% 50%',
+    alt: 'Justin and two teammates smiling and holding up their Apple Watch prize boxes at the YC hackathon',
+    caption: '3rd place, YC Consumer Mobile Hackathon, San Francisco, Nov 2026. We each won an Apple Watch.',
+    ratio: 4 / 3,
   },
   {
     src: '/photos/flux-glasses.jpg',

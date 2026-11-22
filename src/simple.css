@@ -264,8 +264,11 @@ a.sb-name:hover {
   outline-offset: 4px;
 }
 
+/* Every card is the same height (a 4:5 card at the base width); a card's
+   width follows its --ratio, so wide photos can show uncropped. */
 .sb-strip li {
-  flex: 0 0 min(15rem, 72vw);
+  --base: min(15rem, 72vw);
+  flex: 0 0 calc(var(--base) * 1.25 * var(--ratio, 0.8));
   scroll-snap-align: start;
 }
 
@@ -276,7 +279,7 @@ a.sb-name:hover {
 .sb-strip img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: var(--ratio, 0.8);
   object-fit: cover;
 }
 
