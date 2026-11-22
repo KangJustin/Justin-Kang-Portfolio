@@ -14,9 +14,9 @@ export const education = {
 export const photos = [
   {
     src: '/photos/yc-hackathon-2026.jpg',
-    alt: 'Justin and a friend smiling and holding up gift boxes at a table at the YC hackathon',
-    caption: 'YC Consumer Mobile Hackathon, San Francisco, Nov 2026',
-    focus: '90% 50%',
+    alt: 'Justin and two teammates smiling and holding up their Apple Watch prize boxes at the YC hackathon',
+    caption: '3rd place, YC Consumer Mobile Hackathon, San Francisco, Nov 2026. We each won an Apple Watch.',
+    ratio: 4 / 3,
   },
   {
     src: '/photos/flux-glasses.jpg',
@@ -41,11 +41,11 @@ export const photos = [
   {
     src: '/photos/downtown-magnets.jpg',
     alt: 'Justin at a podium on stage giving a speech, with Downtown Magnets High School on the screen behind him',
-    caption: 'Speech after receiving a Plus Me Project scholarship, Los Angeles',
+    caption: 'Speaking at the Plus Me Project’s My Story Matters: IMPACT event, May 2024, as one of six Los Angeles seniors awarded',
   },
   {
     src: '/photos/cif-spirit-award.jpg',
-    alt: 'Justin holding the CIF Spirit of the Sport Award trophy, with three others posing playfully beside him',
-    caption: 'CIF Spirit of the Sport Award ceremony, 2024',
+    alt: 'Justin holding the CIF Spirit of Sport Award trophy, with three others posing playfully beside him',
+    caption: 'CIF Spirit of Sport Award, 2023–24: one of six statewide winners, with a $2,500 scholarship',
   },
 ]

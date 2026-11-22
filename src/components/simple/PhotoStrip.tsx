@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import type { CSSProperties } from 'react'
 
 export interface Photo {
   src: string
@@ -7,6 +8,10 @@ export interface Photo {
   // Which part of the photo to keep when it's cropped to the strip's
   // shape, as a CSS object-position (e.g. '85% 50%'). Default: center.
   focus?: string
+  // Width-to-height ratio for this photo's card. Default 0.8 (4:5, tall).
+  // Use the photo's real ratio (e.g. 4 / 3) to show a wide photo whole;
+  // it stays the same height as the others, just wider.
+  ratio?: number
 }
 
 // A sideways-scrolling row of photos. Swipe or trackpad-scroll it; the
@@ -26,7 +31,7 @@ export function PhotoStrip({ photos }: { photos: Photo[] }) {
     <div className="sb-strip-wrap">
       <ul ref={strip} className="sb-strip" tabIndex={0} aria-label="Photos">
         {photos.map((ph, i) => (
-          <li key={ph.src}>
+          <li key={ph.src} style={ph.ratio ? ({ '--ratio': ph.ratio } as CSSProperties) : undefined}>
             <figure>
               <img
                 src={ph.src}
