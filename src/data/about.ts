@@ -34,7 +34,12 @@ export const photos = [
   },
   {
     src: '/photos/downtown-magnets.jpg',
-    alt: 'Justin at a podium on stage, with Downtown Magnets High School on the screen behind him',
-    caption: 'Downtown Magnets High School',
+    alt: 'Justin at a podium on stage giving a speech, with Downtown Magnets High School on the screen behind him',
+    caption: 'Speech after receiving a Plus Me Project scholarship, Los Angeles',
+  },
+  {
+    src: '/photos/cif-spirit-award.jpg',
+    alt: 'Justin holding the CIF Spirit of the Sport Award trophy, with three others posing playfully beside him',
+    caption: 'CIF Spirit of the Sport Award ceremony, 2024',
   },
 ]
