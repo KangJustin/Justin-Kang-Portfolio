@@ -25,7 +25,12 @@ export const photos = [
   {
     src: '/photos/yls-2024.jpg',
     alt: 'Justin with four other summit leaders holding certificates of recognition',
-    caption: 'Young Leaders Summit, 2024',
+    caption: 'Young Leaders Summit, USC 2024',
+  },
+  {
+    src: '/photos/yls-2025.jpg',
+    alt: 'Justin kneeling front and center with his squad at the 2025 Young Leaders Summit',
+    caption: 'My squad at the Young Leaders Summit, Princeton 2025',
   },
   {
     src: '/photos/downtown-magnets.jpg',
