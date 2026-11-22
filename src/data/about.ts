@@ -13,6 +13,12 @@ export const education = {
 // shown under each photo; alt text describes the photo for screen readers.
 export const photos = [
   {
+    src: '/photos/puppy-yoga.jpg',
+    alt: 'Justin sitting cross-legged at a puppy yoga class, with an inset close-up of a small puppy resting on his lap',
+    caption: 'Invited to a puppy yoga event at Puppy Sphere',
+    ratio: 0.75, // show the whole photo so the inset in the corner isn't cropped
+  },
+  {
     src: '/photos/flux-glasses.jpg',
     alt: 'Justin wearing Meta Ray-Ban glasses, tapping the frame to give a voice command',
     caption: 'Testing Flux on Meta Ray-Bans, LA Hacks 2026',
@@ -30,12 +36,6 @@ export const photos = [
     alt: 'Justin and a teammate holding up ASME CADathon award gears',
     caption: '2nd place, ASME CADathon, Spring 2025',
     link: { label: 'Read the Skyline Transport proposal', href: 'https://drive.google.com/file/d/1nXT0CxWb6JOubhBfQj1hJTWlA6WEJGrj/view' },
-  },
-  {
-    src: '/photos/puppy-yoga.jpg',
-    alt: 'Justin sitting cross-legged at a puppy yoga class, with an inset close-up of a small puppy resting on his lap',
-    caption: 'Invited to a puppy yoga event at Puppy Sphere',
-    ratio: 0.75, // show the whole photo so the inset in the corner isn't cropped
   },
   {
     src: '/photos/yls-2024.jpg',
