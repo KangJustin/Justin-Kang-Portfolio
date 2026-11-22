@@ -45,7 +45,7 @@ export const photos = [
   },
   {
     src: '/photos/cif-spirit-award.jpg',
-    alt: 'Justin holding the CIF Spirit of the Sport Award trophy, with three others posing playfully beside him',
-    caption: 'CIF Spirit of the Sport Award ceremony, 2024',
+    alt: 'Justin holding the CIF Spirit of Sport Award trophy, with three others posing playfully beside him',
+    caption: 'CIF Spirit of Sport Award, 2023–24: one of six statewide winners, with a $2,500 scholarship',
   },
 ]
