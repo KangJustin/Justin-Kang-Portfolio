@@ -233,7 +233,6 @@ a.sb-name:hover {
   display: block;
   width: 180px;
   margin-bottom: 2em;
-  filter: grayscale(1);
 }
 
 /* ---------- sections ---------- */
