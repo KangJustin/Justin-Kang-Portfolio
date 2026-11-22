@@ -16,6 +16,7 @@ export const photos = [
     src: '/photos/flux-glasses.jpg',
     alt: 'Justin wearing Meta Ray-Ban glasses, tapping the frame to give a voice command',
     caption: 'Testing Flux on Meta Ray-Bans, LA Hacks 2026',
+    link: { label: 'See it on Devpost', href: 'https://devpost.com/software/idlemaxing' },
   },
   {
     src: '/photos/yc-hackathon-2026.jpg',
