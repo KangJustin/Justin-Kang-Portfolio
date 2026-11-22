@@ -50,5 +50,6 @@ export const photos = [
     alt: 'Justin holding the CIF Spirit of Sport Award trophy, with his family posing playfully beside him',
     caption: 'CIF Spirit of Sport Award, 2023–24: one of six statewide winners in California',
     ratio: 1600 / 1182,
+    link: { label: 'See the Instagram post', href: 'https://www.instagram.com/p/C5cF9fZvwh5/' },
   },
 ]
