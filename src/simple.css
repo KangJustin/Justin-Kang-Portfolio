@@ -235,6 +235,17 @@ a.sb-name:hover {
   margin-bottom: 2em;
 }
 
+/* Photo in a case study or experience entry: full column width,
+   but tall photos are capped so they don't fill the whole screen. */
+.sb-figure {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 75vh;
+  margin: 2em 0;
+}
+
 /* ---------- sections ---------- */
 
 .sb-section {
