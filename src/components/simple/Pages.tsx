@@ -4,6 +4,7 @@ import { experience } from '../../data/experience'
 import { projects } from '../../data/projects'
 import { skillGroups } from '../../data/skills'
 import { aboutBio, education, photos } from '../../data/about'
+import { PhotoStrip } from './PhotoStrip'
 import { writingItems, writingPage } from '../../data/writing'
 import { fmtDate } from '../../data/nav'
 import { Layout, Link, Section } from './Layout'
@@ -21,21 +22,8 @@ const projectDate = (index: string) => fmtDate((index.split('·')[1] ?? '').trim
 export function AboutPage({ navigate }: { navigate: Navigate }) {
   return (
     <Layout title="About" current="/about" navigate={navigate}>
-      <img className="sb-photo" src="/justin-kang.jpg" alt={`Portrait of ${site.name}`} width={600} height={700} />
+      <PhotoStrip photos={[{ src: '/justin-kang.jpg', alt: `Portrait of ${site.name}` }, ...photos]} />
       <p className="sb-lede">{aboutBio}</p>
-
-      <Section title="Photos">
-        <ul className="sb-photos">
-          {photos.map((ph) => (
-            <li key={ph.src}>
-              <figure>
-                <img src={ph.src} alt={ph.alt} loading="lazy" />
-                <figcaption>{ph.caption}</figcaption>
-              </figure>
-            </li>
-          ))}
-        </ul>
-      </Section>
 
       <Section title="Now">
         <dl className="sb-dl">
