@@ -61,4 +61,9 @@ export const photos = [
     ratio: 1600 / 1182,
     link: { label: 'See the Instagram post', href: 'https://www.instagram.com/p/C5cF9fZvwh5/' },
   },
+  {
+    src: '/photos/united-in-harmony-2023.jpg',
+    alt: 'A hand holding an instant photo of Justin with his group of young campers and fellow counselors at camp',
+    caption: 'Camp counselor for United in Harmony, Ojai, Summer 2023',
+  },
 ]
