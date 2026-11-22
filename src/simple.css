@@ -229,12 +229,6 @@ a.sb-name:hover {
   text-decoration-color: var(--ink);
 }
 
-.sb-photo {
-  display: block;
-  width: 180px;
-  margin-bottom: 2em;
-}
-
 /* Photo in a case study or experience entry: full column width,
    but tall photos are capped so they don't fill the whole screen. */
 .sb-figure {
@@ -246,33 +240,75 @@ a.sb-name:hover {
   margin: 2em 0;
 }
 
-/* About page photo grid: two columns, every photo cropped to the
-   same shape so the grid lines up; one column on phones. */
-.sb-photos {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem 1.25rem;
+/* About page photo strip: headshot first, then scroll sideways.
+   Cards are sized so the next one peeks in, which signals there's more. */
+.sb-strip-wrap {
+  margin-bottom: 2em;
+}
+
+.sb-strip {
+  display: flex;
+  gap: 1rem;
   margin: 0;
-  padding: 0;
+  padding: 0 0 0.75rem;
   list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--rule) transparent;
 }
 
-.sb-photos figure {
+.sb-strip:focus-visible {
+  outline: 1px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.sb-strip li {
+  flex: 0 0 min(15rem, 72vw);
+  scroll-snap-align: start;
+}
+
+.sb-strip figure {
   margin: 0;
 }
 
-.sb-photos img {
+.sb-strip img {
   display: block;
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
 }
 
-.sb-photos figcaption {
+.sb-strip figcaption {
   margin-top: 0.5em;
   font-size: 1rem;
   line-height: 1.4;
   color: var(--muted);
+}
+
+.sb-strip-nav {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: -0.4em; /* line the arrow glyph up with the text edge */
+}
+
+.sb-strip-nav button {
+  padding: 0.1em 0.4em;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.sb-strip-nav button:hover {
+  color: var(--ink);
+}
+
+.sb-strip-nav button:focus-visible {
+  outline: 1px solid var(--ink);
 }
 
 /* ---------- sections ---------- */
@@ -434,10 +470,6 @@ a.sb-name:hover {
   }
 
   .sb-dl > div {
-    grid-template-columns: 1fr;
-  }
-
-  .sb-photos {
     grid-template-columns: 1fr;
   }
 }
