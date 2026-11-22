@@ -246,6 +246,35 @@ a.sb-name:hover {
   margin: 2em 0;
 }
 
+/* About page photo grid: two columns, every photo cropped to the
+   same shape so the grid lines up; one column on phones. */
+.sb-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sb-photos figure {
+  margin: 0;
+}
+
+.sb-photos img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.sb-photos figcaption {
+  margin-top: 0.5em;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
 /* ---------- sections ---------- */
 
 .sb-section {
@@ -405,6 +434,10 @@ a.sb-name:hover {
   }
 
   .sb-dl > div {
+    grid-template-columns: 1fr;
+  }
+
+  .sb-photos {
     grid-template-columns: 1fr;
   }
 }

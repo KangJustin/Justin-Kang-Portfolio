@@ -148,7 +148,6 @@ export const flux = {
   tags: ['Voice AI', 'Gemini', 'Workflow JSON', '12+ integrations'],
   desc: 'Voice-first automation platform on Meta Ray-Ban glasses — one spoken command triggers multi-step workflows across 12+ services, including Gmail, Slack, Notion, and Fetch.ai Agentverse. Built as BarelyAtWork at LA Hacks 2026, in a team of four over 36 hours.',
   codeUrl: 'https://github.com/trigtbh/lahacks-26',
-  image: { src: '/projects/flux-glasses.jpg', alt: 'Justin wearing Meta Ray-Ban glasses, tapping the frame to give a voice command' },
   quote: '"send yesterday\'s demo clips to the team and block 30 minutes tomorrow morning"',
   pipelineSteps: [
     { name: 'transcribe', mark: '✓', kind: 'done', note: '42 ms' },
@@ -237,7 +236,6 @@ export const skyline = {
   date: 'apr_2025',
   tags: ['CAD', 'Cleanroom Systems', 'Mechanical Design', 'Trade-off Analysis'],
   desc: 'Modular overhead gantry and motorized cart system for semiconductor cleanroom material handling, designed around ISO 14644 constraints, vibration control, and a $2,300 BOM.',
-  image: { src: '/projects/skyline-asme.jpg', alt: 'Justin and a teammate holding up ASME CADathon award gears next to the project write-up' },
   writeupUrl: '/skyline-transport-writeup.pdf',
   specs: [
     { label: 'Award', value: '2nd · ASME CADathon ’25' },
