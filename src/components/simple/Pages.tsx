@@ -3,7 +3,7 @@ import { now } from '../../data/now'
 import { experience } from '../../data/experience'
 import { projects } from '../../data/projects'
 import { skillGroups } from '../../data/skills'
-import { aboutBio, education } from '../../data/about'
+import { aboutBio, education, photos } from '../../data/about'
 import { writingItems, writingPage } from '../../data/writing'
 import { fmtDate } from '../../data/nav'
 import { Layout, Link, Section } from './Layout'
@@ -49,6 +49,19 @@ export function AboutPage({ navigate }: { navigate: Navigate }) {
             </div>
           ))}
         </dl>
+      </Section>
+
+      <Section title="Photos">
+        <ul className="sb-photos">
+          {photos.map((ph) => (
+            <li key={ph.src}>
+              <figure>
+                <img src={ph.src} alt={ph.alt} loading="lazy" />
+                <figcaption>{ph.caption}</figcaption>
+              </figure>
+            </li>
+          ))}
+        </ul>
       </Section>
     </Layout>
   )
