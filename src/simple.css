@@ -75,10 +75,6 @@ img {
   text-decoration: none;
 }
 
-a.sb-name:hover {
-  color: var(--muted);
-}
-
 .sb-top {
   display: flex;
   align-items: baseline;
@@ -86,18 +82,13 @@ a.sb-name:hover {
   margin-bottom: clamp(40px, 8vh, 72px);
 }
 
-.sb-top__sep {
-  color: var(--muted);
-}
-
-.sb-top__back {
+.sb-back {
   font-style: italic;
-  color: var(--muted);
   text-decoration: none;
 }
 
-.sb-top__back:hover {
-  color: var(--ink);
+.sb-back:hover {
+  color: var(--muted);
 }
 
 .sb-title {
