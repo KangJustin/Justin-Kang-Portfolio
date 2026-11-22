@@ -15,7 +15,7 @@ export const photos = [
   {
     src: '/photos/yc-hackathon-2026.jpg',
     alt: 'Justin and two teammates smiling and holding up their Apple Watch prize boxes at the YC hackathon',
-    caption: '3rd place, YC Consumer Mobile Hackathon, San Francisco, Nov 2026. We each won an Apple Watch.',
+    caption: '3rd place, YC Consumer Mobile Hackathon, San Francisco, Nov 2026. We won an Apple Watch each.',
     ratio: 1600 / 1382,
   },
   {
