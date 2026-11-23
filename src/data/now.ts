@@ -7,7 +7,7 @@ export const now = {
   blocks: [
     {
       label: "right now, I'm making",
-      body: 'Testing AI pick-and-place robots at Ambi Robotics, and writing up EXCA-Scan — the RC excavator I put under learned control at act-athon.',
+      body: 'Testing AI pick-and-place robots at Ambi Robotics, and building Next Stop, a Mandarin education video game.',
     },
     {
       label: 'teaching myself',
