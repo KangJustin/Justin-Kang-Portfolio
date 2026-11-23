@@ -45,7 +45,7 @@ export const photos = [
   {
     src: '/photos/downtown-magnets.jpg',
     alt: 'Justin at a podium on stage giving a speech, with Downtown Magnets High School on the screen behind him',
-    caption: 'Plus Me Project scholarship, May 2024: one of six LA seniors',
+    caption: 'Plus Me Project scholarship, May 2024: one of six high school seniors in Los Angeles',
     link: { label: 'Watch the event video', href: 'https://www.youtube.com/watch?v=NATPwf2gIms&t=6s' },
   },
   {
