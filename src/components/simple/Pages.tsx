@@ -80,25 +80,43 @@ export function ExperiencePage({ navigate }: { navigate: Navigate }) {
 export function ProjectsPage({ navigate }: { navigate: Navigate }) {
   return (
     <Layout title="Projects" current="/projects" navigate={navigate}>
-      <ol className="sb-entries">
-        {projects.map((p) => (
-          <li key={p.title} className="sb-entry">
-            <p className="sb-meta">
-              {projectDate(p.index)} · {p.tags.slice(0, 3).join(', ')}
-            </p>
-            <h2 className="sb-entry__head">
+      <ul className="sb-gallery">
+        {projects.map((p) => {
+          const card = (
+            <>
+              <div className="sb-card__img">
+                {p.cover ? (
+                  <img
+                    src={p.cover.src}
+                    alt={p.cover.alt}
+                    loading="lazy"
+                    style={p.cover.focus ? { objectPosition: p.cover.focus } : undefined}
+                  />
+                ) : (
+                  <span className="sb-card__ph" aria-hidden="true">
+                    {p.title}
+                  </span>
+                )}
+              </div>
+              <h2 className="sb-card__title">{p.title}</h2>
+              <p className="sb-card__meta">
+                {projectDate(p.index)} · {p.tags.slice(0, 2).join(', ')}
+              </p>
+            </>
+          )
+          return (
+            <li key={p.title}>
               {p.caseStudy ? (
-                <Link href={p.caseStudy} navigate={navigate} className="sb-link-u">
-                  {p.title}
+                <Link href={p.caseStudy} navigate={navigate} className="sb-card">
+                  {card}
                 </Link>
               ) : (
-                p.title
+                <div className="sb-card">{card}</div>
               )}
-            </h2>
-            <p>{p.desc}</p>
-          </li>
-        ))}
-      </ol>
+            </li>
+          )
+        })}
+      </ul>
     </Layout>
   )
 }

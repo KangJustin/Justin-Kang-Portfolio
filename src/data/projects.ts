@@ -14,6 +14,9 @@ export interface Project {
   links: ProjectLink[]
   // Route of the full case-study page (e.g. '/projects/urbanpilot').
   caseStudy?: string
+  // Picture on the Projects gallery card. Projects without one show a
+  // plain tile with the project name. focus = CSS object-position.
+  cover?: { src: string; alt: string; focus?: string }
 }
 
 export const projects: Project[] = [
@@ -39,6 +42,7 @@ export const projects: Project[] = [
       { label: 'Devpost ↗', href: 'https://devpost.com/software/buzzbuddy-ivr0ty' },
     ],
     caseStudy: '/projects/buzzbuddy',
+    cover: { src: '/covers/buzzbuddy.jpg', alt: 'Three BuzzBuddy app screens: start test, reaction-time game, and impairment verdict' },
   },
   {
     index: '[ 003 ] · apr_2025',
@@ -49,6 +53,7 @@ export const projects: Project[] = [
       'Trade-off analysis across layout alternatives; materials selected within a $2,300 BOM to meet cleanroom and conveyance requirements.',
     links: [{ label: 'Writeup ↗', href: '/skyline-transport-writeup.pdf' }],
     caseStudy: '/projects/skyline',
+    cover: { src: '/photos/asme-cadathon.jpg', alt: 'Justin and a teammate holding up ASME CADathon award gears' },
   },
   {
     index: '[ 004 ] · jul_2026',
@@ -85,6 +90,7 @@ export const projects: Project[] = [
       { label: 'Devpost ↗', href: 'https://devpost.com/software/idlemaxing' },
     ],
     caseStudy: '/projects/flux',
+    cover: { src: '/photos/flux-glasses.jpg', alt: 'Justin wearing Meta Ray-Ban glasses, tapping the frame to give a voice command', focus: '50% 35%' },
   },
   {
     index: '[ 007 ] · aug_2026',
